@@ -289,7 +289,8 @@ namespace Content.Client.Paper.UI
             }
 
             // ADT-Tweak Start: Paper field tag
-            SetupFieldButtons(state.Text, state.FieldContext);
+            var fieldText = (!wasEditing || shouldCopyText) ? state.Text : Rope.Collapse(Input.TextRope);
+            SetupFieldButtons(fieldText, state.FieldContext);
             // ADT-Tweak End
 
             for (var i = 0; i <= state.StampedBy.Count * 3 + 1; i++)
@@ -379,6 +380,12 @@ namespace Content.Client.Paper.UI
 
         private void SetupFieldButtons(string text, PaperFieldContext? context)
         {
+            if (_currentPopup != null)
+            {
+                _currentPopup.Close();
+                _currentPopup = null;
+            }
+
             _fieldContext = context;
             FieldButtonsContainer.RemoveAllChildren();
             FieldButtonsContainer.Visible = false;
@@ -524,17 +531,14 @@ namespace Content.Client.Paper.UI
             };
             button.OnPressed += _ =>
             {
-                ReplaceField(fieldIndex, value);
+                ReplaceField(fieldIndex, displayText);
                 popup.Close();
             };
             parent.AddChild(button);
         }
 
-        private void ReplaceField(int fieldIndex, string? value)
+        private void ReplaceField(int fieldIndex, string value)
         {
-            if (value == null)
-                return;
-
             var text = Rope.Collapse(Input.TextRope);
             var positions = FindFieldPositions(text);
 

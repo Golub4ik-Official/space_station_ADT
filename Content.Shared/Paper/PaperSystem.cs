@@ -99,7 +99,7 @@ public sealed class PaperSystem : EntitySystem
     private void BeforeUIOpen(Entity<PaperComponent> entity, ref BeforeActivatableUIOpenEvent args)
     {
         entity.Comp.Mode = PaperAction.Read;
-        UpdateUserInterface(entity);
+        UpdateUserInterface(entity, args.User);
     }
 
     private void OnExamined(Entity<PaperComponent> entity, ref ExaminedEvent args)
@@ -323,7 +323,7 @@ public sealed class PaperSystem : EntitySystem
             return;
 
         // Pens have a `Write` tag.
-        if (!args.Using.HasValue || !_tagSystem.HasTag(args.Using.Value, WriteTag))
+        if (!args.Using.HasValue || !_tagSystem.HasTag(args.Using.Value, WriteTag)) // ADT-Tweak: using WriteTag constant
             return;
 
         EntityUid user = args.User;
