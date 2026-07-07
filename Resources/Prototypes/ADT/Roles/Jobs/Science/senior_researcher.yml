@@ -24,7 +24,7 @@
     pocket1: AnomalyLocatorEmpty
   storage:
     back:
-    - ADTHumanCubeWrapped #ADT-CustomADTLoadout
+    #- ADTHumanCubeWrapped #ADT-CustomADTLoadout
 
 - type: chameleonOutfit
   id: ADTSeniorResearcherChameleonOutfit

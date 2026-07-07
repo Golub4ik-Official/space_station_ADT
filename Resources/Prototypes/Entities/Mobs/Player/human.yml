@@ -110,8 +110,9 @@
     - Wizard
 
 #ADT Tweak Start
-- type: entity
-  parent: MobHuman
-  id: MobArtificialHuman
-  name: Artificial human
+# DISABLED: Artificial humans are no longer obtainable
+#- type: entity
+#  parent: MobHuman
+#  id: MobArtificialHuman
+#  name: Artificial human
 #ADT Tweak End

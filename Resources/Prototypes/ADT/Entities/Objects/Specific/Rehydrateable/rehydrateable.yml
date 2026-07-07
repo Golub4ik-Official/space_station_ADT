@@ -1,12 +1,13 @@
-- type: entity  
-  parent: RehydratableAnimalCube
-  id: ADTHumanCube
-  name: artificial human cube
-  components:
-  - type: Rehydratable
-    possibleSpawns:
-    - MobArtificialHuman
-  - type: Tag
-    tags:
-    - Meat
-    - MonkeyCube
+# DISABLED: Artificial humans are no longer obtainable
+#- type: entity  
+#  parent: RehydratableAnimalCube
+#  id: ADTHumanCube
+#  name: artificial human cube
+#  components:
+#  - type: Rehydratable
+#    possibleSpawns:
+#    - MobArtificialHuman
+#  - type: Tag
+#    tags:
+#    - Meat
+#    - MonkeyCube

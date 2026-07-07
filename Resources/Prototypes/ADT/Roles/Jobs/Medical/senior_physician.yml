@@ -30,7 +30,7 @@
     eyes: ADTClothingEyesGlassesMedChem
   storage:
     back:
-    - ADTHumanCubeWrapped #ADT-CustomADTLoadout
+    #- ADTHumanCubeWrapped #ADT-CustomADTLoadout
 
 - type: chameleonOutfit
   id: ADTSeniorPhysicianChameleonOutfit
