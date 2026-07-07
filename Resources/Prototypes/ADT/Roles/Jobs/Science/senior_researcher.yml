@@ -24,6 +24,7 @@
     pocket1: AnomalyLocatorEmpty
   storage:
     back:
+    # Распоряжение Darkiich: искусственные люди отключены
     #- ADTHumanCubeWrapped #ADT-CustomADTLoadout
 
 - type: chameleonOutfit
