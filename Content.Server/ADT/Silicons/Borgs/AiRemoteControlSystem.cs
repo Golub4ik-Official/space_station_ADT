@@ -1,7 +1,8 @@
+using Content.Server.ADT.Silicons.Borgs.Core.Systems;
 using Content.Server.Silicons.Laws;
-using Content.Shared.Radio.Components;
 using Content.Shared.ADT.Silicons.Borgs;
 using Content.Shared.ADT.Silicons.Borgs.Components;
+using Content.Shared.ADT.Silicons.Borgs.Core.Components;
 using Content.Shared.Actions;
 using Content.Shared.Mind;
 using Content.Shared.Mobs;
@@ -19,6 +20,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Radio.Components;
 using Robust.Shared.Containers;
 
 namespace Content.Server.ADT.Silicons.Borgs;
@@ -99,6 +101,12 @@ public sealed class AiRemoteControlSystem : SharedAiRemoteControlSystem
         if (entity.Comp.AiHolder.HasValue)
             RewriteLaws(entity.Owner, entity.Comp.AiHolder.Value);
 
+        if (TryComp<BorgAiLinkComponent>(entity.Owner, out var aiLink))
+        {
+            aiLink.LinkedAi = null;
+            Dirty(entity.Owner, aiLink);
+        }
+
         ReturnMindIntoAi(entity.Owner);
     }
 
@@ -157,6 +165,12 @@ public sealed class AiRemoteControlSystem : SharedAiRemoteControlSystem
         _stationAiSystem.SwitchRemoteEntityMode(stationAiCore!, false);
 
         RewriteLaws(aiBrain.Value, entity);
+
+        if (TryComp<BorgAiLinkComponent>(entity, out var aiLink))
+        {
+            aiLink.LinkedAi = ai;
+            Dirty(entity, aiLink);
+        }
     }
 
     private void OnBorgDestroyed(Entity<AiRemoteControllerComponent> entity, ref DestructionEventArgs args)
@@ -263,13 +277,27 @@ public sealed class AiRemoteControlSystem : SharedAiRemoteControlSystem
         if (!TryComp<SiliconLawProviderComponent>(from, out var fromLawsComp))
             return;
 
-        if (!HasComp<SiliconLawProviderComponent>(to))
-            return;
-
         if (fromLawsComp.Lawset == null)
             return;
 
         var fromLaws = _lawSystem.GetLaws(from);
+
+        if (TryComp<BorgLawComponent>(to, out var borgLaw))
+        {
+            var borgLawSys = EntityManager.System<BorgLawSystem>();
+            if (!borgLawSys.TryResetToDefault(to, borgLaw))
+                return;
+            if (fromLaws.Laws.Count > 0)
+            {
+                borgLaw.ZerothLaw = string.Join("\n", fromLaws.Laws);
+                borgLaw.ZerothLawOverride = true;
+                Dirty(to, borgLaw);
+            }
+            return;
+        }
+
+        if (!HasComp<SiliconLawProviderComponent>(to))
+            return;
 
         _lawSystem.SetLawsSilent(fromLaws.Laws, to);
     }

@@ -1,0 +1,21 @@
+- type: entity
+  parent: BorgModuleBase
+  id: BorgModuleJanitor
+  name: janitor module
+  components:
+  - type: BorgModule
+    moduleType: Janitor
+    items:
+    - Soap
+    - Mop
+    - TrashBag
+    - LightReplacer
+    - PushBroom
+    - CleaningFluid
+    emagItems:
+    - PolyacidSpray
+    radioChannels:
+    - Janitorial
+    languages:
+    - GalacticCommon
+    - SolCommon

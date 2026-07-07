@@ -140,3 +140,13 @@
   - ADTBorgModuleRescue
   - ADTBorgModuleAdvancedChemical
   - ADTBorgModuleChemical
+
+- type: latheRecipePack
+  id: ADTBorgComponentParts
+  recipes:
+  - ADTBorgPartArmour
+  - ADTBorgPartActuator
+  - ADTBorgPartRadio
+  - ADTBorgPartBinary
+  - ADTBorgPartCamera
+  - ADTBorgPartDiagnostics

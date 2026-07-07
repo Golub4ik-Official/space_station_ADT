@@ -947,3 +947,31 @@
       collection: Salutes
     Purse:
       path: /Audio/Effects/thudswoosh.ogg
+
+- type: emoteSounds
+  id: BorgEmotes
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: ADTBorgScream
+    Death:
+      collection: ADTBorgDeath
+    Laugh:
+      collection: MaleLaugh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
+    DefaultDeathgasp:
+      collection: ADTBorgDeath

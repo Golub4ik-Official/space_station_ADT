@@ -1,0 +1,205 @@
+# SS13 DMI Converted Borg Subtypes
+# Auto-generated from SS13 robots.dmi
+- type: borgSubtype
+  parentBorgType: generic
+  id: ss13_standard
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Generic/standard.rsi
+  dummyPrototype: ADTSs13StandardChassis
+
+- type: borgSubtype
+  parentBorgType: security
+  id: ss13_standard_security
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Security/standard_security.rsi
+  dummyPrototype: ADTSs13StandardSecurityChassis
+
+- type: borgSubtype
+  parentBorgType: medical
+  id: ss13_standard_medical
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Medical/standard_medical.rsi
+  dummyPrototype: ADTSs13StandardMedicalChassis
+
+- type: borgSubtype
+  parentBorgType: engineering
+  id: ss13_standard_engineering
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Engineering/standard_engineering.rsi
+  dummyPrototype: ADTSs13StandardEngineeringChassis
+
+- type: borgSubtype
+  parentBorgType: mining
+  id: ss13_standard_mining
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Mining/standard_mining.rsi
+  dummyPrototype: ADTSs13StandardMiningChassis
+
+- type: borgSubtype
+  parentBorgType: janitor
+  id: ss13_standard_janitor
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Janitor/standard_janitor.rsi
+  dummyPrototype: ADTSs13StandardJanitorChassis
+
+- type: borgSubtype
+  parentBorgType: service
+  id: ss13_standard_service
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Service/standard_service.rsi
+  dummyPrototype: ADTSs13StandardServiceChassis
+
+- type: borgSubtype
+  parentBorgType: generic
+  id: ss13_noble
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Generic/noble.rsi
+  dummyPrototype: ADTSs13NobleChassis
+
+- type: borgSubtype
+  parentBorgType: security
+  id: ss13_noble_security
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Security/noble_security.rsi
+  dummyPrototype: ADTSs13NobleSecurityChassis
+
+- type: borgSubtype
+  parentBorgType: medical
+  id: ss13_noble_medical
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Medical/noble_medical.rsi
+  dummyPrototype: ADTSs13NobleMedicalChassis
+
+- type: borgSubtype
+  parentBorgType: engineering
+  id: ss13_noble_engineering
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Engineering/noble_engineering.rsi
+  dummyPrototype: ADTSs13NobleEngineeringChassis
+
+- type: borgSubtype
+  parentBorgType: mining
+  id: ss13_noble_mining
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Mining/noble_mining.rsi
+  dummyPrototype: ADTSs13NobleMiningChassis
+
+- type: borgSubtype
+  parentBorgType: janitor
+  id: ss13_noble_janitor
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Janitor/noble_janitor.rsi
+  dummyPrototype: ADTSs13NobleJanitorChassis
+
+- type: borgSubtype
+  parentBorgType: service
+  id: ss13_noble_service
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Service/noble_service.rsi
+  dummyPrototype: ADTSs13NobleServiceChassis
+
+- type: borgSubtype
+  parentBorgType: security
+  id: ss13_cricket_security
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Security/cricket_security.rsi
+  dummyPrototype: ADTSs13CricketSecurityChassis
+
+- type: borgSubtype
+  parentBorgType: medical
+  id: ss13_cricket_medical
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Medical/cricket_medical.rsi
+  dummyPrototype: ADTSs13CricketMedicalChassis
+
+- type: borgSubtype
+  parentBorgType: engineering
+  id: ss13_cricket_engineering
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Engineering/cricket_engineering.rsi
+  dummyPrototype: ADTSs13CricketEngineeringChassis
+
+- type: borgSubtype
+  parentBorgType: mining
+  id: ss13_cricket_mining
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Mining/cricket_mining.rsi
+  dummyPrototype: ADTSs13CricketMiningChassis
+
+- type: borgSubtype
+  parentBorgType: janitor
+  id: ss13_cricket_janitor
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Janitor/cricket_janitor.rsi
+  dummyPrototype: ADTSs13CricketJanitorChassis
+
+- type: borgSubtype
+  parentBorgType: service
+  id: ss13_cricket_service
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Service/cricket_service.rsi
+  dummyPrototype: ADTSs13CricketServiceChassis
+
+- type: borgSubtype
+  parentBorgType: engineering
+  id: ss13_rover_engineering
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Engineering/rover_engineering.rsi
+  dummyPrototype: ADTSs13RoverEngineeringChassis
+
+- type: borgSubtype
+  parentBorgType: janitor
+  id: ss13_rover_janitor
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Janitor/rover_janitor.rsi
+  dummyPrototype: ADTSs13RoverJanitorChassis
+
+- type: borgSubtype
+  parentBorgType: medical
+  id: ss13_rover_medical
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Medical/rover_medical.rsi
+  dummyPrototype: ADTSs13RoverMedicalChassis
+
+- type: borgSubtype
+  parentBorgType: service
+  id: ss13_rover_service
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Service/rover_service.rsi
+  dummyPrototype: ADTSs13RoverServiceChassis
+
+- type: borgSubtype
+  parentBorgType: security
+  id: ss13_bloodhound
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Security/bloodhound.rsi
+  dummyPrototype: ADTSs13BloodhoundChassis
+
+- type: borgSubtype
+  parentBorgType: generic
+  id: ss13_droid
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Generic/droid.rsi
+  dummyPrototype: ADTSs13DroidChassis
+
+- type: borgSubtype
+  parentBorgType: medical
+  id: ss13_droid_medical
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Medical/droid_medical.rsi
+  dummyPrototype: ADTSs13DroidMedicalChassis
+
+- type: borgSubtype
+  parentBorgType: mining
+  id: ss13_droid_mining
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Mining/droid_mining.rsi
+  dummyPrototype: ADTSs13DroidMiningChassis
+
+- type: borgSubtype
+  parentBorgType: security
+  id: ss13_heavy_sec
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Security/heavy_sec.rsi
+  dummyPrototype: ADTSs13HeavySecChassis
+
+- type: borgSubtype
+  parentBorgType: medical
+  id: ss13_qualified_doctor_dmi
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Medical/qualified_doctor_dmi.rsi
+  dummyPrototype: ADTSs13QualifiedDoctorDmiChassis
+
+- type: borgSubtype
+  parentBorgType: mining
+  id: ss13_squat_miner
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Mining/squat_miner.rsi
+  dummyPrototype: ADTSs13SquatMinerChassis
+
+- type: borgSubtype
+  parentBorgType: generic
+  id: ss13_repairbot
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Generic/repairbot.rsi
+  dummyPrototype: ADTSs13RepairbotChassis
+
+- type: borgSubtype
+  parentBorgType: generic
+  id: ss13_xenoborg
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Generic/xenoborg.rsi
+  dummyPrototype: ADTSs13XenoborgChassis
+
+- type: borgSubtype
+  parentBorgType: engineering
+  id: ss13_landmate
+  sprite: ADT/Mobs/Silicon/Borgs/Borg_subtype/Engineering/landmate.rsi
+  dummyPrototype: ADTSs13LandmateChassis

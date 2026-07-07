@@ -1,0 +1,124 @@
+# Robot construction parts
+- type: entity
+  id: BorgFrame
+  name: cyborg endoskeleton
+  description: The bare metal bones of a cyborg.
+  components:
+  - type: BorgFrame
+  - type: Sprite
+    sprite: "Silicon/Borgs/Parts/borg_frame.rsi"
+  - type: Construction
+    stages:
+    - PartsAdded
+    - Wired
+    - CellInstalled
+    - MMIInserted
+
+- type: entity
+  id: BorgPartLeftArm
+  name: cyborg left arm
+  components:
+  - type: BorgPart
+    partType: LeftArm
+  - type: Sprite
+    sprite: "Silicon/Borgs/Parts/borg_parts.rsi"
+    state: l_arm
+
+- type: entity
+  id: BorgPartRightArm
+  name: cyborg right arm
+  components:
+  - type: BorgPart
+    partType: RightArm
+  - type: Sprite
+    sprite: "Silicon/Borgs/Parts/borg_parts.rsi"
+    state: r_arm
+
+- type: entity
+  id: BorgPartLeftLeg
+  name: cyborg left leg
+  components:
+  - type: BorgPart
+    partType: LeftLeg
+  - type: Sprite
+    sprite: "Silicon/Borgs/Parts/borg_parts.rsi"
+    state: l_leg
+
+- type: entity
+  id: BorgPartRightLeg
+  name: cyborg right leg
+  components:
+  - type: BorgPart
+    partType: RightLeg
+  - type: Sprite
+    sprite: "Silicon/Borgs/Parts/borg_parts.rsi"
+    state: r_leg
+
+- type: entity
+  id: BorgPartChest
+  name: cyborg chest
+  components:
+  - type: BorgPart
+    partType: Chest
+  - type: Sprite
+    sprite: "Silicon/Borgs/Parts/borg_parts.rsi"
+    state: chest
+
+- type: entity
+  id: BorgPartHead
+  name: cyborg head
+  components:
+  - type: BorgPart
+    partType: Head
+  - type: Sprite
+    sprite: "Silicon/Borgs/Parts/borg_parts.rsi"
+    state: head
+
+# Individual robot components (organs)
+- type: entity
+  id: BorgComponentArmour
+  name: cyborg armour plating
+  components:
+  - type: Sprite
+    sprite: "Silicon/Borgs/Parts/borg_component.rsi"
+    state: armour
+
+- type: entity
+  id: BorgComponentActuator
+  name: cyborg actuator
+  components:
+  - type: Sprite
+    sprite: "Silicon/Borgs/Parts/borg_component.rsi"
+    state: actuator
+
+- type: entity
+  id: BorgComponentRadio
+  name: cyborg radio module
+  components:
+  - type: Sprite
+    sprite: "Silicon/Borgs/Parts/borg_component.rsi"
+    state: radio
+
+- type: entity
+  id: BorgComponentBinaryCommunication
+  name: cyborg binary communication device
+  components:
+  - type: Sprite
+    sprite: "Silicon/Borgs/Parts/borg_component.rsi"
+    state: binary
+
+- type: entity
+  id: BorgComponentCamera
+  name: cyborg camera module
+  components:
+  - type: Sprite
+    sprite: "Silicon/Borgs/Parts/borg_component.rsi"
+    state: camera
+
+- type: entity
+  id: BorgComponentDiagnosisUnit
+  name: cyborg diagnosis unit
+  components:
+  - type: Sprite
+    sprite: "Silicon/Borgs/Parts/borg_component.rsi"
+    state: diagnosis

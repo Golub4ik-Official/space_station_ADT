@@ -135564,7 +135564,7 @@ entities:
     - type: Transform
       pos: -49.5,19.5
       parent: 2
-- proto: PositronicBrain
+- proto: RoboticBrain
   entities:
   - uid: 8127
     components:

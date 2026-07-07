@@ -74,6 +74,7 @@
     containers:
     - part-container
     - cell_slot
+  - type: BorgConstruction
   - type: Pullable
   - type: GuideHelp
     guides:

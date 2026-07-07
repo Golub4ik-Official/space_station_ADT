@@ -1,0 +1,21 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    Title="Robotics Control Console"
+    MinSize="600 400"
+    SetSize="600 400">
+
+    <BoxContainer Orientation="Vertical" Margin="5 5 5 5" VerticalExpand="True">
+        <Label Text="Cyborg Status"
+               FontColorOverride="#88DDF0"
+               StyleClasses="LabelHeading"
+               Margin="0 0 0 5"/>
+
+        <ScrollContainer VerticalExpand="True" HorizontalExpand="True">
+            <BoxContainer Name="BorgListContainer"
+                         Orientation="Vertical"
+                         HorizontalExpand="True"
+                         VerticalExpand="True"
+                         SeparationOverride="2"/>
+        </ScrollContainer>
+    </BoxContainer>
+</DefaultWindow>

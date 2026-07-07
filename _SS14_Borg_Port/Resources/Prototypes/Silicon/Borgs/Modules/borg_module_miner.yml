@@ -1,0 +1,23 @@
+- type: entity
+  parent: BorgModuleBase
+  id: BorgModuleMiner
+  name: miner module
+  components:
+  - type: BorgModule
+    moduleType: Miner
+    items:
+    - MiningDrill
+    - KineticAccelerator
+    - OreBag
+    - GPS
+    - GripperMining
+    emagItems:
+    - KineticAcceleratorDisintegrate
+    radioChannels:
+    - Supply
+    languages:
+    - GalacticCommon
+    - SolCommon
+    actions:
+    - MesonVision
+    - Magpulse

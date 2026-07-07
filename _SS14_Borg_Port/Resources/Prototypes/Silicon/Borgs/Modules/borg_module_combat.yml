@@ -1,0 +1,16 @@
+- type: entity
+  parent: BorgModuleBase
+  id: BorgModuleCombat
+  name: combat module
+  components:
+  - type: BorgModule
+    moduleType: Combat
+    items:
+    - Immolator
+    - StunBaton
+    - Jackhammer
+    radioChannels:
+    - Security
+    languages:
+    - GalacticCommon
+    - SolCommon

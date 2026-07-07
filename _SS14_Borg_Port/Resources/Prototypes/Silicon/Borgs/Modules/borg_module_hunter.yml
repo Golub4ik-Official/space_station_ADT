@@ -1,0 +1,11 @@
+- type: entity
+  parent: BorgModuleBase
+  id: BorgModuleHunter
+  name: hunter module
+  components:
+  - type: BorgModule
+    moduleType: Hunter
+    items:
+    - EnergyClaws
+    - AlienFlash
+    - SmokeSpray

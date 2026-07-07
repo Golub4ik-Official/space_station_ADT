@@ -91,3 +91,68 @@
         type: StrippableBoundUserInterface
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
+
+# ADT Syndicate chassis
+- type: entity
+  id: ADTBorgChassisSyndicateAssault
+  parent: BaseBorgChassisSyndicate
+  name: syndicate assault borg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: generic
+  - type: BorgSwitchableSubtype
+    borgSubtype: default_generic
+  - type: ADTBorgModule
+    moduleType: Syndicate
+    items:
+    - LMG
+    - EnergySword
+    - GrenadeFrag
+
+- type: entity
+  id: ADTBorgChassisSyndicateMedical
+  parent: BaseBorgChassisSyndicate
+  name: syndicate medical borg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: medical
+  - type: BorgSwitchableSubtype
+    borgSubtype: default_medical
+  - type: ADTBorgModule
+    moduleType: Syndicate
+    items:
+    - EnergySabre
+    - Hypospray
+    - MedbeamGun
+
+- type: entity
+  id: ADTBorgChassisSyndicateSaboteur
+  parent: BaseBorgChassisSyndicate
+  name: syndicate saboteur borg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: engineering
+  - type: BorgSwitchableSubtype
+    borgSubtype: default_engineering
+  - type: ADTBorgModule
+    moduleType: Syndicate
+    items:
+    - ChameleonProjector
+    - RCD
+    - EnergySword
+
+- type: entity
+  id: ADTBorgChassisDestroyer
+  parent: BorgChassisSelectable
+  name: destroyer cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: generic
+  - type: BorgSwitchableSubtype
+    borgSubtype: default_generic
+  - type: ADTBorgModule
+    moduleType: Destroyer
+    items:
+    - StunBaton
+    - Disabler
+    - Handcuffs

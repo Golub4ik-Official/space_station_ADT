@@ -6,7 +6,7 @@
   - type: ContainerFill
     containers:
       borg_brain:
-        - PositronicBrain
+        - RoboticBrain
       borg_module:
         - BorgModuleTool
   - type: ItemSlots
@@ -25,7 +25,7 @@
   - type: ContainerFill
     containers:
       borg_brain:
-        - PositronicBrain
+        - RoboticBrain
       borg_module:
         - ADTBorgModuleDetention
   - type: ItemSlots

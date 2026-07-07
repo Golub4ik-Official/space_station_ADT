@@ -1,4 +1,5 @@
 using Content.Shared.Doors.Components;
+using Content.Shared.Doors;
 using Content.Shared.Electrocution;
 using Content.Shared.Silicons.StationAi;
 using Robust.Shared.Utility;
@@ -14,6 +15,9 @@ public sealed partial class StationAiSystem
         SubscribeLocalEvent<DoorBoltComponent, GetStationAiRadialEvent>(OnDoorBoltGetRadial);
         SubscribeLocalEvent<AirlockComponent, GetStationAiRadialEvent>(OnEmergencyAccessGetRadial);
         SubscribeLocalEvent<ElectrifiedComponent, GetStationAiRadialEvent>(OnDoorElectrifiedGetRadial);
+        // ADT-Tweak-Start: open/close toggle so the radial is non-empty on shutters/blast doors
+        SubscribeLocalEvent<DoorComponent, GetStationAiRadialEvent>(OnDoorToggleGetRadial);
+        // ADT-Tweak-End
     }
 
     private void OnDoorBoltGetRadial(Entity<DoorBoltComponent> ent, ref GetStationAiRadialEvent args)
@@ -72,4 +76,25 @@ public sealed partial class StationAiSystem
             }
         );
     }
+
+    // ADT-Tweak-Start: open/close toggle so the radial works on shutters/blast doors/any door.
+    private readonly ResPath _shutterRsi = new("/Textures/Structures/Doors/Shutters/shutters.rsi");
+
+    private void OnDoorToggleGetRadial(Entity<DoorComponent> ent, ref GetStationAiRadialEvent args)
+    {
+        var isOpen = ent.Comp.State is DoorState.Open or DoorState.Opening;
+        args.Actions.Add(
+            new StationAiRadial
+            {
+                Sprite = isOpen
+                    ? new SpriteSpecifier.Rsi(_shutterRsi, "closed")
+                    : new SpriteSpecifier.Rsi(_shutterRsi, "open"),
+                Tooltip = isOpen
+                    ? Loc.GetString("borg-door-control-close")
+                    : Loc.GetString("borg-door-control-open"),
+                Event = new StationAiDoorToggleEvent()
+            }
+        );
+    }
+    // ADT-Tweak-End
 }

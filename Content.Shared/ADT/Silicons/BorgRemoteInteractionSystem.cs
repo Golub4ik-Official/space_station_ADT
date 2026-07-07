@@ -1,3 +1,4 @@
+using Content.Shared.ADT.Silicons.Borgs.Core.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Physics;
 using Content.Shared.Silicons.Borgs.Components;
@@ -21,28 +22,37 @@ public sealed class BorgRemoteInteractionSystem : EntitySystem
         _physicsQuery = GetEntityQuery<PhysicsComponent>();
 
         SubscribeLocalEvent<BorgChassisComponent, InRangeOverrideEvent>(OnBorgInRange);
+        SubscribeLocalEvent<BorgComponent, InRangeOverrideEvent>(OnNewBorgInRange);
+    }
+
+    private void OnNewBorgInRange(Entity<BorgComponent> ent, ref InRangeOverrideEvent args)
+    {
+        HandleInRangeOverride(ent.Owner, args);
     }
 
     private void OnBorgInRange(Entity<BorgChassisComponent> ent, ref InRangeOverrideEvent args)
     {
+        HandleInRangeOverride(ent.Owner, args);
+    }
+
+    private void HandleInRangeOverride(EntityUid uid, InRangeOverrideEvent args)
+    {
         if (!TryComp(args.Target, out StationAiWhitelistComponent? _))
             return;
 
-        var userXform = Transform(ent.Owner);
+        var userXform = Transform(uid);
         var targetXform = Transform(args.Target);
 
         if (targetXform.GridUid != userXform.GridUid)
-        {
             return;
-        }
 
-        var userPos = _xforms.GetMapCoordinates(ent.Owner, userXform);
+        var userPos = _xforms.GetMapCoordinates(uid, userXform);
         var targetPos = _xforms.GetMapCoordinates(args.Target, targetXform);
         var distance = (userPos.Position - targetPos.Position).Length();
 
         if (distance <= SharedInteractionSystem.InteractionRange)
             return;
-    
+
         var targetEntity = args.Target;
         args.Handled = true;
         args.InRange = _interaction.InRangeUnobstructed(

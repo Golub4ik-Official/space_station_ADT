@@ -1,0 +1,4 @@
+- files: ["borg_deathsound.ogg", "borg_deathsound_ref.ogg", "biamthelaw.ogg", "robot_scream.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from SS13 Paradise (tgstation) for SS14 port by WikiHampter"
+  source: "https://github.com/tgstation/tgstation"

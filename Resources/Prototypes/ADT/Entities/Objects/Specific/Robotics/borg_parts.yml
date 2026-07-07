@@ -1,0 +1,89 @@
+- type: entity
+  id: ADTBorgPartArmour
+  name: borg armour plating
+  description: A reinforced armour plate for cyborgs. Provides protection against physical and energy damage.
+  parent: BaseItem
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: ADT/Objects/Specific/Robotics/components.rsi
+    state: armour
+  - type: BorgComponentPart
+    partType: Armour
+    maxDamage: 100
+
+- type: entity
+  id: ADTBorgPartActuator
+  name: borg actuator
+  description: A high-torque actuator for cyborg limb movement.
+  parent: BaseItem
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: ADT/Objects/Specific/Robotics/components.rsi
+    state: actuator
+  - type: BorgComponentPart
+    partType: Actuator
+    maxDamage: 50
+
+- type: entity
+  id: ADTBorgPartRadio
+  name: borg radio transceiver
+  description: A short-range radio transceiver module for cyborgs.
+  parent: BaseItem
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: ADT/Objects/Specific/Robotics/components.rsi
+    state: radio
+  - type: BorgComponentPart
+    partType: Radio
+    maxDamage: 40
+
+- type: entity
+  id: ADTBorgPartBinary
+  name: borg binary communication chip
+  description: A binary communication chip allowing direct AI-to-cyborg communication.
+  parent: BaseItem
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: ADT/Objects/Specific/Robotics/components.rsi
+    state: binary
+  - type: BorgComponentPart
+    partType: BinaryCommunication
+    maxDamage: 30
+
+- type: entity
+  id: ADTBorgPartCamera
+  name: borg optical sensor
+  description: A high-resolution optical sensor array for cyborgs.
+  parent: BaseItem
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: ADT/Objects/Specific/Robotics/components.rsi
+    state: camera
+  - type: BorgComponentPart
+    partType: Camera
+    maxDamage: 40
+
+- type: entity
+  id: ADTBorgPartDiagnostics
+  name: borg diagnostics unit
+  description: A self-diagnostic module that monitors cyborg system integrity.
+  parent: BaseItem
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: ADT/Objects/Specific/Robotics/components.rsi
+    state: diagnosis
+  - type: BorgComponentPart
+    partType: DiagnosisUnit
+    maxDamage: 30

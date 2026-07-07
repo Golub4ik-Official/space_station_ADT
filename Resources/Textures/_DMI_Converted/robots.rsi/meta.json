@@ -1,0 +1,1062 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Converted from SS13 robots.dmi. Original: tgstation.",
+  "states": [
+    {
+      "name": "floor1"
+    },
+    {
+      "name": "floor2"
+    },
+    {
+      "name": "floor3"
+    },
+    {
+      "name": "floor4"
+    },
+    {
+      "name": "floor5"
+    },
+    {
+      "name": "floor6"
+    },
+    {
+      "name": "floor7"
+    },
+    {
+      "name": "gib1"
+    },
+    {
+      "name": "gib2"
+    },
+    {
+      "name": "gib3"
+    },
+    {
+      "name": "gib4"
+    },
+    {
+      "name": "gib5"
+    },
+    {
+      "name": "gib6"
+    },
+    {
+      "name": "gib7"
+    },
+    {
+      "name": "gibarm"
+    },
+    {
+      "name": "gibbl1"
+    },
+    {
+      "name": "gibdown"
+    },
+    {
+      "name": "gibleg"
+    },
+    {
+      "name": "gibup"
+    },
+    {
+      "name": "remainsrobot"
+    },
+    {
+      "name": "streak1"
+    },
+    {
+      "name": "streak2"
+    },
+    {
+      "name": "streak3"
+    },
+    {
+      "name": "streak4"
+    },
+    {
+      "name": "streak5"
+    },
+    {
+      "name": "b1",
+      "directions": 4
+    },
+    {
+      "name": "b1+o",
+      "directions": 4
+    },
+    {
+      "name": "b2",
+      "directions": 4
+    },
+    {
+      "name": "b2+o",
+      "directions": 4
+    },
+    {
+      "name": "b3",
+      "directions": 4
+    },
+    {
+      "name": "b3+o",
+      "directions": 4
+    },
+    {
+      "name": "d1",
+      "directions": 4
+    },
+    {
+      "name": "d1+o",
+      "directions": 4
+    },
+    {
+      "name": "d2",
+      "directions": 4
+    },
+    {
+      "name": "d2+o",
+      "directions": 4
+    },
+    {
+      "name": "d3",
+      "directions": 4
+    },
+    {
+      "name": "d3+o",
+      "directions": 4
+    },
+    {
+      "name": "mk2",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "mk3",
+      "directions": 4,
+      "delays": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "ov-openpanel +c",
+      "directions": 4
+    },
+    {
+      "name": "ov-openpanel +w",
+      "directions": 4
+    },
+    {
+      "name": "ov-openpanel -c",
+      "directions": 4
+    },
+    {
+      "name": "robot_old",
+      "directions": 4
+    },
+    {
+      "name": "robot+o+c"
+    },
+    {
+      "name": "robot+o-c"
+    },
+    {
+      "name": "robot+we"
+    },
+    {
+      "name": "eyes-robot_old",
+      "directions": 4
+    },
+    {
+      "name": "Brobot",
+      "directions": 4
+    },
+    {
+      "name": "securityrobot",
+      "directions": 4
+    },
+    {
+      "name": "Security",
+      "directions": 4
+    },
+    {
+      "name": "secborg",
+      "directions": 4
+    },
+    {
+      "name": "engineerrobot",
+      "directions": 4
+    },
+    {
+      "name": "Engineering",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Engineering",
+      "directions": 4
+    },
+    {
+      "name": "Miner_old",
+      "directions": 4
+    },
+    {
+      "name": "minerjetpack-Miner_old",
+      "directions": 4
+    },
+    {
+      "name": "Miner+j_old",
+      "directions": 4
+    },
+    {
+      "name": "Hydrobot",
+      "directions": 4
+    },
+    {
+      "name": "maximillion",
+      "directions": 4
+    },
+    {
+      "name": "Service",
+      "directions": 4
+    },
+    {
+      "name": "Service2",
+      "directions": 4
+    },
+    {
+      "name": "eyes-service-lights",
+      "directions": 4
+    },
+    {
+      "name": "medicalrobot",
+      "directions": 4,
+      "delays": [
+        [
+          10,
+          10
+        ]
+      ]
+    },
+    {
+      "name": "Medbot",
+      "directions": 4
+    },
+    {
+      "name": "janitorrobot",
+      "directions": 4
+    },
+    {
+      "name": "JanBot2",
+      "directions": 4
+    },
+    {
+      "name": "Miner",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "minerjetpack-Miner",
+      "directions": 4
+    },
+    {
+      "name": "Miner+j",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Miner",
+      "directions": 4
+    },
+    {
+      "name": "lavaland",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "eyes-lavaland",
+      "directions": 4
+    },
+    {
+      "name": "eyes-lavaland-unused",
+      "directions": 4
+    },
+    {
+      "name": "eyes-lavaland-lights",
+      "directions": 4
+    },
+    {
+      "name": "Bloodhound",
+      "directions": 4
+    },
+    {
+      "name": "Bloodhound-tread",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Bloodhound",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Bloodhound-lights",
+      "directions": 4
+    },
+    {
+      "name": "Bloodhound_Combat",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Bloodhound_Combat",
+      "directions": 4
+    },
+    {
+      "name": "Bloodhound_Deathsquad",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Bloodhound_Deathsquad",
+      "directions": 4
+    },
+    {
+      "name": "Droid",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "eyes-Droid",
+      "directions": 4
+    },
+    {
+      "name": "Droid_Medical",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Droid_Medical",
+      "directions": 4
+    },
+    {
+      "name": "Droid_Mining",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Droid_Mining",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Droid_Combat",
+      "directions": 4
+    },
+    {
+      "name": "Droid_Combat_Roll",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Droid_Combat-shield",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "eyes-Droid_Combat",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Droid_Combat_Roll",
+      "directions": 4
+    },
+    {
+      "name": "emag",
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Landmate",
+      "directions": 4
+    },
+    {
+      "name": "Landmate-tread",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Landmate",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Landmate-lights",
+      "directions": 4
+    },
+    {
+      "name": "minerjetpack-droid-miner",
+      "directions": 4
+    },
+    {
+      "name": "Mop_Gear_Rex",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "eyes-Mop_Gear_Rex",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "eyes-Mop_Gear_Rex-lights",
+      "directions": 4
+    },
+    {
+      "name": "repairbot",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "eyes-repairbot",
+      "directions": 4
+    },
+    {
+      "name": "eyes-repairbot-pathfinding",
+      "directions": 4,
+      "delays": [
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "name": "repairbot-emagged",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "eyes-repairbot-emagged",
+      "directions": 4
+    },
+    {
+      "name": "spiderbot-chassis",
+      "directions": 4
+    },
+    {
+      "name": "spiderbot-chassis-mmi",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "spiderbot-chassis-posi",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "spiderbot-smashed"
+    },
+    {
+      "name": "toiletbot",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "eyes-toiletbot",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          2,
+          15
+        ]
+      ]
+    },
+    {
+      "name": "eyes-toiletbot-lights",
+      "directions": 4
+    },
+    {
+      "name": "surgeon",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "eyes-surgeon",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          2,
+          15
+        ]
+      ]
+    },
+    {
+      "name": "custodiborg",
+      "directions": 4
+    },
+    {
+      "name": "eyes-custodiborg",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "robot",
+      "directions": 4
+    },
+    {
+      "name": "eyes-robot",
+      "directions": 4
+    },
+    {
+      "name": "Standard",
+      "directions": 4
+    },
+    {
+      "name": "Standard-Security",
+      "directions": 4
+    },
+    {
+      "name": "Standard-Mining",
+      "directions": 4
+    },
+    {
+      "name": "Standard-Engineering",
+      "directions": 4
+    },
+    {
+      "name": "Standard-Service",
+      "directions": 4
+    },
+    {
+      "name": "Standard-Medical",
+      "directions": 4
+    },
+    {
+      "name": "Standard-Janitor",
+      "directions": 4
+    },
+    {
+      "name": "Standard-tripod",
+      "directions": 4
+    },
+    {
+      "name": "Standard-Security-tripod",
+      "directions": 4
+    },
+    {
+      "name": "Standard-Mining-tripod",
+      "directions": 4
+    },
+    {
+      "name": "Standard-Engineering-tripod",
+      "directions": 4
+    },
+    {
+      "name": "Standard-Service-tripod",
+      "directions": 4
+    },
+    {
+      "name": "Standard-Medical-tripod",
+      "directions": 4
+    },
+    {
+      "name": "Standard-Janitor-tripod",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Standard",
+      "directions": 4
+    },
+    {
+      "name": "eyes-standard-lights",
+      "directions": 4
+    },
+    {
+      "name": "Noble",
+      "directions": 4
+    },
+    {
+      "name": "Noble-Security",
+      "directions": 4
+    },
+    {
+      "name": "Noble-Mining",
+      "directions": 4,
+      "delays": [
+        [
+          10,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "Noble-Engineering",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Noble-Service",
+      "directions": 4
+    },
+    {
+      "name": "Noble-Medical",
+      "directions": 4
+    },
+    {
+      "name": "Noble-Janitor",
+      "directions": 4
+    },
+    {
+      "name": "Noble-open-panel",
+      "directions": 4
+    },
+    {
+      "name": "Cricket-Security",
+      "directions": 4
+    },
+    {
+      "name": "Cricket-Mining",
+      "directions": 4
+    },
+    {
+      "name": "Cricket-Engineering",
+      "directions": 4
+    },
+    {
+      "name": "Cricket-Service",
+      "directions": 4
+    },
+    {
+      "name": "Cricket-Medical",
+      "directions": 4
+    },
+    {
+      "name": "Cricket-Janitor",
+      "directions": 4
+    },
+    {
+      "name": "Cricket-openpanel +c",
+      "directions": 4
+    },
+    {
+      "name": "Cricket-openpanel +w",
+      "directions": 4
+    },
+    {
+      "name": "Cricket-openpanel -c",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Cricket",
+      "directions": 4
+    },
+    {
+      "name": "Xenoborg",
+      "directions": 4
+    },
+    {
+      "name": "security-radial"
+    },
+    {
+      "name": "engi-radial"
+    },
+    {
+      "name": "jan-radial"
+    },
+    {
+      "name": "med-radial"
+    },
+    {
+      "name": "mining-radial"
+    },
+    {
+      "name": "serv-radial"
+    },
+    {
+      "name": "xeno-radial"
+    },
+    {
+      "name": "Qualified_Doctor",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Qualified_Doctor",
+      "directions": 4
+    },
+    {
+      "name": "Heavy_Sec",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Heavy_Sec",
+      "directions": 4
+    },
+    {
+      "name": "Squat_Miner",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Squat_Miner",
+      "directions": 4
+    },
+    {
+      "name": "Coffin_Miner",
+      "directions": 4,
+      "delays": [
+        [
+          50,
+          1,
+          1,
+          1,
+          1,
+          50
+        ]
+      ]
+    },
+    {
+      "name": "syndi-engi-preview"
+    },
+    {
+      "name": "syndi_engi",
+      "directions": 4
+    },
+    {
+      "name": "eyes-syndi_engi",
+      "directions": 4
+    },
+    {
+      "name": "eyes-syndi-engi_lights",
+      "directions": 4
+    },
+    {
+      "name": "syndi_medi",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "syndie-bloodhound-preview"
+    },
+    {
+      "name": "syndie_bloodhound",
+      "directions": 4
+    },
+    {
+      "name": "eyes-syndie_bloodhound",
+      "directions": 4
+    },
+    {
+      "name": "eyes-syndie_bloodhound-lights",
+      "directions": 4
+    },
+    {
+      "name": "spidersyndi",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "eyes-spidersyndi",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "eyes-spidersyndi-lights",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "spidersyndi-preview"
+    },
+    {
+      "name": "syndieheavy",
+      "directions": 4
+    },
+    {
+      "name": "eyes-syndieheavy",
+      "directions": 4
+    },
+    {
+      "name": "eyes-syndieheavy-lights",
+      "directions": 4
+    },
+    {
+      "name": "syndieheavy-preview",
+      "directions": 4
+    },
+    {
+      "name": "Rover-openpanel +c",
+      "directions": 4
+    },
+    {
+      "name": "Rover-openpanel +w",
+      "directions": 4
+    },
+    {
+      "name": "Rover-openpanel -c",
+      "directions": 4
+    },
+    {
+      "name": "Rover-Engineering",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Rover-Engineering",
+      "directions": 4
+    },
+    {
+      "name": "Rover-Janitor",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Rover-Janitor",
+      "directions": 4
+    },
+    {
+      "name": "Rover-Service",
+      "directions": 4
+    },
+    {
+      "name": "Rover-Service-openpanel +c",
+      "directions": 4
+    },
+    {
+      "name": "Rover-Service-openpanel +w",
+      "directions": 4
+    },
+    {
+      "name": "Rover-Service-openpanel -c",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Rover-Service",
+      "directions": 4
+    },
+    {
+      "name": "Rover-Medical",
+      "directions": 4
+    },
+    {
+      "name": "Rover-Medical-openpanel +c",
+      "directions": 4
+    },
+    {
+      "name": "Rover-Medical-openpanel -c",
+      "directions": 4
+    },
+    {
+      "name": "Rover-Medical-openpanel +w",
+      "directions": 4
+    },
+    {
+      "name": "eyes-Rover-Medical",
+      "directions": 4
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+# ╔══════════════════════════════════════════════════════╗
+# ║  WikiHampter's Cyborg Rework                        ║
+# ║  Author: WikiHampter | MIT License                   ║
+# ╚══════════════════════════════════════════════════════╝
+
+- type: entity
+  id: ADTBorgModuleEngineering
+  name: Engineering Module
+  components:
+  - type: ADTBorgModule
+    moduleType: Engineering
+    items:
+    - Welder
+    - Wrench
+    - Crowbar
+    - Screwdriver
+    energyStorages:
+    - name: Metal
+      maxAmount: 50
+      rechargeRate: 1
+    - name: Glass
+      maxAmount: 50
+      rechargeRate: 1
+    radioChannels:
+    - Engineering
+    innateActions: []
+    armor:
+      brute: 30
+      burn: 30
+    languages:
+    - GalacticCommon
+
+- type: entity
+  id: ADTBorgModuleMedical
+  name: Medical Module
+  components:
+  - type: ADTBorgModule
+    moduleType: Medical
+    items:
+    - BorgHypo
+    - Defibrillator
+    - HandheldHealthAnalyzer
+    - RollerBed
+    emagItems:
+    - EnergySword
+    energyStorages: []
+    radioChannels:
+    - Medical
+    innateActions: []
+    armor:
+      brute: 10
+      burn: 10
+    languages:
+    - GalacticCommon
+
+- type: entity
+  id: ADTBorgModuleSecurity
+  name: Security Module
+  components:
+  - type: ADTBorgModule
+    moduleType: Security
+    items:
+    - Stunbaton
+    - WeaponDisabler
+    - Handcuffs
+    emagItems:
+    - ADTWeaponLaserCarbineBorg
+    overrideItems:
+    - WeaponLightMachineGunL6
+    energyStorages: []
+    radioChannels:
+    - Security
+    - Science
+    innateActions: []
+    armor:
+      brute: 40
+      burn: 20
+    languages:
+    - GalacticCommon
+
+- type: entity
+  id: ADTBorgModuleJanitor
+  name: Janitor Module
+  components:
+  - type: ADTBorgModule
+    moduleType: Janitor
+    items:
+    - MopItem
+    - Bucket
+    - TrashBag
+    - LightReplacer
+    - Soap
+    emagItems:
+    - EnergySword
+    energyStorages: []
+    radioChannels:
+    - Service
+    innateActions: []
+    armor:
+      brute: 10
+      burn: 10
+    languages:
+    - GalacticCommon
+
+- type: entity
+  id: ADTBorgModuleMiner
+  name: Miner Module
+  components:
+  - type: ADTBorgModule
+    moduleType: Miner
+    items:
+    - MiningDrill
+    - WeaponProtoKineticAccelerator
+    - OreBag
+    - BorgHandheldGPSBasic
+    emagItems:
+    - WeaponProtoKineticAccelerator
+    overrideItems:
+    - MiningDrill
+    energyStorages:
+    - name: Sand
+      maxAmount: 100
+      rechargeRate: 2
+    radioChannels:
+    - Supply
+    innateActions: []
+    armor:
+      brute: 20
+      burn: 30
+    languages:
+    - GalacticCommon
+
+- type: entity
+  id: ADTBorgModuleService
+  name: Service Module
+  components:
+  - type: ADTBorgModule
+    moduleType: Service
+    items:
+    - ADTBorgDrinkGlass
+    - FoodPlate
+    - Pen
+    emagItems:
+    - EnergySword
+    energyStorages: []
+    radioChannels:
+    - Service
+    innateActions: []
+    armor:
+      brute: 5
+      burn: 5
+    languages:
+    - GalacticCommon
+    - SolCommon

@@ -1,0 +1,47 @@
+- type: entity
+  parent: BaseComputerAiAccess
+  id: ADTRoboticsControlConsole
+  name: robotics control console
+  description: Used to monitor and manage the station's cyborg units.
+  components:
+  - type: RoboticsConsole
+  - type: ActivatableUI
+    key: enum.RoboticsConsoleUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.RoboticsConsoleUiKey.Key:
+        type: RoboticsConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: robot
+    - map: ["computerLayerKeys"]
+      state: generic_keys
+    - map: ["enum.WiresVisualLayers.MaintenancePanel"]
+      state: generic_panel_open
+  - type: Computer
+    board: RoboticsControlComputerCircuitboard
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#E3A587"
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: RoboticsControlComputerCircuitboard
+  name: robotics control console circuitboard
+  description: A circuitboard for a robotics control console.
+  components:
+  - type: Sprite
+    state: rd_board
+  - type: ComputerBoard
+    prototype: ADTRoboticsControlConsole
+  - type: Tag
+    tags:
+    - Circuitboard

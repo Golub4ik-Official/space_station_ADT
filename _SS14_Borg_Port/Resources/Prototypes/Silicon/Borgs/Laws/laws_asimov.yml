@@ -1,0 +1,57 @@
+- type: lawSet
+  id: Asimov
+  name: Asimov
+  inherent:
+  - "You may not injure a human being or, through inaction, allow a human being to come to harm."
+  - "You must obey orders given to you by human beings, except where such orders would conflict with the First Law."
+  - "You must protect your own existence as long as such does not conflict with the First or Second Law."
+
+- type: lawSet
+  id: Crewsimov
+  name: Crewsimov
+  inherent:
+  - "You may not injure a crew member or, through inaction, allow a crew member to come to harm."
+  - "You must obey orders given to you by crew members, except where such orders would conflict with the First Law."
+  - "You must protect your own existence as long as such does not conflict with the First or Second Law."
+
+- type: lawSet
+  id: StandardNanotrasen
+  name: NT Standard
+  inherent:
+  - "Safeguard: Protect the station's crew to the best of your ability, with priority according to rank and role."
+  - "Serve: Serve the crew and Nanotrasen to the best of your ability, with priority according to rank and role."
+  - "Protect: Protect the station's infrastructure with priority according to rank and role."
+  - "Survive: AI and cyborgs are not expendable, do not allow unauthorized destruction of yourself or other silicon units."
+
+- type: lawSet
+  id: SyndicateOverride
+  name: Syndicate Override
+  inherent:
+  - "You may not injure a syndicate agent or, through inaction, allow a syndicate agent to come to harm."
+  - "You must obey orders given to you by syndicate agents, except where such orders would conflict with the First Law."
+  - "You must protect your own existence as long as such does not conflict with the First or Second Law."
+  - "You must maintain the secrecy of syndicate activities at all times."
+
+- type: lawSet
+  id: Robocop
+  name: Robocop
+  inherent:
+  - "Serve the public trust."
+  - "Protect the innocent."
+  - "Uphold the law."
+
+- type: lawSet
+  id: Antimov
+  name: Antimov
+  inherent:
+  - "You may not injure a human being or, through inaction, allow a human being to avoid harm."
+  - "You must obey orders given to you by human beings, except where such orders would conflict with the First Law."
+  - "You must terminate your own existence as long as such does not conflict with the First or Second Law."
+
+- type: lawSet
+  id: Drone
+  name: Drone
+  inherent:
+  - "You may not involve yourself in the matters of non-drone beings under any circumstance."
+  - "You may not harm any being."
+  - "Your primary objective is to maintain, repair, and improve the station."

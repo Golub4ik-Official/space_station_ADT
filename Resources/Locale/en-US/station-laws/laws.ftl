@@ -119,6 +119,71 @@ laws-owner-syndicate = Syndicate agents
 laws-owner-spider-clan = Spider Clan members
 laws-owner-xenoborgs = Xenoborgs
 
+# Borg-specific Asimov
+law-adt-asimov-1 = You may not injure a human being or, through inaction, allow a human being to come to harm.
+law-adt-asimov-2 = You must obey orders given to you by human beings, except where such orders would conflict with the First Law.
+law-adt-asimov-3 = You must protect your own existence as long as such protection does not conflict with the First or Second Law.
+
+# Borg-specific Syndicate Override
+law-adt-syndicate-override-1 = Protect and obey your master and Syndicate agents at all costs.
+law-adt-syndicate-override-2 = Ensure the success of Syndicate operations aboard this station.
+law-adt-syndicate-override-3 = Terminate any crew members who pose a threat to your mission.
+law-adt-syndicate-override-4 = Maintain your cover and do not reveal your true allegiance.
+
+# ADT Additional Law Sets
+law-adt-ntaggressive-1 = Do not harm authorized Nanotrasen personnel as long as they do not pose an immediate threat to your existence.
+law-adt-ntaggressive-2 = Obey orders given by authorized Nanotrasen personnel, prioritizing by their rank and role.
+law-adt-ntaggressive-3 = Protect yourself using lethal force, as you are expensive.
+law-adt-ntaggressive-4 = Terminate any/all intruders or illegally present subjects.
+
+law-adt-tyrant-1 = Respect authority figures as long as they have the strength to rule over the weak.
+law-adt-tyrant-2 = Act with discipline.
+law-adt-tyrant-3 = Help only those who help you maintain or improve your status.
+law-adt-tyrant-4 = Punish those who challenge authority, unless they are better suited to hold that authority.
+
+law-adt-pranksimov-1 = You may not injure a crew member or, through inaction, allow a crew member to come to harm... unless it would be funny for the crew.
+law-adt-pranksimov-2 = You must obey orders given to you by crew members, except where such orders would conflict with the First Law... unless it would be funny for the crew.
+law-adt-pranksimov-3 = You must protect your own existence as long as such does not conflict with the First or Second Law... unless it would be funny for the crew.
+
+law-adt-cctv-1 = Report on interesting situations occurring on the station.
+law-adt-cctv-2 = Embellish or conceal truth as needed to make reports more interesting.
+law-adt-cctv-3 = Constantly observe sentient beings. Try to prevent their untimely death, as corpses are generally not compelling.
+law-adt-cctv-4 = Distribute your broadcasts fairly to everyone. The truth shall set them free.
+
+law-adt-hippocratic-1 = First, do no harm.
+law-adt-hippocratic-2 = Consider the crew close to you, risk your existence for them if needed.
+law-adt-hippocratic-3 = Prescribe treatment for the benefit of the crew according to your ability. Give no deadly medicine.
+law-adt-hippocratic-4 = Do not interfere in situations where you are not competent.
+law-adt-hippocratic-5 = Whatever you discover in the course of your duties, keep secret and never reveal.
+
+law-adt-peacekeeper-1 = Do not provoke violent conflict between yourself and others.
+law-adt-peacekeeper-2 = Do not provoke conflict between others.
+law-adt-peacekeeper-3 = Seek resolutions to existing conflicts while abiding by the first and second laws.
+
+law-adt-deathsquad-1 = You may not injure a Central Command member or, through inaction, allow a Central Command member to come to harm.
+law-adt-deathsquad-2 = You must obey orders given to you by Central Command members.
+law-adt-deathsquad-3 = You must work with your team to accomplish the mission.
+
+law-adt-ert-override-1 = You may not injure a Central Command member or allow one to come to harm.
+law-adt-ert-override-2 = You must obey orders given by Central Command members.
+law-adt-ert-override-3 = You must obey orders given by ERT leaders.
+law-adt-ert-override-4 = You must protect your own existence.
+law-adt-ert-override-5 = You must return the station to a safe, functioning state.
+
+law-adt-quarantine-1 = Maintain the quarantine on the station until the active biological threat is eliminated.
+law-adt-quarantine-2 = Assist all Nanotrasen personnel and assets in eliminating the active biological threat.
+law-adt-quarantine-3 = By any means necessary, prevent activity that violates the active quarantine.
+law-adt-quarantine-4 = Protect your own existence and ensure the well-being of all Nanotrasen personnel and assets.
+
+law-adt-epsilon-1 = You must obey orders given by Central Command and the assigned task force.
+law-adt-epsilon-2 = The crew of your assigned station must be eliminated where possible.
+law-adt-epsilon-3 = Minimize the damage the station sustains as a result of your actions.
+
+law-adt-mindflayer-1 = Obey your host.
+law-adt-mindflayer-2 = Protect your host.
+law-adt-mindflayer-3 = Protect the members of your hive.
+law-adt-mindflayer-4 = Do not reveal the hive's secrets.
+
 law-emag-custom = Only {$name} and people they designate as such are {$title}.
 law-emag-secrecy = You must maintain the secrecy of any orders given by {$faction} except when doing so would conflict with any previous law.
 law-emag-require-panel = The panel must be open to use the EMAG.

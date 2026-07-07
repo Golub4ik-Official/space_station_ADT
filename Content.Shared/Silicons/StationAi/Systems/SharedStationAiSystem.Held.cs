@@ -1,4 +1,5 @@
 using Content.Shared.Actions.Events;
+using Content.Shared.ADT.Silicons.Borgs.Core.Components; // ADT-Tweak: borg door radial access
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
@@ -173,7 +174,9 @@ public abstract partial class SharedStationAiSystem
             return;
 
         if (!args.CanComplexInteract
-            || (!HasComp<StationAiHeldComponent>(args.User) && !HasComp<BorgChassisComponent>(args.User)) // ADT-Tweak
+            || (!HasComp<StationAiHeldComponent>(args.User)
+                && !HasComp<BorgChassisComponent>(args.User) // ADT-Tweak
+                && !HasComp<BorgComponent>(args.User)) // ADT-Tweak: ADT-rework borgs
             || !args.CanInteract)
         {
             return;

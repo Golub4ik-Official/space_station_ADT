@@ -1,0 +1,19 @@
+- type: wireLayout
+  id: ADTBorgWireLayout
+  wires:
+  - !type:BorgWireAction
+    wireType: AiControl
+    name: borg-wire-ai-control
+    color: "#ff4444"
+  - !type:BorgWireAction
+    wireType: Camera
+    name: borg-wire-camera
+    color: "#44ff44"
+  - !type:BorgWireAction
+    wireType: LawCheck
+    name: borg-wire-law-check
+    color: "#4444ff"
+  - !type:BorgWireAction
+    wireType: Locked
+    name: borg-wire-locked
+    color: "#ffff44"

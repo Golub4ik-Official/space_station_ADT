@@ -1,0 +1,16 @@
+- type: entity
+  parent: BorgModuleBase
+  id: BorgModuleDestroyer
+  name: destroyer module
+  components:
+  - type: BorgModule
+    moduleType: Destroyer
+    items:
+    - Immolator
+    - StunBaton
+    - DestroyerMobilityModule
+    radioChannels:
+    - Security
+    languages:
+    - GalacticCommon
+    - SolCommon

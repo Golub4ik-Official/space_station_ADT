@@ -1,0 +1,25 @@
+- type: entity
+  parent: BorgModuleBase
+  id: BorgModuleMedical
+  name: medical module
+  components:
+  - type: BorgModule
+    moduleType: Medical
+    items:
+    - BorgHypospray
+    - Defibrillator
+    - RollerBedHolder
+    - HealthAnalyzer
+    - GripperMedical
+    - SurgicalTools
+    - SplintPack
+    - BrutePack
+    - BurnPack
+    - Nanopaste
+    radioChannels:
+    - Medical
+    languages:
+    - GalacticCommon
+    - SolCommon
+    actions:
+    - ThermalVision

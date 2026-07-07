@@ -1,0 +1,65 @@
+# Borg ability prototypes
+- type: entity
+  id: BorgAbilityHeadlamp
+  name: headlamp
+  description: Toggle your integrated headlamp.
+  components:
+  - type: BorgAbility
+    abilityType: Headlamp
+    icon: "Silicon/Borgs/HUD/hud_robot.rsi/headlamp_off.png"
+    toggleIcon: "Silicon/Borgs/HUD/hud_robot.rsi/headlamp_on.png"
+
+- type: entity
+  id: BorgAbilityThrusters
+  name: ion thrusters
+  description: Toggle ion thrusters for space movement.
+  components:
+  - type: BorgAbility
+    abilityType: Thrusters
+    icon: "Silicon/Borgs/HUD/hud_robot.rsi/thrusters_off.png"
+    toggleIcon: "Silicon/Borgs/HUD/hud_robot.rsi/thrusters_on.png"
+
+- type: entity
+  id: BorgAbilitySelfDiagnosis
+  name: self-diagnosis
+  description: Run a diagnostic check on your systems.
+  components:
+  - type: BorgAbility
+    abilityType: SelfDiagnosis
+    icon: "Silicon/Borgs/HUD/hud_robot.rsi/diagnosis.png"
+
+- type: entity
+  id: BorgAbilityStateLaws
+  name: state laws
+  description: Announce your current laws over the radio.
+  components:
+  - type: BorgAbility
+    abilityType: StateLaws
+    icon: "Silicon/Borgs/HUD/hud_robot.rsi/laws.png"
+
+- type: entity
+  id: BorgAbilitySensorMode
+  name: sensor mode
+  description: Cycle through sensor modes.
+  components:
+  - type: BorgAbility
+    abilityType: SensorMode
+    icon: "Silicon/Borgs/HUD/hud_robot.rsi/sensor.png"
+
+- type: entity
+  id: BorgAbilityRadio
+  name: radio
+  description: Open the radio channel panel.
+  components:
+  - type: BorgAbility
+    abilityType: Radio
+    icon: "Silicon/Borgs/HUD/hud_robot.rsi/radio.png"
+
+- type: entity
+  id: BorgAbilityPDA
+  name: PDA
+  description: Open your personal digital assistant.
+  components:
+  - type: BorgAbility
+    abilityType: PDA
+    icon: "Silicon/Borgs/HUD/hud_robot.rsi/pda.png"

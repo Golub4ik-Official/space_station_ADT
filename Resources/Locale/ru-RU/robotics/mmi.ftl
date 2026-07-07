@@ -1,11 +1,14 @@
-positronic-brain-installed = Обнаружена нейронная активность.
-positronic-brain-off = Нейронная активность не обнаружена.
-positronic-brain-still-searching = Идёт процесс синтетического нейронного дескремблирования...
-positronic-brain-searching = Начинается процесс синтетического нейронного дескремблирования...
-positronic-brain-role-name = Позитронный мозг
-positronic-brain-role-description = Служите экипажу станции.
-positronic-brain-wipe-device-verb-text = Стереть мозг
-positronic-brain-wiped-device = Нейронная активность была прекращена.
-positronic-brain-stop-searching-verb-text = Прекратить поиск
-positronic-brain-stopped-searching = Нейронное дескремблирование прекращено.
+# Роботический мозг (единственный тип искусственного мозга — ADT-Tweak: PositronicBrain удалён)
+robotic-brain-installed = Обнаружена нейронная активность.
+robotic-brain-off = Нейронная активность не обнаружена.
+robotic-brain-still-searching = Загрузка кибернетической матрицы...
+robotic-brain-searching = Начало загрузки кибернетической матрицы...
+robotic-brain-role-name = Роботический мозг
+robotic-brain-role-description = Служите экипажу станции как синтетик.
+robotic-brain-wipe-device-verb-text = Стереть мозг
+robotic-brain-wiped-device = Кибернетическая матрица была уничтожена.
+robotic-brain-stop-searching-verb-text = Прекратить поиск
+robotic-brain-stopped-searching = Загрузка кибернетической матрицы остановлена.
+
+# ММИ (вариант с органическим мозгом) — общая метка слота
 positronic-brain-slot-component-slot-name-brain = Мозг

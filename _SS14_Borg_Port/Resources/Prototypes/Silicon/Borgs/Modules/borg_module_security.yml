@@ -1,0 +1,21 @@
+- type: entity
+  parent: BorgModuleBase
+  id: BorgModuleSecurity
+  name: security module
+  components:
+  - type: BorgModule
+    moduleType: Security
+    items:
+    - StunBaton
+    - Disabler
+    - Zipties
+    - HoloSign
+    - SecHUD
+    emagItems:
+    - LaserGun
+    - StunArm
+    radioChannels:
+    - Security
+    languages:
+    - GalacticCommon
+    - SolCommon

@@ -1,0 +1,89 @@
+{
+    "version": 1,
+    "license": null,
+    "copyright": null,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "indwelder"
+        },
+        {
+            "name": "indwelder75"
+        },
+        {
+            "name": "indwelder50"
+        },
+        {
+            "name": "indwelder25"
+        },
+        {
+            "name": "indwelder0"
+        },
+        {
+            "name": "indwelder-on",
+            "delays": [
+                [
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "wrench"
+        },
+        {
+            "name": "cutters_cyborg"
+        },
+        {
+            "name": "screwdriver_cyborg"
+        },
+        {
+            "name": "crowbar"
+        },
+        {
+            "name": "multitool"
+        },
+        {
+            "name": "knife"
+        },
+        {
+            "name": "fingerblades"
+        },
+        {
+            "name": "laser"
+        },
+        {
+            "name": "laser_charge1"
+        },
+        {
+            "name": "laser_charge2"
+        },
+        {
+            "name": "laser_charge3"
+        },
+        {
+            "name": "laser_charge4"
+        },
+        {
+            "name": "laser_empty"
+        },
+        {
+            "name": "taser"
+        },
+        {
+            "name": "taser_charge_disable"
+        },
+        {
+            "name": "taser_disable"
+        },
+        {
+            "name": "taser_charge_stun"
+        },
+        {
+            "name": "taser_stun"
+        }
+    ]
+}

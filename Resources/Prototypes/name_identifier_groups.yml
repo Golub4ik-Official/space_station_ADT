@@ -18,8 +18,8 @@
   maxValue: 999
 
 - type: nameIdentifierGroup
-  id: PositronicBrain
-  format: name-identifier-format-positronic-brain
+  id: RoboticBrain # ADT-Tweak: renamed from PositronicBrain
+  format: name-identifier-format-robotic-brain
   minValue: 10
   maxValue: 99
 

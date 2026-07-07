@@ -1,0 +1,12 @@
+lawset-ADTMomsimov-name = Momsimov
+lawset-ADTNTAggressive-name = NT Aggressive
+lawset-ADTTyrant-name = T.Y.R.A.N.T.
+lawset-ADTPranksimov-name = Pranksimov
+lawset-ADTCCTV-name = CCTV
+lawset-ADTHippocratic-name = Hippocratic Oath
+lawset-ADTPeacekeeper-name = UN-2000 Peacekeeper
+lawset-ADTDeathsquad-name = TerminatorOS 3.1
+lawset-ADTERTOverride-name = ERT Override
+lawset-ADTQuarantine-name = Quarantine
+lawset-ADTEpsilon-name = Epsilon
+lawset-ADTMindflayer-name = Mindflayer Override

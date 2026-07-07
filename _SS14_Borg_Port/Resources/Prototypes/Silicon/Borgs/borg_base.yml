@@ -1,0 +1,101 @@
+# Base cyborg entity prototype
+- type: entity
+  id: BorgBase
+  name: cyborg
+  description: A lawed cyborg, servant of the crew.
+  components:
+  - type: Borg
+  - type: BorgSlots
+    slotCount: 3
+  - type: BorgBattery
+  - type: BorgWires
+  - type: BorgComponentParts
+  - type: BorgLaw
+    lawSet: Crewsimov
+  - type: BorgAI
+  - type: BorgUpgrade
+  - type: BorgVisualizer
+  - type: Sprite
+    sprite: "Silicon/Borgs/Sprites/borg_standard.rsi"
+  - type: Physics
+    bodyType: Kinematic
+  - type: Interaction
+  - type: Radio
+  - type: PDA
+  - type: Camera
+  - type: HealthBar
+  - type: StaminaBar
+
+# Engineering cyborg
+- type: entity
+  parent: BorgBase
+  id: BorgEngineering
+  name: engineering cyborg
+  components:
+  - type: BorgModule
+    moduleType: Engineering
+  - type: BorgVisualizer
+    moduleSprite: "Silicon/Borgs/Sprites/borg_engineering.rsi"
+  - type: BorgEnergyStorage
+    storages:
+    - name: Metal
+      maxAmount: 50
+      rechargeRate: 1
+    - name: Glass
+      maxAmount: 50
+      rechargeRate: 1
+
+# Medical cyborg
+- type: entity
+  parent: BorgBase
+  id: BorgMedical
+  name: medical cyborg
+  components:
+  - type: BorgModule
+    moduleType: Medical
+  - type: BorgVisualizer
+    moduleSprite: "Silicon/Borgs/Sprites/borg_medical.rsi"
+
+# Security cyborg
+- type: entity
+  parent: BorgBase
+  id: BorgSecurity
+  name: security cyborg
+  components:
+  - type: BorgModule
+    moduleType: Security
+  - type: BorgVisualizer
+    moduleSprite: "Silicon/Borgs/Sprites/borg_security.rsi"
+
+# Janitor cyborg
+- type: entity
+  parent: BorgBase
+  id: BorgJanitor
+  name: janitor cyborg
+  components:
+  - type: BorgModule
+    moduleType: Janitor
+  - type: BorgVisualizer
+    moduleSprite: "Silicon/Borgs/Sprites/borg_janitor.rsi"
+
+# Miner cyborg
+- type: entity
+  parent: BorgBase
+  id: BorgMiner
+  name: miner cyborg
+  components:
+  - type: BorgModule
+    moduleType: Miner
+  - type: BorgVisualizer
+    moduleSprite: "Silicon/Borgs/Sprites/borg_miner.rsi"
+
+# Service cyborg
+- type: entity
+  parent: BorgBase
+  id: BorgService
+  name: service cyborg
+  components:
+  - type: BorgModule
+    moduleType: Service
+  - type: BorgVisualizer
+    moduleSprite: "Silicon/Borgs/Sprites/borg_service.rsi"

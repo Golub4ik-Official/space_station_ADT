@@ -41802,7 +41802,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: PositronicBrain
+- proto: RoboticBrain
   entities:
   - uid: 5111
     components:

@@ -1,0 +1,114 @@
+# ╔══════════════════════════════════════════════════════╗
+# ║  WikiHampter's Cyborg Rework                        ║
+# ║  Author: WikiHampter | MIT License                   ║
+# ╚══════════════════════════════════════════════════════╝
+
+- type: borgModuleType
+  id: Engineering
+  name: Engineering Module
+  radioChannels:
+  - Engineering
+  innateActions: []
+  armor:
+    brute: 30
+    burn: 30
+  languages:
+  - GalacticCommon
+
+- type: borgModuleType
+  id: Medical
+  name: Medical Module
+  radioChannels:
+  - Medical
+  innateActions: []
+  armor:
+    brute: 10
+    burn: 10
+  languages:
+  - GalacticCommon
+
+- type: borgModuleType
+  id: Security
+  name: Security Module
+  radioChannels:
+  - Security
+  - Science
+  innateActions: []
+  armor:
+    brute: 40
+    burn: 20
+  languages:
+  - GalacticCommon
+
+- type: borgModuleType
+  id: Janitor
+  name: Janitor Module
+  radioChannels:
+  - Service
+  innateActions: []
+  armor:
+    brute: 10
+    burn: 10
+  languages:
+  - GalacticCommon
+
+- type: borgModuleType
+  id: Miner
+  name: Miner Module
+  radioChannels:
+  - Supply
+  innateActions: []
+  armor:
+    brute: 20
+    burn: 30
+  languages:
+  - GalacticCommon
+
+- type: borgModuleType
+  id: Service
+  name: Service Module
+  radioChannels:
+  - Service
+  innateActions: []
+  armor:
+    brute: 5
+    burn: 5
+  languages:
+  - GalacticCommon
+  - SolCommon
+
+- type: borgModuleType
+  id: Combat
+  name: Combat Module
+  radioChannels:
+  - Security
+  innateActions: []
+  armor:
+    brute: 50
+    burn: 30
+  languages:
+  - GalacticCommon
+
+- type: borgModuleType
+  id: Destroyer
+  name: Destroyer Module
+  radioChannels:
+  - Security
+  innateActions: []
+  armor:
+    brute: 80
+    burn: 50
+  languages:
+  - GalacticCommon
+
+- type: borgModuleType
+  id: Syndicate
+  name: Syndicate Module
+  radioChannels:
+  - Security
+  innateActions: []
+  armor:
+    brute: 60
+    burn: 40
+  languages:
+  - GalacticCommon

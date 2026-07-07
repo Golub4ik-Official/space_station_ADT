@@ -1,0 +1,170 @@
+# ╔══════════════════════════════════════════════════════╗
+# ║  WikiHampter's Cyborg Rework                        ║
+# ║  Author: WikiHampter | MIT License                   ║
+# ╚══════════════════════════════════════════════════════╝
+
+- type: entity
+  id: ADTBorgEngineering
+  name: engineering cyborg
+  parent: ADTBorgBase
+  components:
+  - type: BorgSlot
+    maxModules: 1
+    moduleWhitelist:
+    - ADTBorgModuleEngineering
+    - ADTBorgModuleRPD
+  - type: BorgSwitchableType
+    selectedBorgType: engineering
+  - type: BorgSwitchableSubtype
+  - type: Sprite
+    sprite: Mobs/Silicon/chassis.rsi
+    layers:
+    - state: engineer
+    - state: engineer_e_r
+      shader: unshaded
+      visible: false
+    - state: engineer_l
+      shader: unshaded
+      visible: false
+  - type: Icon
+    sprite: Mobs/Silicon/chassis.rsi
+    state: engineer
+  - type: Construction
+    graph: Cyborg
+    node: cyborg
+
+- type: entity
+  id: ADTBorgMedical
+  name: medical cyborg
+  parent: ADTBorgBase
+  components:
+  - type: BorgSlot
+    maxModules: 1
+    moduleWhitelist:
+    - ADTBorgModuleMedical
+    - ADTBorgModuleChemical
+    - ADTBorgModuleAdvancedChemical
+    - ADTBorgModuleRescue
+  - type: BorgSwitchableType
+    selectedBorgType: medical
+  - type: BorgSwitchableSubtype
+  - type: Sprite
+    sprite: Mobs/Silicon/chassis.rsi
+    layers:
+    - state: medical
+    - state: medical_e_r
+      shader: unshaded
+      visible: false
+    - state: medical_l
+      shader: unshaded
+      visible: false
+  - type: Icon
+    sprite: Mobs/Silicon/chassis.rsi
+    state: medical
+
+- type: entity
+  id: ADTBorgSecurity
+  name: security cyborg
+  parent: ADTBorgBase
+  components:
+  - type: BorgSlot
+    maxModules: 1
+    moduleWhitelist:
+    - ADTBorgModuleSecurity
+    - ADTBorgModuleDetention
+    - ADTBorgModuleHarm
+  - type: BorgSwitchableType
+    selectedBorgType: security
+  - type: BorgSwitchableSubtype
+  - type: Sprite
+    sprite: Mobs/Silicon/chassis.rsi
+    layers:
+    - state: sec
+    - state: sec_e_r
+      shader: unshaded
+      visible: false
+    - state: sec_l
+      shader: unshaded
+      visible: false
+  - type: Icon
+    sprite: Mobs/Silicon/chassis.rsi
+    state: sec
+
+- type: entity
+  id: ADTBorgJanitor
+  name: janitor cyborg
+  parent: ADTBorgBase
+  components:
+  - type: BorgSlot
+    maxModules: 1
+    moduleWhitelist:
+    - ADTBorgModuleJanitor
+  - type: BorgSwitchableType
+    selectedBorgType: janitor
+  - type: BorgSwitchableSubtype
+  - type: Sprite
+    sprite: Mobs/Silicon/chassis.rsi
+    layers:
+    - state: janitor
+    - state: janitor_e_r
+      shader: unshaded
+      visible: false
+    - state: janitor_l
+      shader: unshaded
+      visible: false
+  - type: Icon
+    sprite: Mobs/Silicon/chassis.rsi
+    state: janitor
+
+- type: entity
+  id: ADTBorgMiner
+  name: miner cyborg
+  parent: ADTBorgBase
+  components:
+  - type: BorgSlot
+    maxModules: 1
+    moduleWhitelist:
+    - ADTBorgModuleMiner
+    - ADTBorgModuleSalvage
+  - type: BorgSwitchableType
+    selectedBorgType: mining
+  - type: BorgSwitchableSubtype
+  - type: Sprite
+    sprite: Mobs/Silicon/chassis.rsi
+    layers:
+    - state: miner
+    - state: miner_e_r
+      shader: unshaded
+      visible: false
+    - state: miner_l
+      shader: unshaded
+      visible: false
+  - type: Icon
+    sprite: Mobs/Silicon/chassis.rsi
+    state: miner
+
+- type: entity
+  id: ADTBorgService
+  name: service cyborg
+  parent: ADTBorgBase
+  components:
+  - type: BorgSlot
+    maxModules: 1
+    moduleWhitelist:
+    - ADTBorgModuleService
+  - type: BorgSwitchableType
+    selectedBorgType: service
+  - type: BorgSwitchableSubtype
+  - type: Sprite
+    sprite: Mobs/Silicon/chassis.rsi
+    layers:
+    - state: service
+    - state: service_e_r
+      shader: unshaded
+      visible: false
+    - state: service_l
+      shader: unshaded
+      visible: false
+  - type: Icon
+    sprite: Mobs/Silicon/chassis.rsi
+    state: service

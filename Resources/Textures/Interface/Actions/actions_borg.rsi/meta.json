@@ -187,8 +187,30 @@
         {
             "name":"xenoborg-tool-module"
         },
-        {
-            "name": "select-type"
-        }
+    {
+        "name": "select-type"
+    },
+    {
+        "name": "headlamp"
+    },
+    {
+        "name": "self-diagnosis"
+    },
+    {
+        "name": "sensor-mode"
+    },
+    {
+        "name": "magpulse"
+    },
+    {
+        "name": "thrusters"
+    },
+    {
+        "name": "radio"
+    },
+    {
+        "name": "pda"
+    }
+}
     ]
 }

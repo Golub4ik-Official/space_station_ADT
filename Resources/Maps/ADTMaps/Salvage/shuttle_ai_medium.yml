@@ -2272,7 +2272,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 13.5,-8.5
       parent: 1
-- proto: PositronicBrain
+- proto: RoboticBrain
   entities:
   - uid: 227
     components:

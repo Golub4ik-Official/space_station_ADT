@@ -23,14 +23,6 @@
   - type: BorgBrain
   - type: BlockMovement
   - type: Examiner
-  - type: IntrinsicRadioReceiver
-  - type: IntrinsicRadioTransmitter
-    channels:
-    - Binary
-  - type: ActiveRadio
-    channels:
-    - Binary
-    - Common
   - type: NameIdentifier
     group: MMI
   - type: DoAfter
@@ -67,73 +59,113 @@
         - Brain
 
 - type: entity
-  parent: BaseItem
-  id: PositronicBrain
-  name: positronic brain
-  description: An artificial brain capable of spontaneous neural activity.
+  parent: MMI
+  id: MMIRadioEnabled
+  name: man-machine interface
+  suffix: Radio-enabled
+  description: A machine able to facilitate communication between a biological brain and electronics, with an integrated radio.
   components:
-    - type: Sprite
-      sprite: Objects/Specific/Robotics/mmi.rsi
-      layers:
-      - state: posibrain
-        map: ["base"]
-    - type: Input
-      context: human
-    - type: ToggleableGhostRole
-      examineTextMindPresent: positronic-brain-installed
-      examineTextMindSearching: positronic-brain-still-searching
-      examineTextNoMind: positronic-brain-off
-      beginSearchingText: positronic-brain-searching
-      roleName: positronic-brain-role-name
-      roleDescription: positronic-brain-role-description
-      roleRules: ghost-role-information-silicon-rules
-      mindRoles:
-      - MindRoleGhostRoleSilicon
-      wipeVerbText: positronic-brain-wipe-device-verb-text
-      wipeVerbPopup: positronic-brain-wiped-device
-      stopSearchVerbText: positronic-brain-stop-searching-verb-text
-      stopSearchVerbPopup: positronic-brain-stopped-searching
-      job: Borg
-    - type: BlockMovement
-    - type: Examiner
-    - type: BorgBrain
-    - type: IntrinsicRadioReceiver
-    - type: IntrinsicRadioTransmitter
-      channels:
-      - Binary
-    - type: ActiveRadio
-      channels:
-      - Binary
-      - Common
-    - type: NameIdentifier
-      group: PositronicBrain
-    - type: DoAfter
-    - type: Actions
-    - type: TypingIndicator
-      proto: robot
-    - type: Speech
-      speechSounds: Pai
-    - type: Alerts
-    - type: MobState
-      allowedStates:
-      - Alive
-      - Dead
-    - type: Appearance
-    - type: Tag
-      tags:
-      - CannotSuicide
-    - type: GenericVisualizer
-      visuals:
-        enum.ToggleableGhostRoleVisuals.Status:
-          base:
-            Off: { state: posibrain }
-            Searching: { state: posibrain-searching }
-            On: { state: posibrain-occupied }
-    - type: GuideHelp
-      guides:
-      - Cyborgs
-      - Robotics
-    - type: ChangeVoiceInContainer
-      whitelist:
-        components:
-        - SecretStash
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+  - type: Speech
+    speechSounds: Pai
+
+- type: entity
+  parent: MMI
+  id: SyndicateMMI
+  name: syndicate man-machine interface
+  suffix: Syndicate
+  description: A sinister variant of the MMI, designed to ensure absolute loyalty to the Syndicate. Law modifications are impossible.
+  components:
+  - type: SyndicateMMI
+  - type: Sprite
+    sprite: Objects/Specific/Robotics/mmi.rsi
+    layers:
+    - state: mmi_brain
+      map: ["enum.MMIVisualLayers.Brain"]
+      visible: false
+    - state: mmi_off
+      color: "#FF4444"
+      map: ["enum.MMIVisualLayers.Base"]
+# Robotic Brain — a manufactured AI core with a built-in synthetic brain.
+# Used in borg construction as an alternative to organic-brain MMI.
+# Does not require an organic brain; ghosts can join as the brain.
+# ADT-Tweak: this is the single manufactured brain type (PositronicBrain removed);
+# StationAiBrain inherits from this prototype.
+- type: entity
+  parent: BaseItem
+  id: RoboticBrain
+  name: robotic brain
+  description: A Beta-level artificial intelligence core containing a non-sapient mechanical mind.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: boris
+  - type: Input
+    context: human
+  - type: ToggleableGhostRole
+    examineTextMindPresent: robotic-brain-installed
+    examineTextMindSearching: robotic-brain-still-searching
+    examineTextNoMind: robotic-brain-off
+    beginSearchingText: robotic-brain-searching
+    roleName: robotic-brain-role-name
+    roleDescription: robotic-brain-role-description
+    roleRules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleGhostRoleSilicon
+    wipeVerbText: robotic-brain-wipe-device-verb-text
+    wipeVerbPopup: robotic-brain-wiped-device
+    stopSearchVerbText: robotic-brain-stop-searching-verb-text
+    stopSearchVerbPopup: robotic-brain-stopped-searching
+    job: Borg
+  - type: BlockMovement
+  - type: Examiner
+  - type: BorgBrain
+  # ADT-Tweak-Start: parity with former PositronicBrain — integrated radio
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+  # ADT-Tweak-End
+  - type: NameIdentifier
+    group: RoboticBrain # ADT-Tweak: renamed from PositronicBrain
+  - type: DoAfter
+  - type: Actions
+  - type: TypingIndicator
+    proto: robot
+  - type: Speech
+    speechSounds: Pai
+  - type: Alerts
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: Appearance
+  - type: Tag
+    tags:
+    - CannotSuicide
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableGhostRoleVisuals.Status:
+        base:
+          Off: { state: boris }
+          Searching: { state: boris_recharging }
+          On: { state: boris }
+  - type: ChangeVoiceInContainer # ADT-Tweak: parity with former PositronicBrain
+    whitelist:
+      components:
+      - SecretStash
+  - type: GuideHelp
+    guides:
+    - Cyborgs
+    - Robotics

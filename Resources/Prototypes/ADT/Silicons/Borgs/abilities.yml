@@ -1,0 +1,76 @@
+# ╔══════════════════════════════════════════════════════╗
+# ║  WikiHampter's Cyborg Rework                        ║
+# ║  Author: WikiHampter | MIT License                   ║
+# ╚══════════════════════════════════════════════════════╝
+
+- type: entity
+  id: BorgAbilityHeadlamp
+  name: Headlamp
+  components:
+  - type: BorgAbility
+    abilityType: Toggle
+    icon: Interface/Actions/actions_borg.rsi/headlamp.png
+    powerCost: 16
+
+- type: entity
+  id: BorgAbilityThrusters
+  name: Ion Thrusters
+  components:
+  - type: BorgAbility
+    abilityType: Toggle
+    icon: Interface/Actions/actions_borg.rsi/thrusters.png
+    powerCost: 25
+
+- type: entity
+  id: BorgAbilitySelfDiagnosis
+  name: Self-Diagnosis
+  components:
+  - type: BorgAbility
+    abilityType: Instant
+    icon: Interface/Actions/actions_borg.rsi/self-diagnosis.png
+    powerCost: 0
+
+- type: entity
+  id: BorgAbilityStateLaws
+  name: State Laws
+  components:
+  - type: BorgAbility
+    abilityType: Instant
+    icon: Interface/Actions/actions_borg.rsi/state-laws.png
+    powerCost: 0
+
+- type: entity
+  id: BorgAbilitySensorMode
+  name: Sensor Mode
+  components:
+  - type: BorgAbility
+    abilityType: Cycle
+    icon: Interface/Actions/actions_borg.rsi/sensor-mode.png
+    powerCost: 0
+
+- type: entity
+  id: BorgAbilityMagpulse
+  name: Magpulse
+  components:
+  - type: BorgAbility
+    abilityType: Toggle
+    icon: Interface/Actions/actions_borg.rsi/magpulse.png
+    powerCost: 10
+
+- type: entity
+  id: BorgAbilityRadio
+  name: Radio
+  components:
+  - type: BorgAbility
+    abilityType: Toggle
+    icon: Interface/Actions/actions_borg.rsi/radio.png
+    powerCost: 0
+
+- type: entity
+  id: BorgAbilityPDA
+  name: PDA
+  components:
+  - type: BorgAbility
+    abilityType: Instant
+    icon: Interface/Actions/actions_borg.rsi/pda.png
+    powerCost: 0

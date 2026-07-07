@@ -1,0 +1,126 @@
+- type: entity
+  parent: BaseAction
+  id: ActionBorgHeadlamp
+  name: Headlamp
+  description: Toggle your headlamp.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon:
+      sprite: Interface/Actions/actions_borg.rsi
+      state: headlamp
+    event: !type:BorgHeadlampToggleEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionBorgStateLaws
+  name: State Laws
+  description: Recite your active laws.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon:
+      sprite: Interface/Actions/actions_borg.rsi
+      state: state-laws
+    event: !type:BorgStateLawsEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionBorgSelfDiagnosis
+  name: Self-Diagnosis
+  description: Run a diagnostic check on your systems.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon:
+      sprite: Interface/Actions/actions_borg.rsi
+      state: self-diagnosis
+    event: !type:BorgSelfDiagnosisEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionBorgSensorMode
+  name: Sensor Mode
+  description: Cycle through your vision sensors.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon:
+      sprite: Interface/Actions/actions_borg.rsi
+      state: sensor-mode
+    event: !type:BorgSensorModeEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionBorgMagpulse
+  name: Magpulse
+  description: Toggle magnetic boots.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon:
+      sprite: Interface/Actions/actions_borg.rsi
+      state: magpulse
+    event: !type:BorgMagpulseToggleEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionBorgThrusters
+  name: Ion Thrusters
+  description: Toggle your ion thrusters for space propulsion.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon:
+      sprite: Interface/Actions/actions_borg.rsi
+      state: thrusters
+    event: !type:BorgThrustersToggleEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionBorgRadio
+  name: Radio
+  description: Toggle your radio.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon:
+      sprite: Interface/Actions/actions_borg.rsi
+      state: radio
+    event: !type:BorgRadioToggleEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionBorgPda
+  name: PDA
+  description: Open your PDA.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon:
+      sprite: Interface/Actions/actions_borg.rsi
+      state: pda
+    event: !type:OpenUiActionEvent
+      key: enum.PdaUiKey.Key
+
+- type: entity
+  parent: BaseAction
+  id: ActionBorgReturnToAI
+  name: Return to AI
+  description: Transfer your mind back to the AI core.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon:
+      sprite: Interface/Actions/actions_borg.rsi
+      state: state-laws
+    event: !type:BorgReturnToAiEvent

@@ -1,0 +1,8 @@
+# Base module prototype for inheritance
+- type: entity
+  id: BorgModuleBase
+  name: module
+  abstract: true
+  components:
+  - type: BorgModule
+    moduleType: Standard

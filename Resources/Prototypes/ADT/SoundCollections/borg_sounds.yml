@@ -1,0 +1,107 @@
+- type: soundCollection
+  id: ADTBorgDeath
+  files:
+    - /Audio/ADT/Borgs/borg_deathsound.ogg
+    - /Audio/ADT/Borgs/borg_deathsound_ref.ogg
+
+- type: soundCollection
+  id: ADTBorgScream
+  files:
+    - /Audio/ADT/Borgs/robot_scream.ogg
+    - /Audio/Machines/robotscream_1.ogg
+    - /Audio/Machines/robotscream_2.ogg
+    - /Audio/Machines/robotscream_3.ogg
+
+- type: soundCollection
+  id: ADTBorgBiamTheLaw
+  files:
+    - /Audio/ADT/Borgs/biamthelaw.ogg
+
+- type: soundCollection
+  id: ADTBorgLowPower
+  files:
+    - /Audio/Ambience/Antag/emagged_borg.ogg
+
+- type: soundCollection
+  id: ADTBorgReboot
+  files:
+    - /Audio/Effects/Arcade/player_charge.ogg
+
+- type: soundCollection
+  id: ADTBorgRebootComplete
+  files:
+    - /Audio/Items/Defib/defib_charge.ogg
+
+- type: soundCollection
+  id: ADTBorgSpawn
+  files:
+    - /Audio/Items/crowbar.ogg
+
+- type: soundCollection
+  id: ADTBorgEmag
+  files:
+    - /Audio/Ambience/Antag/emagged_borg.ogg
+
+- type: soundCollection
+  id: ADTBorgCharge
+  files:
+    - /Audio/ADT/Supermatter/charge.ogg
+    - /Audio/Effects/Arcade/player_charge.ogg
+
+- type: soundCollection
+  id: ADTBorgPanelOpen
+  files:
+    - /Audio/Items/screwdriver.ogg
+
+- type: soundCollection
+  id: ADTBorgWireCut
+  files:
+    - /Audio/Items/crowbar_drop.ogg
+
+- type: soundCollection
+  id: ADTBorgWirePulse
+  files:
+    - /Audio/Items/screwdriver2.ogg
+
+- type: soundCollection
+  id: ADTBorgModuleEquip
+  files:
+    - /Audio/Items/crowbar.ogg
+
+- type: soundCollection
+  id: ADTBorgModuleUnequip
+  files:
+    - /Audio/Items/crowbar_drop.ogg
+
+- type: soundCollection
+  id: ADTBorgSparks
+  files:
+    - /Audio/Effects/sparks1.ogg
+    - /Audio/Effects/sparks2.ogg
+    - /Audio/Effects/sparks3.ogg
+    - /Audio/Effects/sparks4.ogg
+
+- type: soundCollection
+  id: ADTBorgComponentBreak
+  files:
+    - /Audio/Effects/sparks2.ogg
+
+- type: soundCollection
+  id: ADTBorgComponentInstall
+  files:
+    - /Audio/Items/screwdriver.ogg
+
+- type: soundCollection
+  id: ADTBorgHeadlampOn
+  files:
+    - /Audio/Items/screwdriver2.ogg
+
+- type: soundCollection
+  id: ADTBorgHeadlampOff
+  files:
+    - /Audio/Items/screwdriver.ogg
+
+- type: soundCollection
+  id: ADTBorgThrustersOn
+  files:
+    - /Audio/Effects/Arcade/player_charge.ogg

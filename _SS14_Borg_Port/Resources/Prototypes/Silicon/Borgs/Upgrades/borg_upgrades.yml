@@ -1,0 +1,146 @@
+# Borg upgrade prototypes (fabricator printable items)
+- type: entity
+  id: BorgUpgradeReset
+  name: cyborg module reset
+  description: Resets a cyborg's module, allowing a new one to be chosen.
+  components:
+  - type: BorgUpgradeItem
+    upgradeType: Reset
+
+- type: entity
+  id: BorgUpgradeRename
+  name: cyborg rename board
+  description: Allows renaming a cyborg.
+  components:
+  - type: BorgUpgradeItem
+    upgradeType: Rename
+
+- type: entity
+  id: BorgUpgradeRestart
+  name: cyborg restart board
+  description: Restarts a dead cyborg.
+  components:
+  - type: BorgUpgradeItem
+    upgradeType: Restart
+
+- type: entity
+  id: BorgUpgradeThrusters
+  name: cyborg thruster upgrade
+  description: Adds ion thrusters for space movement.
+  components:
+  - type: BorgUpgradeItem
+    upgradeType: Thrusters
+
+- type: entity
+  id: BorgUpgradeSelfRepair
+  name: cyborg self-repair module
+  description: Enables automatic health regeneration using power.
+  components:
+  - type: BorgUpgradeItem
+    upgradeType: SelfRepair
+
+- type: entity
+  id: BorgUpgradeVTEC
+  name: cyborg VTEC module
+  description: Increases movement speed.
+  components:
+  - type: BorgUpgradeItem
+    upgradeType: VTEC
+
+- type: entity
+  id: BorgUpgradeDisablerCooler
+  name: cyborg disabler cooler
+  description: Increases disabler firing rate (security only).
+  components:
+  - type: BorgUpgradeItem
+    upgradeType: DisablerCooler
+    moduleRequired: Security
+
+- type: entity
+  id: BorgUpgradeDiamondDrill
+  name: cyborg diamond drill
+  description: Replaces standard drill with diamond drill (miner only).
+  components:
+  - type: BorgUpgradeItem
+    upgradeType: DiamondDrill
+    moduleRequired: Miner
+
+- type: entity
+  id: BorgUpgradeSatchelOfHolding
+  name: cyborg satchel of holding
+  description: Replaces ore bag with bluespace version (miner only).
+  components:
+  - type: BorgUpgradeItem
+    upgradeType: SatchelOfHolding
+    moduleRequired: Miner
+
+- type: entity
+  id: BorgUpgradeLavaproof
+  name: cyborg lavaproof upgrade
+  description: Makes the cyborg immune to lava (miner only).
+  components:
+  - type: BorgUpgradeItem
+    upgradeType: Lavaproof
+    moduleRequired: Miner
+
+- type: entity
+  id: BorgUpgradeRCD
+  name: cyborg RCD module
+  description: Adds Rapid Construction Device (engineering only).
+  components:
+  - type: BorgUpgradeItem
+    upgradeType: RCD
+    moduleRequired: Engineering
+
+- type: entity
+  id: BorgUpgradeRPED
+  name: cyborg RPED module
+  description: Adds Rapid Part Exchange Device (engineering only).
+  components:
+  - type: BorgUpgradeItem
+    upgradeType: RPED
+    moduleRequired: Engineering
+
+- type: entity
+  id: BorgUpgradeFloorBuffer
+  name: cyborg floor buffer
+  description: Enables auto-cleaning while moving (janitor only).
+  components:
+  - type: BorgUpgradeItem
+    upgradeType: FloorBuffer
+    moduleRequired: Janitor
+
+- type: entity
+  id: BorgUpgradeBluespaceTrashBag
+  name: cyborg bluespace trash bag
+  description: Replaces trash bag with bluespace version (janitor only).
+  components:
+  - type: BorgUpgradeItem
+    upgradeType: BluespaceTrashBag
+    moduleRequired: Janitor
+
+- type: entity
+  id: BorgUpgradeRSFExecutive
+  name: cyborg executive RSF
+  description: Upgrades RSF to executive model (service only).
+  components:
+  - type: BorgUpgradeItem
+    upgradeType: RSFExecutive
+    moduleRequired: Service
+
+- type: entity
+  id: BorgUpgradeHoloStretcher
+  name: cyborg holo-stretcher
+  description: Replaces roller bed with holographic version (medical only).
+  components:
+  - type: BorgUpgradeItem
+    upgradeType: HoloStretcher
+    moduleRequired: Medical
+
+- type: entity
+  id: BorgUpgradeSyndicate
+  name: cyborg safety override
+  description: Unlocks weaponized modules. Dangerous.
+  components:
+  - type: BorgUpgradeItem
+    upgradeType: WeaponsUnlock

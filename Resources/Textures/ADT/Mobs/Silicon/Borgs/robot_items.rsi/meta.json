@@ -1,0 +1,63 @@
+{
+    "version": 1,
+    "license": null,
+    "copyright": null,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "meson"
+        },
+        {
+            "name": "thermal"
+        },
+        {
+            "name": "healthhud"
+        },
+        {
+            "name": "securityhud"
+        },
+        {
+            "name": "elecarm"
+        },
+        {
+            "name": "elecarm_active",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "charger_charge"
+        },
+        {
+            "name": "charger_draw"
+        },
+        {
+            "name": "connector"
+        },
+        {
+            "name": "lollipop"
+        },
+        {
+            "name": "hugmodule"
+        }
+    ]
+}

@@ -1,0 +1,121 @@
+# ╔══════════════════════════════════════════════════════╗
+# ║  WikiHampter's Cyborg Rework                        ║
+# ║  Author: WikiHampter | MIT License                   ║
+# ╚══════════════════════════════════════════════════════╝
+
+- type: entity
+  id: ADTBorgBase
+  name: cyborg
+  abstract: true
+  components:
+  - type: Borg
+  - type: BorgSlot
+    maxModules: 1
+    moduleWhitelist: []
+  - type: BorgBattery
+    cellContainerId: cell_slot
+    lowPowerThreshold: 0.1
+    drainPerSecond: 10
+  - type: BorgWires
+  - type: BorgLaw
+    lawSet: Crewsimov
+    lawSyncEnabled: true
+  - type: BorgConstruction
+  - type: BorgReboot
+    rebootDuration: 15
+  - type: BorgAiLink
+  - type: BorgInfo
+    containerId: cell_slot
+  - type: AiRemoteController
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+    - Common
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+  - type: UserInterface
+    interfaces:
+      enum.BorgInfoUiKey.BorgInfo:
+        type: BorgBoundUserInterface
+      enum.PdaUiKey.Key:
+        type: PdaBoundUserInterface
+  - type: Pda
+  - type: CartridgeLoader
+  - type: ContainerContainer
+  - type: ItemSlots
+  - type: Sprite
+    sprite: Mobs/Silicon/chassis.rsi
+    layers:
+    - state: robot
+    - state: robot_e_r
+      shader: unshaded
+      visible: false
+    - state: robot_l
+      shader: unshaded
+      visible: false
+  - type: Physics
+    bodyType: KinematicController
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MobState
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: Damageable
+    damageContainer: Silicon
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:GibBehavior
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-cyborg
+    interactFailureString: petting-failure-cyborg
+  - type: Body
+    prototype: Robot
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 1.5
+    damageRecovery:
+      types:
+        Asphyxiation: -1.5
+  - type: Temperature
+    heatDamageThreshold: 400
+    coldDamageThreshold: 200
+    currentTemperature: 310.15
+    specificHeat: 42
+    heatDamage:
+      types:
+        Heat: 1.5
+    coldDamage:
+      types:
+        Cold: 0.5
+  - type: TypingIndicator
+    proto: robot
+  - type: StandingState
+  - type: Thirst
+  - type: Hunger
+  - type: Perishable
+  - type: Icon
+    sprite: Mobs/Silicon/chassis.rsi
+    state: robot
+
+# Borg Law Sets — migrated to siliconLaw/siliconLawset

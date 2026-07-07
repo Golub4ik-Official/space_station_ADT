@@ -16,6 +16,26 @@ public abstract partial class SharedStationAiSystem
         SubscribeLocalEvent<DoorBoltComponent, StationAiBoltEvent>(OnAirlockBolt);
         SubscribeLocalEvent<AirlockComponent, StationAiEmergencyAccessEvent>(OnAirlockEmergencyAccess);
         SubscribeLocalEvent<ElectrifiedComponent, StationAiElectrifiedEvent>(OnElectrified);
+        // ADT-Tweak-Start: borg/AI open-close toggle (shutters, blast doors, airlocks)
+        SubscribeLocalEvent<DoorComponent, StationAiDoorToggleEvent>(OnDoorToggle);
+        // ADT-Tweak-End
+    }
+
+    /// <summary>
+    /// ADT-Tweak: toggles any door (airlock, windoor, shutter, blast door) open/closed.
+    /// Used by borgs and AI when interacting with doors that only support open/close.
+    /// </summary>
+    private void OnDoorToggle(EntityUid ent, DoorComponent component, StationAiDoorToggleEvent args)
+    {
+        if (!_doors.TryToggleDoor(ent, component, args.User))
+        {
+            ShowDeviceNotRespondingPopup(args.User);
+            _adminLogger.Add(LogType.Action,
+                $"{args.User} was unable to toggle {ent} using the door radial.");
+            return;
+        }
+
+        _adminLogger.Add(LogType.Action, $"{args.User} toggled {ent} using the door radial.");
     }
 
     /// <summary>
@@ -142,3 +162,11 @@ public sealed class StationAiElectrifiedEvent : BaseStationAiAction
     /// <summary> Marker, should door be electrified or no. </summary>
     public bool Electrified;
 }
+
+// ADT-Tweak-Start: borg/AI open-close toggle for any door type (shutters, blast doors, airlocks).
+/// <summary> Event for StationAI/borg attempt at toggling a door open or closed. </summary>
+[Serializable, NetSerializable]
+public sealed class StationAiDoorToggleEvent : BaseStationAiAction
+{
+}
+// ADT-Tweak-End

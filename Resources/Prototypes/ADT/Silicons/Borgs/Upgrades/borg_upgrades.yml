@@ -1,0 +1,173 @@
+# ╔══════════════════════════════════════════════════════╗
+# ║  WikiHampter's Cyborg Rework                        ║
+# ║  Author: WikiHampter | MIT License                   ║
+# ╚══════════════════════════════════════════════════════╝
+
+- type: entity
+  id: ADTBorgUpgradeReset
+  name: cyborg reset module
+  components:
+  - type: BorgUpgrade
+    upgradeType: Reset
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: cyborg_upgrade
+
+- type: entity
+  id: ADTBorgUpgradeRename
+  name: cyborg rename module
+  components:
+  - type: BorgUpgrade
+    upgradeType: Rename
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: cyborg_upgrade
+
+- type: entity
+  id: ADTBorgUpgradeRestart
+  name: cyborg restart module
+  components:
+  - type: BorgUpgrade
+    upgradeType: Restart
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: restart
+
+- type: entity
+  id: ADTBorgUpgradeThrusters
+  name: ion thrusters upgrade
+  components:
+  - type: BorgUpgrade
+    upgradeType: Thrusters
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: thrusters
+
+- type: entity
+  id: ADTBorgUpgradeSelfRepair
+  name: self-repair module
+  components:
+  - type: BorgUpgrade
+    upgradeType: SelfRepair
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: self_repair
+
+- type: entity
+  id: ADTBorgUpgradeVTEC
+  name: VTEC upgrade
+  components:
+  - type: BorgUpgrade
+    upgradeType: VTEC
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: vtec
+
+- type: entity
+  id: ADTBorgUpgradeDisablerCooler
+  name: disabler cooler module
+  components:
+  - type: BorgUpgrade
+    upgradeType: DisablerCooler
+    moduleRequired: Security
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: disabler_cooler
+
+- type: entity
+  id: ADTBorgUpgradeDiamondDrill
+  name: diamond drill upgrade
+  components:
+  - type: BorgUpgrade
+    upgradeType: DiamondDrill
+    moduleRequired: Miner
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: diamond_drill
+
+- type: entity
+  id: ADTBorgUpgradeSatchelOfHolding
+  name: satchel of holding upgrade
+  components:
+  - type: BorgUpgrade
+    upgradeType: SatchelOfHolding
+    moduleRequired: Miner
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: satchel_holding
+
+- type: entity
+  id: ADTBorgUpgradeLavaproof
+  name: lavaproof upgrade
+  components:
+  - type: BorgUpgrade
+    upgradeType: Lavaproof
+    moduleRequired: Miner
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: lavaproof
+
+- type: entity
+  id: ADTBorgUpgradeRCD
+  name: RCD upgrade
+  components:
+  - type: BorgUpgrade
+    upgradeType: RCD
+    moduleRequired: Engineering
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: rcd
+
+- type: entity
+  id: ADTBorgUpgradeRPED
+  name: RPED upgrade
+  components:
+  - type: BorgUpgrade
+    upgradeType: RPED
+    moduleRequired: Engineering
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: rped
+
+- type: entity
+  id: ADTBorgUpgradeFloorBuffer
+  name: floor buffer upgrade
+  components:
+  - type: BorgUpgrade
+    upgradeType: FloorBuffer
+    moduleRequired: Janitor
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: floor_buffer
+
+- type: entity
+  id: ADTBorgUpgradeBluespaceTrashBag
+  name: bluespace trash bag upgrade
+  components:
+  - type: BorgUpgrade
+    upgradeType: BluespaceTrashBag
+    moduleRequired: Janitor
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: bluespace_bag
+
+- type: entity
+  id: ADTBorgUpgradeRSFExecutive
+  name: RSF executive upgrade
+  components:
+  - type: BorgUpgrade
+    upgradeType: RSFExecutive
+    moduleRequired: Service
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: rsf_executive
+
+- type: entity
+  id: ADTBorgUpgradeWeaponsUnlock
+  name: weapons unlock module
+  components:
+  - type: BorgUpgrade
+    upgradeType: WeaponsUnlock
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: weapons_unlock

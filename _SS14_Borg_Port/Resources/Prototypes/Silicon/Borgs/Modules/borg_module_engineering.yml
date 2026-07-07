@@ -1,0 +1,30 @@
+# Engineering module definition
+- type: entity
+  parent: BorgModuleBase
+  id: BorgModuleEngineering
+  name: engineering module
+  components:
+  - type: BorgModule
+    moduleType: Engineering
+    items:
+    - Welder
+    - Wrench
+    - Crowbar
+    - Screwdriver
+    - Wirecutters
+    - Multitool
+    - RPD
+    - GripperEngineering
+    emagItems:
+    - RCD
+    radioChannels:
+    - Engineering
+    languages:
+    - GalacticCommon
+    - SolCommon
+    actions:
+    - EngineeringScanner
+    - Magpulse
+    armorValues:
+      brute: 30
+      burn: 30

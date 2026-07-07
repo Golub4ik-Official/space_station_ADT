@@ -69,6 +69,8 @@
     interfaces:
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
+      enum.AiUi.Key:          # ADT-Tweak: borg/AI door-control radial on shutters/blast doors
+        type: StationAiBoundUserInterface
   - type: Airtight
 ###  - type: RadiationBlocker #ADT
 ###    resistance: 2 #ADT

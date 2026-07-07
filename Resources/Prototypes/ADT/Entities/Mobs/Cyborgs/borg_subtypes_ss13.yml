@@ -1,0 +1,341 @@
+# SS13 DMI Converted Borg Chassis
+# Auto-generated from SS13 robots.dmi
+- type: entity
+  id: ADTSs13StandardChassis
+  parent: BorgChassisGeneric
+  name: Standard Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: generic
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_standard
+
+- type: entity
+  id: ADTSs13StandardSecurityChassis
+  parent: ADTBorgChassisSec
+  name: Standard Security Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: security
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_standard_security
+
+- type: entity
+  id: ADTSs13StandardMedicalChassis
+  parent: BorgChassisMedical
+  name: Standard Medical Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: medical
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_standard_medical
+
+- type: entity
+  id: ADTSs13StandardEngineeringChassis
+  parent: BorgChassisEngineer
+  name: Standard Engineering Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: engineering
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_standard_engineering
+
+- type: entity
+  id: ADTSs13StandardMiningChassis
+  parent: BorgChassisMining
+  name: Standard Mining Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: mining
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_standard_mining
+
+- type: entity
+  id: ADTSs13StandardJanitorChassis
+  parent: BorgChassisJanitor
+  name: Standard Janitor Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: janitor
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_standard_janitor
+
+- type: entity
+  id: ADTSs13StandardServiceChassis
+  parent: BorgChassisService
+  name: Standard Service Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: service
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_standard_service
+
+- type: entity
+  id: ADTSs13NobleChassis
+  parent: BorgChassisGeneric
+  name: Noble Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: generic
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_noble
+
+- type: entity
+  id: ADTSs13NobleSecurityChassis
+  parent: ADTBorgChassisSec
+  name: Noble Security Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: security
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_noble_security
+
+- type: entity
+  id: ADTSs13NobleMedicalChassis
+  parent: BorgChassisMedical
+  name: Noble Medical Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: medical
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_noble_medical
+
+- type: entity
+  id: ADTSs13NobleEngineeringChassis
+  parent: BorgChassisEngineer
+  name: Noble Engineering Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: engineering
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_noble_engineering
+
+- type: entity
+  id: ADTSs13NobleMiningChassis
+  parent: BorgChassisMining
+  name: Noble Mining Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: mining
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_noble_mining
+
+- type: entity
+  id: ADTSs13NobleJanitorChassis
+  parent: BorgChassisJanitor
+  name: Noble Janitor Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: janitor
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_noble_janitor
+
+- type: entity
+  id: ADTSs13NobleServiceChassis
+  parent: BorgChassisService
+  name: Noble Service Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: service
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_noble_service
+
+- type: entity
+  id: ADTSs13CricketSecurityChassis
+  parent: ADTBorgChassisSec
+  name: Cricket Security Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: security
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_cricket_security
+
+- type: entity
+  id: ADTSs13CricketMedicalChassis
+  parent: BorgChassisMedical
+  name: Cricket Medical Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: medical
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_cricket_medical
+
+- type: entity
+  id: ADTSs13CricketEngineeringChassis
+  parent: BorgChassisEngineer
+  name: Cricket Engineering Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: engineering
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_cricket_engineering
+
+- type: entity
+  id: ADTSs13CricketMiningChassis
+  parent: BorgChassisMining
+  name: Cricket Mining Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: mining
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_cricket_mining
+
+- type: entity
+  id: ADTSs13CricketJanitorChassis
+  parent: BorgChassisJanitor
+  name: Cricket Janitor Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: janitor
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_cricket_janitor
+
+- type: entity
+  id: ADTSs13CricketServiceChassis
+  parent: BorgChassisService
+  name: Cricket Service Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: service
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_cricket_service
+
+- type: entity
+  id: ADTSs13RoverEngineeringChassis
+  parent: BorgChassisEngineer
+  name: Rover Engineering Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: engineering
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_rover_engineering
+
+- type: entity
+  id: ADTSs13RoverJanitorChassis
+  parent: BorgChassisJanitor
+  name: Rover Janitor Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: janitor
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_rover_janitor
+
+- type: entity
+  id: ADTSs13RoverMedicalChassis
+  parent: BorgChassisMedical
+  name: Rover Medical Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: medical
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_rover_medical
+
+- type: entity
+  id: ADTSs13RoverServiceChassis
+  parent: BorgChassisService
+  name: Rover Service Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: service
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_rover_service
+
+- type: entity
+  id: ADTSs13BloodhoundChassis
+  parent: ADTBorgChassisSec
+  name: Bloodhound Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: security
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_bloodhound
+
+- type: entity
+  id: ADTSs13DroidChassis
+  parent: BorgChassisGeneric
+  name: Droid Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: generic
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_droid
+
+- type: entity
+  id: ADTSs13DroidMedicalChassis
+  parent: BorgChassisMedical
+  name: Droid Medical Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: medical
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_droid_medical
+
+- type: entity
+  id: ADTSs13DroidMiningChassis
+  parent: BorgChassisMining
+  name: Droid Mining Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: mining
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_droid_mining
+
+- type: entity
+  id: ADTSs13HeavySecChassis
+  parent: ADTBorgChassisSec
+  name: Heavy Security Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: security
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_heavy_sec
+
+- type: entity
+  id: ADTSs13QualifiedDoctorDmiChassis
+  parent: BorgChassisMedical
+  name: Qualified Doctor Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: medical
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_qualified_doctor_dmi
+
+- type: entity
+  id: ADTSs13SquatMinerChassis
+  parent: BorgChassisMining
+  name: Squat Miner Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: mining
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_squat_miner
+
+- type: entity
+  id: ADTSs13RepairbotChassis
+  parent: BorgChassisGeneric
+  name: Repairbot Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: generic
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_repairbot
+
+- type: entity
+  id: ADTSs13XenoborgChassis
+  parent: BorgChassisGeneric
+  name: Xenoborg Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: generic
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_xenoborg
+
+- type: entity
+  id: ADTSs13LandmateChassis
+  parent: BorgChassisEngineer
+  name: Landmate Cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: engineering
+  - type: BorgSwitchableSubtype
+    borgSubtype: ss13_landmate

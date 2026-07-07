@@ -1,0 +1,74 @@
+# Syndicate cyborgs
+- type: entity
+  parent: BorgBase
+  id: BorgSyndicate
+  name: syndicate assault cyborg
+  description: A deadly cyborg under syndicate control.
+  components:
+  - type: BorgModule
+    moduleType: Syndicate
+  - type: BorgLaw
+    lawSet: SyndicateOverride
+    isSyndicateOverride: true
+  - type: BorgAI
+    lawSyncEnabled: false
+  - type: BorgUpgrade
+    weaponsUnlocked: true
+  - type: BorgVisualizer
+    moduleSprite: "Silicon/Borgs/Sprites/borg_syndicate.rsi"
+
+- type: entity
+  parent: BorgBase
+  id: BorgSyndicateMedical
+  name: syndicate medical cyborg
+  components:
+  - type: BorgModule
+    moduleType: SyndicateMedical
+  - type: BorgLaw
+    lawSet: SyndicateOverride
+    isSyndicateOverride: true
+  - type: BorgAI
+    lawSyncEnabled: false
+  - type: BorgVisualizer
+    moduleSprite: "Silicon/Borgs/Sprites/borg_syndicate.rsi"
+
+- type: entity
+  parent: BorgBase
+  id: BorgSyndicateSaboteur
+  name: syndicate saboteur cyborg
+  components:
+  - type: BorgModule
+    moduleType: SyndicateSaboteur
+  - type: BorgLaw
+    lawSet: SyndicateOverride
+    isSyndicateOverride: true
+  - type: BorgAI
+    lawSyncEnabled: false
+  - type: BorgUpgrade
+    weaponsUnlocked: true
+  - type: BorgVisualizer
+    moduleSprite: "Silicon/Borgs/Sprites/borg_syndicate.rsi"
+
+# Combat cyborg (Gamma)
+- type: entity
+  parent: BorgBase
+  id: BorgCombat
+  name: combat cyborg
+  description: A high-grade combat cyborg.
+  components:
+  - type: BorgModule
+    moduleType: Combat
+  - type: BorgVisualizer
+    moduleSprite: "Silicon/Borgs/Sprites/borg_combat.rsi"
+
+# Destroyer (Admin)
+- type: entity
+  parent: BorgBase
+  id: BorgDestroyer
+  name: destroyer cyborg
+  description: An absolutely devastating war machine.
+  components:
+  - type: BorgModule
+    moduleType: Destroyer
+  - type: BorgVisualizer
+    moduleSprite: "Silicon/Borgs/Sprites/borg_destroyer.rsi"

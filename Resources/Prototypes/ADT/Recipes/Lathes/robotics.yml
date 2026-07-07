@@ -390,3 +390,59 @@
     Gold: 100
     Plasma: 50
     Cloth: 500
+
+# Borg component parts
+- type: latheRecipe
+  id: ADTBorgPartArmour
+  result: ADTBorgPartArmour
+  completetime: 3
+  materials:
+    Steel: 1500
+    Plastic: 500
+    Silver: 200
+
+- type: latheRecipe
+  id: ADTBorgPartActuator
+  result: ADTBorgPartActuator
+  completetime: 3
+  materials:
+    Steel: 800
+    Plastic: 300
+
+- type: latheRecipe
+  id: ADTBorgPartRadio
+  result: ADTBorgPartRadio
+  completetime: 2
+  materials:
+    Steel: 300
+    Plastic: 200
+    Glass: 200
+    Gold: 50
+
+- type: latheRecipe
+  id: ADTBorgPartBinary
+  result: ADTBorgPartBinary
+  completetime: 2
+  materials:
+    Steel: 200
+    Plastic: 200
+    Gold: 100
+    Silver: 100
+
+- type: latheRecipe
+  id: ADTBorgPartCamera
+  result: ADTBorgPartCamera
+  completetime: 2
+  materials:
+    Steel: 300
+    Plastic: 200
+    Glass: 300
+
+- type: latheRecipe
+  id: ADTBorgPartDiagnostics
+  result: ADTBorgPartDiagnostics
+  completetime: 2
+  materials:
+    Steel: 200
+    Plastic: 300
+    Glass: 100

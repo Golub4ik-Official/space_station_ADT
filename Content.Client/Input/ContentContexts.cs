@@ -95,6 +95,12 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.OfferItem); // ADT-Tweak
             human.AddFunction(ContentKeyFunctions.PickupHumans); // ADT-Tweak
             human.AddFunction(ContentKeyFunctions.TogglePosing); // ADT-Tweak
+            // ADT-Tweak-Start: borg door-control keybinds (WikiHampter's Cyborg Rework)
+            human.AddFunction(ContentKeyFunctions.ADTBorgBoltDoor);
+            human.AddFunction(ContentKeyFunctions.ADTBorgElectrifyDoor);
+            human.AddFunction(ContentKeyFunctions.ADTBorgEmergencyDoor);
+            human.AddFunction(ContentKeyFunctions.ADTBorgToggleDoor);
+            // ADT-Tweak-End
 
             // actions should be common (for ghosts, mobs, etc)
             common.AddFunction(ContentKeyFunctions.OpenActionsMenu);

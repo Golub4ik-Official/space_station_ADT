@@ -143,5 +143,12 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction MappingCancelEraseDecal = "MappingCancelEraseDecal";
         public static readonly BoundKeyFunction MappingOpenContextMenu = "MappingOpenContextMenu";
         public static readonly BoundKeyFunction PickupHumans = "PickupHumans"; // ADT-Tweak
+
+        // ADT-Tweak-Start: borg door-control keybinds (WikiHampter's Cyborg Rework)
+        public static readonly BoundKeyFunction ADTBorgBoltDoor = "ADTBorgBoltDoor";
+        public static readonly BoundKeyFunction ADTBorgElectrifyDoor = "ADTBorgElectrifyDoor";
+        public static readonly BoundKeyFunction ADTBorgEmergencyDoor = "ADTBorgEmergencyDoor";
+        public static readonly BoundKeyFunction ADTBorgToggleDoor = "ADTBorgToggleDoor";
+        // ADT-Tweak-End
     }
 }

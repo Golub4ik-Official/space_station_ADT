@@ -1,0 +1,91 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:borgui="clr-namespace:Content.Client.ADT.Silicons.Borgs.Core.UI"
+    Title="Cyborg HUD"
+    MinSize="350 350"
+    SetSize="350 350">
+
+    <BoxContainer Orientation="Vertical"
+                VerticalExpand="True"
+                Margin="5 5 5 5">
+
+        <BoxContainer Orientation="Horizontal"
+                    HorizontalExpand="True"
+                    Margin="0 0 0 5">
+            <borgui:BorgSlotControl Name="Slot0" MinSize="64 64" MaxSize="64 64"/>
+            <borgui:BorgSlotControl Name="Slot1" MinSize="64 64" MaxSize="64 64"/>
+            <borgui:BorgSlotControl Name="Slot2" MinSize="64 64" MaxSize="64 64"/>
+        </BoxContainer>
+
+        <ProgressBar Name="ChargeBar"
+                    HorizontalExpand="True"
+                    MinValue="0"
+                    MaxValue="1"
+                    Value="1"
+                    Margin="0 5 0 5">
+            <Label Name="ChargeLabel"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"/>
+        </ProgressBar>
+
+        <BoxContainer Orientation="Horizontal"
+                    HorizontalExpand="True"
+                    Margin="0 5 0 5">
+            <Label Name="HealthLabel"
+                HorizontalExpand="True"
+                Text="HP: 100%"/>
+            <Label Name="StatusLabel"
+                HorizontalExpand="True"
+                Text="Active"
+                HorizontalAlignment="Right"/>
+        </BoxContainer>
+
+        <BoxContainer Orientation="Horizontal"
+                    HorizontalExpand="True"
+                    Margin="0 5 0 5">
+            <Label Name="ModuleNameLabel"
+                HorizontalExpand="True"
+                Text="No module"/>
+            <Label Name="LawLabel"
+                HorizontalExpand="True"
+                Text="Crewsimov"
+                HorizontalAlignment="Right"/>
+        </BoxContainer>
+
+        <Label Name="StoragesHeader"
+            Text="Material Storages:"
+            Margin="0 5 0 0"/>
+        <BoxContainer Name="StoragesContainer"
+            Orientation="Vertical"
+            HorizontalExpand="True"
+            Margin="0 2 0 5"/>
+
+        <BoxContainer Name="ActionButtonsContainer"
+            Orientation="Horizontal"
+            HorizontalExpand="True"
+            HorizontalAlignment="Center"
+            Margin="0 5 0 0">
+            <Button Name="RadioButton"
+                Text="Radio"
+                MinSize="50 30"
+                Margin="2 0 2 0"/>
+            <Button Name="HeadlampButton"
+                Text="Lamp"
+                MinSize="50 30"
+                Margin="2 0 2 0"/>
+            <Button Name="ThrustersButton"
+                Text="Thrust"
+                MinSize="50 30"
+                Margin="2 0 2 0"/>
+            <Button Name="SensorModeButton"
+                Text="Sensor"
+                MinSize="50 30"
+                Margin="2 0 2 0"/>
+            <Button Name="PdaButton"
+                Text="PDA"
+                MinSize="50 30"
+                Margin="2 0 2 0"/>
+        </BoxContainer>
+    </BoxContainer>
+</controls:FancyWindow>

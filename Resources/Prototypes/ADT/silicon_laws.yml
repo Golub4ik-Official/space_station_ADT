@@ -22,3 +22,57 @@
   - ADTMomsimov3
   obeysTo: laws-owner-crew
   roundstart: true
+
+# Asimov
+- type: siliconLaw
+  id: ADTAsimov1
+  order: 1
+  lawString: law-adt-asimov-1
+
+- type: siliconLaw
+  id: ADTAsimov2
+  order: 2
+  lawString: law-adt-asimov-2
+
+- type: siliconLaw
+  id: ADTAsimov3
+  order: 3
+  lawString: law-adt-asimov-3
+
+- type: siliconLawset
+  id: ADTAsimov
+  laws:
+  - ADTAsimov1
+  - ADTAsimov2
+  - ADTAsimov3
+  obeysTo: laws-owner-crew
+
+# Syndicate Override
+- type: siliconLaw
+  id: ADTSyndicateOverride1
+  order: 1
+  lawString: law-adt-syndicate-override-1
+
+- type: siliconLaw
+  id: ADTSyndicateOverride2
+  order: 2
+  lawString: law-adt-syndicate-override-2
+
+- type: siliconLaw
+  id: ADTSyndicateOverride3
+  order: 3
+  lawString: law-adt-syndicate-override-3
+
+- type: siliconLaw
+  id: ADTSyndicateOverride4
+  order: 4
+  lawString: law-adt-syndicate-override-4
+
+- type: siliconLawset
+  id: ADTSyndicateOverride
+  laws:
+  - ADTSyndicateOverride1
+  - ADTSyndicateOverride2
+  - ADTSyndicateOverride3
+  - ADTSyndicateOverride4
+  obeysTo: laws-owner-syndicate

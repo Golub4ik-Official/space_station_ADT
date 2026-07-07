@@ -1,0 +1,40 @@
+- type: entity
+  parent: BorgModuleBase
+  id: BorgModuleSyndicate
+  name: syndicate assault module
+  components:
+  - type: BorgModule
+    moduleType: Syndicate
+    items:
+    - EnergySword
+    - LMG
+    - GrenadeLauncher
+    - Pinpointer
+
+- type: entity
+  parent: BorgModuleBase
+  id: BorgModuleSyndicateMedical
+  name: syndicate medical module
+  components:
+  - type: BorgModule
+    moduleType: SyndicateMedical
+    items:
+    - EnergySaw
+    - SyndicateHypospray
+    - Medbeam
+    - Defibrillator
+
+- type: entity
+  parent: BorgModuleBase
+  id: BorgModuleSyndicateSaboteur
+  name: syndicate saboteur module
+  components:
+  - type: BorgModule
+    moduleType: SyndicateSaboteur
+    items:
+    - RCD
+    - ChameleonProjector
+    - Crowbar
+    - Multitool
+    - EnergySword
+    - MailTagger

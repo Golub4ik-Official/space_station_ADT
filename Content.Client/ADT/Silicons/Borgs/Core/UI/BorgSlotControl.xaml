@@ -1,0 +1,16 @@
+<PanelContainer xmlns="https://spacestation14.io"
+                MinSize="64 64"
+                MaxSize="64 64"
+                Margin="2 2 2 2"
+                Name="SlotPanel">
+    <BoxContainer Orientation="Vertical"
+                HorizontalExpand="True"
+                VerticalExpand="True"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+        <SpriteView Name="SlotSprite"
+                    Scale="2 2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"/>
+    </BoxContainer>
+</PanelContainer>

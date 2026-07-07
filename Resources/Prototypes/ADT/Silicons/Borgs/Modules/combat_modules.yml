@@ -1,0 +1,147 @@
+# ╔══════════════════════════════════════════════════════╗
+# ║  WikiHampter's Cyborg Rework                        ║
+# ║  Author: WikiHampter | MIT License                   ║
+# ╚══════════════════════════════════════════════════════╝
+
+- type: entity
+  id: ADTBorgModuleCombat
+  name: Combat Module
+  components:
+  - type: ADTBorgModule
+    moduleType: Combat
+    items:
+    - Stunbaton
+    - WeaponDisabler
+    - Handcuffs
+    emagItems:
+    - ADTWeaponLaserCarbineBorg
+    overrideItems:
+    - WeaponLightMachineGunL6
+    energyStorages: []
+    radioChannels:
+    - Security
+    innateActions: []
+    armor:
+      brute: 50
+      burn: 30
+    languages:
+    - GalacticCommon
+
+- type: entity
+  id: ADTBorgModuleDestroyer
+  name: Destroyer Module
+  components:
+  - type: ADTBorgModule
+    moduleType: Destroyer
+    items:
+    - Stunbaton
+    - WeaponDisabler
+    - Handcuffs
+    emagItems:
+    - WeaponLaserCannon
+    overrideItems:
+    - WeaponPulseRifle
+    energyStorages: []
+    radioChannels:
+    - Security
+    - Science
+    innateActions: []
+    armor:
+      brute: 80
+      burn: 50
+    languages:
+    - GalacticCommon
+
+- type: entity
+  id: ADTBorgModuleHunter
+  name: Hunter Module
+  components:
+  - type: ADTBorgModule
+    moduleType: Hunter
+    items:
+    - EnergyDagger
+    - Flash
+    emagItems:
+    - EnergySword
+    energyStorages: []
+    radioChannels:
+    - Science
+    innateActions: []
+    armor:
+      brute: 40
+      burn: 30
+    languages:
+    - GalacticCommon
+
+- type: entity
+  id: ADTBorgModuleSyndicateAssault
+  name: Syndicate Assault Module
+  components:
+  - type: ADTBorgModule
+    moduleType: Syndicate
+    items:
+    - WeaponLightMachineGunL6
+    - EnergySword
+    - GrenadeFrag
+    emagItems:
+    - WeaponPulseRifle
+    - EnergySword
+    energyStorages: []
+    radioChannels:
+    - Syndicate
+    innateActions: []
+    armor:
+      brute: 60
+      burn: 40
+    languages:
+    - GalacticCommon
+
+- type: entity
+  id: ADTBorgModuleSyndicateMedical
+  name: Syndicate Medical Module
+  components:
+  - type: ADTBorgModule
+    moduleType: Syndicate
+    items:
+    - EnergySword
+    - Hypospray
+    - BorgHypo
+    emagItems:
+    - EnergySword
+    energyStorages: []
+    radioChannels:
+    - Syndicate
+    innateActions: []
+    armor:
+      brute: 30
+      burn: 30
+    languages:
+    - GalacticCommon
+
+- type: entity
+  id: ADTBorgModuleSyndicateSaboteur
+  name: Syndicate Saboteur Module
+  components:
+  - type: ADTBorgModule
+    moduleType: Syndicate
+    items:
+    - ChameleonProjector
+    - RCD
+    - EnergySword
+    emagItems:
+    - WeaponPulsePistol
+    energyStorages:
+    - name: Metal
+      maxAmount: 100
+      rechargeRate: 2
+    - name: Glass
+      maxAmount: 100
+      rechargeRate: 2
+    radioChannels:
+    - Syndicate
+    innateActions: []
+    armor:
+      brute: 50
+      burn: 50
+    languages:
+    - GalacticCommon

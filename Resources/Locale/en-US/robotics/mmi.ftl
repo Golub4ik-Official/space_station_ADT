@@ -1,15 +1,17 @@
-positronic-brain-installed = Neural activity detected.
-positronic-brain-off = No neural activity detected.
-positronic-brain-still-searching = Synthetic neuron descrambling in progress...
-positronic-brain-searching = Beginning synthetic neuron descrambling...
+# Robotic Brain (the single manufactured brain type — ADT-Tweak: PositronicBrain removed)
+robotic-brain-installed = Neural activity detected.
+robotic-brain-off = No neural activity detected.
+robotic-brain-still-searching = Booting cybernetic matrix...
+robotic-brain-searching = Beginning cybernetic matrix boot sequence...
 
-positronic-brain-role-name = Positronic Brain
-positronic-brain-role-description = Serve the station crew.
+robotic-brain-role-name = Robotic Brain
+robotic-brain-role-description = Serve the station crew as a synthetic.
 
-positronic-brain-wipe-device-verb-text = Wipe Brain
-positronic-brain-wiped-device = The neural activity was terminated.
+robotic-brain-wipe-device-verb-text = Wipe Brain
+robotic-brain-wiped-device = The cybernetic matrix was terminated.
 
-positronic-brain-stop-searching-verb-text = Stop searching
-positronic-brain-stopped-searching = Neuron descrambling halted.
+robotic-brain-stop-searching-verb-text = Stop searching
+robotic-brain-stopped-searching = Cybernetic boot halted.
 
+# MMI (organic-brain variant) — kept shared slot label
 positronic-brain-slot-component-slot-name-brain = Brain

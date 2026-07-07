@@ -28,6 +28,19 @@
           - Handcuff
     - item: ADTtelescopicBaton
     - item: ADTBorgflash
+  - type: ADTBorgModule
+    moduleType: Security
+    items:
+    - ADTWeaponDisablerBorg
+    - Handcuffs
+    - ADTtelescopicBaton
+    - ADTBorgflash
+    radioChannels:
+    - Security
+    - Science
+    armor:
+      brute: 40
+      burn: 20
   - type: BorgModuleIcon
     icon: { sprite: "/Textures/Objects/Misc/zipties.rsi", state: cuff }
 
@@ -44,6 +57,19 @@
     hands:
     - item: Truncheon
     - item: ADTWeaponLaserCarbineBorg
+  - type: ADTBorgModule
+    moduleType: Security
+    items:
+    - Truncheon
+    - ADTWeaponLaserCarbineBorg
+    emagItems:
+    - ADTWeaponLaserCarbineBorg
+    radioChannels:
+    - Security
+    - Science
+    armor:
+      brute: 40
+      burn: 20
 
 - type: entity
   id: ADTBorgModuleRPD
@@ -61,6 +87,18 @@
     - item: GasAnalyzer
     - item: HolofanProjectorBorg
     - item: PowerDrill
+  - type: ADTBorgModule
+    moduleType: Engineering
+    items:
+    - ADTRPDRecharging
+    - GasAnalyzer
+    - HolofanProjectorBorg
+    - PowerDrill
+    radioChannels:
+    - Engineering
+    armor:
+      brute: 30
+      burn: 30
   - type: BorgModuleIcon
     icon: { sprite: ADT/Interface/Actions/actions_borg.rsi, state: rpd-module }
 
@@ -88,6 +126,19 @@
     - item: BorgHandheldGPSBasic
     - item: HandHeldMassScannerBorg
     - item: BorgOreBagOfHolding
+  - type: ADTBorgModule
+    moduleType: Miner
+    items:
+    - WeaponProtoKineticAccelerator
+    - WeaponGrapplingGun
+    - BorgHandheldGPSBasic
+    - HandHeldMassScannerBorg
+    - BorgOreBagOfHolding
+    radioChannels:
+    - Supply
+    armor:
+      brute: 20
+      burn: 30
   - type: BorgModuleIcon
     icon: { sprite: ADT/Interface/Actions/actions_borg.rsi, state: salvage-module }
 
@@ -108,6 +159,20 @@
     - item: ADTBorgDrinkGlass
     - item: ADTBorgDrinkGlass
     - item: ADTBorgDrinkGlass
+  - type: ADTBorgModule
+    moduleType: Medical
+    items:
+    - HandheldHealthAnalyzer
+    - Syringe
+    - Syringe
+    - ADTBorgDrinkGlass
+    - ADTBorgDrinkGlass
+    - ADTBorgDrinkGlass
+    radioChannels:
+    - Medical
+    armor:
+      brute: 10
+      burn: 10
 
 - type: entity
   id: ADTBorgModuleAdvancedChemical
@@ -125,6 +190,19 @@
     - item: BorgDropper
     - item: ChemistryEmptyVial
     - item: HandLabeler
+  - type: ADTBorgModule
+    moduleType: Medical
+    items:
+    - HandheldHealthAnalyzer
+    - BorgHypo
+    - BorgDropper
+    - ChemistryEmptyVial
+    - HandLabeler
+    radioChannels:
+    - Medical
+    armor:
+      brute: 10
+      burn: 10
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-chem-module }
 
@@ -145,3 +223,17 @@
     - item: HandheldStationMapUnpowered
     - item: WeaponGrapplingGun
     - item: DefibrillatorOneHandedUnpowered
+  - type: ADTBorgModule
+    moduleType: Medical
+    items:
+    - HandheldHealthAnalyzer
+    - BorgFireExtinguisher
+    - BorgHandheldGPSBasic
+    - HandheldStationMapUnpowered
+    - WeaponGrapplingGun
+    - DefibrillatorOneHandedUnpowered
+    radioChannels:
+    - Medical
+    armor:
+      brute: 10
+      burn: 10

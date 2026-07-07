@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Converted from SS13 robot_items.dmi. Original: tgstation.",
+  "states": [
+    {
+      "name": "meson"
+    },
+    {
+      "name": "thermal"
+    },
+    {
+      "name": "healthhud"
+    },
+    {
+      "name": "securityhud"
+    },
+    {
+      "name": "elecarm"
+    },
+    {
+      "name": "elecarm_active",
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "charger_charge"
+    },
+    {
+      "name": "charger_draw"
+    },
+    {
+      "name": "connector"
+    },
+    {
+      "name": "lollipop"
+    },
+    {
+      "name": "hugmodule"
+    }
+  ]
+}

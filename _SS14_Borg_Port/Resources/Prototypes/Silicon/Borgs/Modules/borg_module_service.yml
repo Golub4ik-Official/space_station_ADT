@@ -1,0 +1,22 @@
+- type: entity
+  parent: BorgModuleBase
+  id: BorgModuleService
+  name: service module
+  components:
+  - type: BorgModule
+    moduleType: Service
+    items:
+    - BoozeDispenser
+    - SodaDispenser
+    - RSF
+    - PianoSynth
+    - GripperService
+    - MultiPen
+    - FormPrinter
+    emagItems:
+    - RSFCounterfeit
+    radioChannels:
+    - Service
+    languages:
+    - GalacticCommon
+    - SolCommon

@@ -43,6 +43,13 @@
   - type: ShowElectrocutionHUD
   - type: StationAiVision
   # ADT-Tweak end
+  # ADT-Tweak: Borg gripper for picking up items
+  - type: BorgGripper
+    gripperType: Universal
+  # ADT-Tweak: Wire hacking UI
+  - type: Wires
+    boardName: borg-wires-board-name
+    layoutId: ADTBorgWireLayout
 
 - type: entity
   id: BorgChassisGeneric

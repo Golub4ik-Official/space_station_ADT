@@ -1,4 +1,5 @@
 using Content.Shared.ADT.Silicons.Borgs;
+using Content.Shared.ADT.Silicons.Borgs.Core.Components;
 using Robust.Server.GameObjects;
 using Content.Server.Actions;
 using Robust.Shared.Player;
@@ -18,9 +19,10 @@ public sealed partial class BorgInfoSystem : EntitySystem
     [Dependency] private readonly ActionsSystem _action = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly PowerCellSystem _powerCell = default!;
-    [Dependency] private readonly BorgSystem _borg = default!;
+    [Dependency] private readonly Content.Server.Silicons.Borgs.BorgSystem _borg = default!;
     [Dependency] private readonly IEntityManager _entity = default!;
     [Dependency] private readonly SharedBatterySystem _battery = default!;
+    [Dependency] private readonly Core.Systems.BorgSystem _borgRework = default!;
 
     public override void Initialize()
     {
@@ -96,7 +98,12 @@ public sealed partial class BorgInfoSystem : EntitySystem
         var chargePercent = 0f;
         var hasBattery = false;
 
-        if (_powerCell.TryGetBatteryFromSlot(uid, out var battery) && battery is { } batteryEntity)
+        if (TryComp<BorgBatteryComponent>(uid, out var borgBattery) && borgBattery.MaxCharge > 0)
+        {
+            chargePercent = borgBattery.Charge / borgBattery.MaxCharge;
+            hasBattery = true;
+        }
+        else if (_powerCell.TryGetBatteryFromSlot(uid, out var battery) && battery is { } batteryEntity)
         {
             var currentCharge = _battery.GetCharge(batteryEntity.Owner);
             chargePercent = currentCharge / batteryEntity.Comp.MaxCharge;
@@ -132,7 +139,11 @@ public sealed partial class BorgInfoSystem : EntitySystem
 
     private void OnPowerCellSlotEmpty(EntityUid uid, BorgInfoComponent component, ref PowerCellSlotEmptyEvent args)
     {
-        if (TryComp<BorgChassisComponent>(uid, out var chassis))
+        if (HasComp<BorgComponent>(uid))
+        {
+            _borgRework.SetActive(uid, false);
+        }
+        else if (TryComp<BorgChassisComponent>(uid, out var chassis))
         {
             _borg.SetActive((uid, chassis), false);
         }

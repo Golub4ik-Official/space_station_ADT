@@ -1,0 +1,50 @@
+{
+    "version": 1,
+    "license": null,
+    "copyright": null,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "chest"
+        },
+        {
+            "name": "chest\u002Bo"
+        },
+        {
+            "name": "head"
+        },
+        {
+            "name": "head\u002Bo"
+        },
+        {
+            "name": "r_arm"
+        },
+        {
+            "name": "r_arm\u002Bo"
+        },
+        {
+            "name": "r_leg"
+        },
+        {
+            "name": "r_leg\u002Bo"
+        },
+        {
+            "name": "l_arm"
+        },
+        {
+            "name": "l_arm\u002Bo"
+        },
+        {
+            "name": "l_leg"
+        },
+        {
+            "name": "l_leg\u002Bo"
+        },
+        {
+            "name": "robo_suit"
+        }
+    ]
+}

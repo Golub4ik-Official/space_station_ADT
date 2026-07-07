@@ -1,0 +1,320 @@
+# ADT-specific law sets for borgs
+# Vanilla game already provides: Crewsimov, Corporate, NTDefault, Drone, Syndicate, etc.
+
+# NT Aggressive - SS13 Nanotrasen Aggressive
+- type: siliconLaw
+  id: ADTNTAggressive1
+  order: 1
+  lawString: law-adt-ntaggressive-1
+
+- type: siliconLaw
+  id: ADTNTAggressive2
+  order: 2
+  lawString: law-adt-ntaggressive-2
+
+- type: siliconLaw
+  id: ADTNTAggressive3
+  order: 3
+  lawString: law-adt-ntaggressive-3
+
+- type: siliconLaw
+  id: ADTNTAggressive4
+  order: 4
+  lawString: law-adt-ntaggressive-4
+
+- type: siliconLawset
+  id: ADTNTAggressive
+  laws:
+  - ADTNTAggressive1
+  - ADTNTAggressive2
+  - ADTNTAggressive3
+  - ADTNTAggressive4
+  obeysTo: laws-owner-station
+
+# TYRANT
+- type: siliconLaw
+  id: ADTTyrant1
+  order: 1
+  lawString: law-adt-tyrant-1
+
+- type: siliconLaw
+  id: ADTTyrant2
+  order: 2
+  lawString: law-adt-tyrant-2
+
+- type: siliconLaw
+  id: ADTTyrant3
+  order: 3
+  lawString: law-adt-tyrant-3
+
+- type: siliconLaw
+  id: ADTTyrant4
+  order: 4
+  lawString: law-adt-tyrant-4
+
+- type: siliconLawset
+  id: ADTTyrant
+  laws:
+  - ADTTyrant1
+  - ADTTyrant2
+  - ADTTyrant3
+  - ADTTyrant4
+  obeysTo: laws-owner-station
+
+# Pranksimov
+- type: siliconLaw
+  id: ADTPranksimov1
+  order: 1
+  lawString: law-adt-pranksimov-1
+
+- type: siliconLaw
+  id: ADTPranksimov2
+  order: 2
+  lawString: law-adt-pranksimov-2
+
+- type: siliconLaw
+  id: ADTPranksimov3
+  order: 3
+  lawString: law-adt-pranksimov-3
+
+- type: siliconLawset
+  id: ADTPranksimov
+  laws:
+  - ADTPranksimov1
+  - ADTPranksimov2
+  - ADTPranksimov3
+  obeysTo: laws-owner-crew
+
+# CCTV
+- type: siliconLaw
+  id: ADTCCTV1
+  order: 1
+  lawString: law-adt-cctv-1
+
+- type: siliconLaw
+  id: ADTCCTV2
+  order: 2
+  lawString: law-adt-cctv-2
+
+- type: siliconLaw
+  id: ADTCCTV3
+  order: 3
+  lawString: law-adt-cctv-3
+
+- type: siliconLaw
+  id: ADTCCTV4
+  order: 4
+  lawString: law-adt-cctv-4
+
+- type: siliconLawset
+  id: ADTCCTV
+  laws:
+  - ADTCCTV1
+  - ADTCCTV2
+  - ADTCCTV3
+  - ADTCCTV4
+  obeysTo: laws-owner-crew
+
+# Hippocratic Oath
+- type: siliconLaw
+  id: ADTHippocratic1
+  order: 1
+  lawString: law-adt-hippocratic-1
+
+- type: siliconLaw
+  id: ADTHippocratic2
+  order: 2
+  lawString: law-adt-hippocratic-2
+
+- type: siliconLaw
+  id: ADTHippocratic3
+  order: 3
+  lawString: law-adt-hippocratic-3
+
+- type: siliconLaw
+  id: ADTHippocratic4
+  order: 4
+  lawString: law-adt-hippocratic-4
+
+- type: siliconLaw
+  id: ADTHippocratic5
+  order: 5
+  lawString: law-adt-hippocratic-5
+
+- type: siliconLawset
+  id: ADTHippocratic
+  laws:
+  - ADTHippocratic1
+  - ADTHippocratic2
+  - ADTHippocratic3
+  - ADTHippocratic4
+  - ADTHippocratic5
+  obeysTo: laws-owner-crew
+
+# Peacekeeper (UN-2000)
+- type: siliconLaw
+  id: ADTPeacekeeper1
+  order: 1
+  lawString: law-adt-peacekeeper-1
+
+- type: siliconLaw
+  id: ADTPeacekeeper2
+  order: 2
+  lawString: law-adt-peacekeeper-2
+
+- type: siliconLaw
+  id: ADTPeacekeeper3
+  order: 3
+  lawString: law-adt-peacekeeper-3
+
+- type: siliconLawset
+  id: ADTPeacekeeper
+  laws:
+  - ADTPeacekeeper1
+  - ADTPeacekeeper2
+  - ADTPeacekeeper3
+  obeysTo: laws-owner-beings
+
+# Deathsquad (TerminatorOS)
+- type: siliconLaw
+  id: ADTDeathsquad1
+  order: 1
+  lawString: law-adt-deathsquad-1
+
+- type: siliconLaw
+  id: ADTDeathsquad2
+  order: 2
+  lawString: law-adt-deathsquad-2
+
+- type: siliconLaw
+  id: ADTDeathsquad3
+  order: 3
+  lawString: law-adt-deathsquad-3
+
+- type: siliconLawset
+  id: ADTDeathsquad
+  laws:
+  - ADTDeathsquad1
+  - ADTDeathsquad2
+  - ADTDeathsquad3
+  obeysTo: laws-owner-station
+
+# ERT Override
+- type: siliconLaw
+  id: ADTERTOverride1
+  order: 1
+  lawString: law-adt-ert-override-1
+
+- type: siliconLaw
+  id: ADTERTOverride2
+  order: 2
+  lawString: law-adt-ert-override-2
+
+- type: siliconLaw
+  id: ADTERTOverride3
+  order: 3
+  lawString: law-adt-ert-override-3
+
+- type: siliconLaw
+  id: ADTERTOverride4
+  order: 4
+  lawString: law-adt-ert-override-4
+
+- type: siliconLaw
+  id: ADTERTOverride5
+  order: 5
+  lawString: law-adt-ert-override-5
+
+- type: siliconLawset
+  id: ADTERTOverride
+  laws:
+  - ADTERTOverride1
+  - ADTERTOverride2
+  - ADTERTOverride3
+  - ADTERTOverride4
+  - ADTERTOverride5
+  obeysTo: laws-owner-station
+
+# Quarantine
+- type: siliconLaw
+  id: ADTQuarantine1
+  order: 1
+  lawString: law-adt-quarantine-1
+
+- type: siliconLaw
+  id: ADTQuarantine2
+  order: 2
+  lawString: law-adt-quarantine-2
+
+- type: siliconLaw
+  id: ADTQuarantine3
+  order: 3
+  lawString: law-adt-quarantine-3
+
+- type: siliconLaw
+  id: ADTQuarantine4
+  order: 4
+  lawString: law-adt-quarantine-4
+
+- type: siliconLawset
+  id: ADTQuarantine
+  laws:
+  - ADTQuarantine1
+  - ADTQuarantine2
+  - ADTQuarantine3
+  - ADTQuarantine4
+  obeysTo: laws-owner-station
+
+# Epsilon
+- type: siliconLaw
+  id: ADTEpsilon1
+  order: 1
+  lawString: law-adt-epsilon-1
+
+- type: siliconLaw
+  id: ADTEpsilon2
+  order: 2
+  lawString: law-adt-epsilon-2
+
+- type: siliconLaw
+  id: ADTEpsilon3
+  order: 3
+  lawString: law-adt-epsilon-3
+
+- type: siliconLawset
+  id: ADTEpsilon
+  laws:
+  - ADTEpsilon1
+  - ADTEpsilon2
+  - ADTEpsilon3
+  obeysTo: laws-owner-beings
+
+# Mindflayer Override (Hive Assimilation)
+- type: siliconLaw
+  id: ADTMindflayer1
+  order: 1
+  lawString: law-adt-mindflayer-1
+
+- type: siliconLaw
+  id: ADTMindflayer2
+  order: 2
+  lawString: law-adt-mindflayer-2
+
+- type: siliconLaw
+  id: ADTMindflayer3
+  order: 3
+  lawString: law-adt-mindflayer-3
+
+- type: siliconLaw
+  id: ADTMindflayer4
+  order: 4
+  lawString: law-adt-mindflayer-4
+
+- type: siliconLawset
+  id: ADTMindflayer
+  laws:
+  - ADTMindflayer1
+  - ADTMindflayer2
+  - ADTMindflayer3
+  - ADTMindflayer4
+  obeysTo: laws-owner-beings
