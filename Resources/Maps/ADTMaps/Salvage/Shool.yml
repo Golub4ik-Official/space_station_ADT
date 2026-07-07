@@ -1354,7 +1354,6 @@ entities:
     - type: Transform
       pos: 19.5,12.5
       parent: 1
-# Распоряжение Darkiich: искусственные люди отключены
 #- proto: ADTHumanCubeBox
 #  entities:
 #  - uid: 491

@@ -1,5 +1,4 @@
-﻿# Распоряжение Darkiich: искусственные люди отключены
-#- type: entity
+﻿#- type: entity
 #  parent: BoxCardboard
 #  name: artificial human cube box
 #  id: ADTHumanCubeBox

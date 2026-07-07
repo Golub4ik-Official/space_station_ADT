@@ -42,7 +42,6 @@
     back:
     - Flash
     - ADTtelescopicBaton #ADT-CustomADTLoadoutStart
-    # Распоряжение Darkiich: искусственные люди отключены
     #- ADTHumanCubeWrapped #ADT-CustomADTLoadoutEnd
 
 - type: chameleonOutfit

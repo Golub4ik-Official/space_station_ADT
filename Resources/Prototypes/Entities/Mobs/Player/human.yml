@@ -110,7 +110,6 @@
     - Wizard
 
 #ADT Tweak Start
-# Распоряжение Darkiich: искусственные люди отключены
 #- type: entity
 #  parent: MobHuman
 #  id: MobArtificialHuman
