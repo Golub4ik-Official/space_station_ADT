@@ -29,7 +29,7 @@
     ears: ClothingHeadsetMedical
     eyes: ADTClothingEyesGlassesMedChem
   storage:
-    back:
+    back: []
     #- ADTHumanCubeWrapped #ADT-CustomADTLoadout
 
 - type: chameleonOutfit

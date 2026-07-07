@@ -51,7 +51,7 @@
     pocket1: WeaponRevolverDeckard
     pocket2: SpeedLoaderMagnum
   storage:
-    back:
+    back: []
     #- ADTHumanCubeWrapped #ADT-CustomADTLoadout
 
 - type: chameleonOutfit

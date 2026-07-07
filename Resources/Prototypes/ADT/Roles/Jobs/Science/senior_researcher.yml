@@ -23,7 +23,7 @@
     belt: ClothingBeltUtilityFilled
     pocket1: AnomalyLocatorEmpty
   storage:
-    back:
+    back: []
     #- ADTHumanCubeWrapped #ADT-CustomADTLoadout
 
 - type: chameleonOutfit
