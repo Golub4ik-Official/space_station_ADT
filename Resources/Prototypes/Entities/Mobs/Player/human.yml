@@ -110,8 +110,8 @@
     - Wizard
 
 #ADT Tweak Start
-#- type: entity
-#  parent: MobHuman
-#  id: MobArtificialHuman
-#  name: Artificial human
+- type: entity
+  parent: MobHuman
+  id: MobArtificialHuman
+  name: Artificial human
 #ADT Tweak End
