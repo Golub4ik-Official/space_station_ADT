@@ -46,7 +46,7 @@ public sealed class PaperSystem : EntitySystem
     private static readonly ProtoId<TagPrototype> WriteIgnoreStampsTag = "WriteIgnoreStamps";
     private static readonly ProtoId<TagPrototype> WriteTag = "Write"; // ADT-Tweak
     private static readonly ProtoId<TagPrototype> CrayonTag = "Crayon"; // ADT-Tweak: Chalkboard
-    private const string InGameYear = "2570"; // ADT-Tweak: Paper field tag
+    private const int TimeYearSpaceStationAdt = 544; // ADT-Tweak: Paper field tag
 
     private EntityQuery<PaperComponent> _paperQuery;
 
@@ -474,7 +474,8 @@ public sealed class PaperSystem : EntitySystem
 
         var roundTime = _gameTicker.RoundDuration();
         context.CurrentTime = $"{roundTime.Hours:D2}:{roundTime.Minutes:D2}:{roundTime.Seconds:D2}";
-        context.CurrentDate = $"{DateTime.UtcNow:dd.MM}.{InGameYear}";
+        var inGameTime = DateTime.UtcNow.AddYears(TimeYearSpaceStationAdt).AddHours(3);
+        context.CurrentDate = $"{inGameTime:dd.MM}.{inGameTime.Year}";
         context.CurrentDateTime = $"{context.CurrentTime} {context.CurrentDate}";
 
         var stationEnt = _station.GetOwningStation(user);
