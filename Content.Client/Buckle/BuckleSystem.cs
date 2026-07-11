@@ -3,6 +3,7 @@ using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Rotation;
+using Content.Shared.Tag;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 
@@ -14,6 +15,7 @@ internal sealed class BuckleSystem : SharedBuckleSystem
     [Dependency] private readonly IEyeManager _eye = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private readonly TagSystem _tagSystem = default!; // ADT-Tweak
 
     public override void Initialize()
     {
@@ -66,9 +68,13 @@ internal sealed class BuckleSystem : SharedBuckleSystem
             if (!TryComp<SpriteComponent>(buckledEntity, out var buckledSprite))
                 continue;
 
-            if (isNorth)
+            if (isNorth && _tagSystem.HasTag(uid, "BodyBag"))
             {
-                // This will only assign if empty, it won't get overwritten by new depth on multiple calls, which do happen easily
+                buckle.OriginalDrawDepth ??= buckledSprite.DrawDepth;
+                _sprite.SetDrawDepth((buckledEntity, buckledSprite), strapSprite.DrawDepth + 1); // ADT-Tweak
+            }
+            else if (isNorth)
+            {
                 buckle.OriginalDrawDepth ??= buckledSprite.DrawDepth;
                 _sprite.SetDrawDepth((buckledEntity, buckledSprite), strapSprite.DrawDepth - 1);
             }
@@ -81,7 +87,7 @@ internal sealed class BuckleSystem : SharedBuckleSystem
     }
 
     /// <summary>
-    /// Lower the draw depth of the buckled entity without needing for the strap entity to rotate/move.
+    /// Raise the draw depth of the buckled entity so it renders above the strap.
     /// Only do so when the entity is facing screen-local north
     /// </summary>
     private void OnBuckledEvent(Entity<BuckleComponent> ent, ref BuckledEvent args)
@@ -98,7 +104,10 @@ internal sealed class BuckleSystem : SharedBuckleSystem
             return;
 
         ent.Comp.OriginalDrawDepth ??= buckledSprite.DrawDepth;
-        _sprite.SetDrawDepth((ent.Owner, buckledSprite), strapSprite.DrawDepth - 1);
+        if (_tagSystem.HasTag(args.Strap, "BodyBag"))
+            _sprite.SetDrawDepth((ent.Owner, buckledSprite), strapSprite.DrawDepth + 1); // ADT-Tweak
+        else
+            _sprite.SetDrawDepth((ent.Owner, buckledSprite), strapSprite.DrawDepth - 1);
     }
 
     /// <summary>

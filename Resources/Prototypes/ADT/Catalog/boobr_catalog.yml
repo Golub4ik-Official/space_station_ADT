@@ -650,9 +650,29 @@
 - type: listing
   id: ADTBoberNightVision
   name: uplink-night-vision-name
-  description:  uplink-night-vision-desc
+  description: uplink-night-vision-desc
   productEntity: ClothingEyesNightVision
   cost:
     Productunit: 4
+  categories:
+  - ADTUplinkERTMisc
+
+- type: listing
+  id: ADTBoberBodyBagEnvironmentalNanotrasen
+  name: ent-BoxBodyBagEnvironmentalNanotrasen
+  description: ent-BoxBodyBagEnvironmentalNanotrasen.desc
+  productEntity: BoxBodyBagEnvironmentalNanotrasen
+  cost:
+    Productunit: 2
+  categories:
+  - ADTUplinkERTMisc
+
+- type: listing
+  id: ADTBoberHoloStretcherFolded
+  name: ent-HoloStretcherFolded
+  description: ent-HoloStretcherFolded.desc
+  productEntity: HoloStretcherFolded
+  cost:
+    Productunit: 2
   categories:
   - ADTUplinkERTMisc

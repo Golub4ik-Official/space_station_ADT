@@ -1,0 +1,9 @@
+body-bag-cinch-open-prevent = The bag is cinched shut! Uncinch it first.
+body-bag-cinch-verb-cinch = Cinch bag
+body-bag-cinch-verb-uncinch = Uncinch bag
+body-bag-cinch-success = You cinch the bag shut.
+body-bag-cinch-uncinch-success = You uncinch the bag.
+body-bag-cinch-examine-cinched = The bag is cinched shut.
+body-bag-cinch-verb-breakout = Break out
+body-bag-cinch-breakout-start = You start trying to break out of the bag...
+body-bag-cinch-breakout-success = You break out of the bag!

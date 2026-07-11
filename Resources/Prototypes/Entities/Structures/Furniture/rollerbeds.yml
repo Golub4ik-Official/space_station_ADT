@@ -7,10 +7,12 @@
     - type: Transform
       noRot: true
     - type: Item
-      size: Normal
+      size: Huge # ADT-Tweak
       heldPrefix: rollerbed
+    - type: RollerBedPullSlow # ADT-Tweak
     - type: Sprite
       sprite: Structures/Furniture/rollerbeds.rsi
+      drawdepth: DeadMobs # ADT-Tweak
       noRot: true
       layers:
       - state: rollerbed
@@ -26,6 +28,7 @@
       soundHit:
         collection: MetalThud
     - type: InteractionOutline
+    - type: BodyBagStretcher # ADT-Tweak
     - type: Physics
     - type: Fixtures
       fixtures:
@@ -64,6 +67,7 @@
       rotation: -90
       buckleOffset: "0,0.15"
       buckleOnInteractHand: False
+      buckleDoafterTime: 2 # ADT-Tweak
     - type: Appearance
     - type: GenericVisualizer
       visuals:
@@ -102,6 +106,7 @@
   - type: Item
     heldPrefix: cheap_rollerbed
   - type: Sprite
+    drawdepth: DeadMobs # ADT-Tweak
     layers:
     - state: cheap_rollerbed
       map: ["unfoldedLayer"]
@@ -131,6 +136,7 @@
   - type: Item
     heldPrefix: emergency_rollerbed
   - type: Sprite
+    drawdepth: DeadMobs # ADT-Tweak
     layers:
     - state: emergency_rollerbed
       map: ["unfoldedLayer"]

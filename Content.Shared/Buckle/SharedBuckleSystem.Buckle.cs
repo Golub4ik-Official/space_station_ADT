@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using Content.Shared.ADT.Medical.BodyBags; // ADT-Tweak
 using Content.Shared.Alert;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Cuffs.Components;
@@ -579,6 +580,11 @@ public abstract partial class SharedBuckleSystem
     {
         if (args.Target == null || args.Used == null)
             return;
+
+        // ADT-Tweak-Start: Always require doAfter progress bar for carts/stretchers
+        if (HasComp<BodyBagStretcherComponent>(args.Used.Value))
+            return;
+        // ADT-Tweak-End
 
         if (TryComp<CuffableComponent>(args.Target, out var targetCuffableComp) && targetCuffableComp.CuffedHandCount > 0
             || _mobState.IsIncapacitated(args.Target.Value))

@@ -1,0 +1,9 @@
+body-bag-cinch-open-prevent = Мешок затянут! Сначала ослабьте затяжку.
+body-bag-cinch-verb-cinch = Затянуть мешок
+body-bag-cinch-verb-uncinch = Ослабить мешок
+body-bag-cinch-success = Вы затягиваете мешок.
+body-bag-cinch-uncinch-success = Вы ослабляете мешок.
+body-bag-cinch-examine-cinched = Мешок затянут стяжками.
+body-bag-cinch-verb-breakout = Выбраться
+body-bag-cinch-breakout-start = Вы начинаете пытаться выбраться из мешка...
+body-bag-cinch-breakout-success = Вам удалось выбраться из мешка!

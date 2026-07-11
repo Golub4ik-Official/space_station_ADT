@@ -1,0 +1,8 @@
+- type: construction
+  id: BodyBagBox
+  name: construction-recipe-body-bag-box
+  graph: BodyBagBox
+  startNode: start
+  targetNode: bodybagbox
+  category: construction-category-storage
+  objectType: Item

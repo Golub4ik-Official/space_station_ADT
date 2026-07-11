@@ -1,0 +1,49 @@
+# Lost Crew Loot Tables
+# Items found on recovered crewmember bodies
+
+- type: entityTable
+  id: LostCrewLootTable
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      weight: 5
+      children:
+      - id: MedkitFilled
+      - id: MedkitBurnFilled
+      - id: MedkitToxinFilled
+      - id: MedkitOxygenFilled
+      - id: MedkitBruteFilled
+      - id: MedkitAdvancedFilled
+      - id: MedkitRadiationFilled
+    - !type:GroupSelector
+      weight: 4
+      children:
+      - id: PillCanisterTricordrazine
+      - id: PillCanisterDexalin
+      - id: PillCanisterBicaridine
+      - id: HandheldHealthAnalyzer
+    - !type:GroupSelector
+      weight: 2
+      children:
+      - id: Crowbar
+      - id: Wrench
+      - id: Screwdriver
+      - id: Wirecutter
+      - id: Multitool
+    - !type:GroupSelector
+      weight: 2
+      children:
+      - id: FoodDonkpocket
+      - id: DrinkWaterBottleFull
+      - id: DrinkColaCan
+    - !type:GroupSelector
+      weight: 1
+      children:
+      - id: ClothingEyesGlassesSunglasses
+      - id: Cigar
+      - id: Lighter
+    - !type:GroupSelector
+      weight: 1
+      children:
+      - id: CrayonBox
+

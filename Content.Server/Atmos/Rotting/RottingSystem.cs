@@ -1,4 +1,5 @@
 using Content.Server.Atmos.EntitySystems;
+using Content.Shared.ADT.Medical.BodyBags; // ADT-Tweak
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Rotting;
 using Content.Shared.Body.Events;
@@ -53,16 +54,25 @@ public sealed class RottingSystem : SharedRottingSystem
     /// TODO: hot temperatures increase rot?
     /// </summary>
     /// <returns></returns>
+    // ADT-Tweak-Start: refactored for body bag rot slow support
     private float GetRotRate(EntityUid uid)
     {
-        if (_container.TryGetContainingContainer((uid, null, null), out var container) &&
-            TryComp<ProRottingContainerComponent>(container.Owner, out var rotContainer))
+        var rate = 1f;
+
+        if (_container.TryGetContainingContainer((uid, null, null), out var container))
         {
-            return rotContainer.DecayModifier;
+            if (TryComp<ProRottingContainerComponent>(container.Owner, out var rotContainer))
+                rate = rotContainer.DecayModifier;
+
+            // ADT-Tweak-Start: Body bags slow down rotting
+            if (TryComp<BodyBagRotSlowComponent>(container.Owner, out var slow))
+                rate *= slow.DecayMultiplier;
+            // ADT-Tweak-End
         }
 
-        return 1f;
+        return rate;
     }
+    // ADT-Tweak-End
 
     public override void Update(float frameTime)
     {

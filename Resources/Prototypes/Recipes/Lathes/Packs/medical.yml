@@ -45,7 +45,7 @@
   - Defibrillator
   - HandheldHealthAnalyzer
   - DiseaseSwab
-  - BodyBag
+  # - BodyBag # ADT-Tweak: removed — moved to ADT lathe packs
   - WhiteCane
   - OffsetCane
   - OffsetCaneWood
@@ -57,6 +57,7 @@
   - RollerBedSpawnFolded
   - CheapRollerBedSpawnFolded
   - EmergencyRollerBedSpawnFolded
+  - HoloStretcher # ADT-Tweak
 
 - type: latheRecipePack
   id: MedicalClothingStatic
@@ -101,6 +102,7 @@
   - SyringeBluespace
   - ADTBlankMediPen # ADT-Tweak
   - ADTMiniSyringe # ADT-Tweak
+  - BodyBagBluespace # ADT-Tweak
   - AdvancedJetInjector
 
 - type: latheRecipePack

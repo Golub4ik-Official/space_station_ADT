@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: ADTLockerPathologistFilled
   suffix: Filled
   parent: ADTLockerPathologist
@@ -10,6 +10,7 @@
         - id: ClothingBackpackDuffelSurgeryFilled
         - id: BoxFolderBlack
         - id: Paper
+        - id: BoxBodyBag
         - id: BoxBodyBag
         - id: ClothingMaskSterile
         - id: ADTRubberStampPathologist
@@ -25,8 +26,8 @@
         children:
         - id: ClothingOuterCoatParamedicWB
         - id: ClothingHeadHatParamedicsoft
-        - id: ADTClothingHeadHatsParamedicBeret 
-        - id: ADTHighVoltageDefibrillator 
+        - id: ADTClothingHeadHatsParamedicBeret
+        - id: ADTHighVoltageDefibrillator
         - id: ClothingOuterWinterPara
         - id: ClothingUniformJumpsuitParamedic
         - id: ClothingUniformJumpskirtParamedic
@@ -38,3 +39,4 @@
         - id: MedkitFilled
           prob: 0.3
         - id: ADTBookSRPmed
+        - id: BoxBodyBagStasis

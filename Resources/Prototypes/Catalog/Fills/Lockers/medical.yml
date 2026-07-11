@@ -1,4 +1,4 @@
-﻿# Medical supply lockers
+# Medical supply lockers
 
 - type: entityTable
   id: LockerFillMedicine
@@ -132,6 +132,7 @@
     - id: ADTBloodPackTransfusionFull # ADT tweak: Blood IV
     - id: JetInjector
     - id: HandheldHealthAnalyzer
+    - id: BoxBodyBagStasis
     - id: BoxBodyBag
     - !type:GroupSelector
       children:

@@ -24,8 +24,13 @@ health-examinable-carbon-Piercing-75 = [color=#D3CA5B]{ CAPITALIZE(SUBJECT($targ
 health-examinable-carbon-Piercing-100 = [color=#D1C848]{ CAPITALIZE(POSS-ADJ($target)) } body is completely covered in massive, gaping holes.[/color]
 health-examinable-carbon-Piercing-200 = [color=#d6c800]{ CAPITALIZE(POSS-ADJ($target)) } body looks torn apart![/color]
 
+health-examinable-carbon-Asphyxiation-8 = [color=#7DBACE]{ CAPITALIZE(POSS-ADJ($target)) } breathing seems slightly strained.[/color]
+health-examinable-carbon-Asphyxiation-15 = [color=#7DBACE]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-BE($target) } short of breath.[/color]
 health-examinable-carbon-Asphyxiation-30 = [color=#7DBACE]{ CAPITALIZE(POSS-ADJ($target)) } lips are turning blue.[/color]
+health-examinable-carbon-Asphyxiation-50 = [color=#189FCC]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-BE($target) } struggling to breathe.[/color]
 health-examinable-carbon-Asphyxiation-75 = [color=#189FCC]{ CAPITALIZE(POSS-ADJ($target)) } face is turning blue.[/color]
+health-examinable-carbon-Asphyxiation-100 = [color=#189FCC]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-BE($target) } gasping for air![/color]
+health-examinable-carbon-Asphyxiation-200 = [color=#0B6F99]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-BE($target) } not breathing![/color]
 
 health-examinable-carbon-Heat-8 = [color=#C8917A]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } a superficial burn.[/color]
 health-examinable-carbon-Heat-15 = [color=#D38664]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } a few first-degree burns.[/color]

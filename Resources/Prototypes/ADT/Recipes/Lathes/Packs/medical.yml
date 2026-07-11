@@ -23,6 +23,9 @@
   - ADTMiniSyringe
   - ADTTourniquet
   - ADTPatchLepo
+  - BodyBagEnvironmental
+  - BodyBagPrisoner
+  - BodyBagBluespace
   
 - type: latheRecipePack
   id: ADTAdvancedMedical
@@ -48,6 +51,7 @@
   - ADTPatchCryo
   - CryostasisBeaker
   - SyringeCryostasis
+  - BodyBagStasis
 
 - type: latheRecipePack
   id: ADTThermoTech

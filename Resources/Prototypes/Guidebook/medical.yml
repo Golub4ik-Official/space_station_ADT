@@ -7,6 +7,8 @@
   - Chemist
   - Cloning
   - Cryogenics
+  - BodyBags # ADT-Tweak
+  - Stretchers # ADT-Tweak
 
 - type: guideEntry
   id: MedicalDoctor
@@ -50,3 +52,15 @@
   id: AdvancedBrute
   name: guide-entry-brute
   text: "/ServerInfo/Guidebook/Medical/AdvancedBrute.xml"
+
+# ADT-Tweak-Start: Body bags and stretchers guide entries
+- type: guideEntry
+  id: BodyBags
+  name: guide-entry-bodybags
+  text: "/ServerInfo/Guidebook/Medical/BodyBags.xml"
+
+- type: guideEntry
+  id: Stretchers
+  name: guide-entry-stretchers
+  text: "/ServerInfo/Guidebook/Medical/Stretchers.xml"
+# ADT-Tweak-End

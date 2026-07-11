@@ -118,3 +118,47 @@
   completetime: 2
   materials:
     Plastic: 50
+
+- type: latheRecipe
+  id: HoloStretcher
+  result: HoloStretcherFolded
+  completetime: 4
+  materials:
+    Steel: 1000
+    Silver: 500
+    Glass: 500
+    Diamond: 200
+
+# New body bag types
+- type: latheRecipe
+  id: BodyBagBluespace
+  result: BodyBagBluespaceFolded
+  completetime: 4
+  materials:
+    Plastic: 300
+    Silver: 100
+    ADTBScrystal: 300
+
+- type: latheRecipe
+  id: BodyBagEnvironmental
+  result: BodyBagEnvironmentalFolded
+  completetime: 3
+  materials:
+    Plastic: 500
+    Steel: 200
+
+- type: latheRecipe
+  id: BodyBagStasis
+  result: BodyBagStasisFolded
+  completetime: 4
+  materials:
+    Plastic: 500
+    Silver: 200
+
+- type: latheRecipe
+  id: BodyBagPrisoner
+  result: BodyBagPrisonerFolded
+  completetime: 4
+  materials:
+    Plastic: 500
+    Steel: 300

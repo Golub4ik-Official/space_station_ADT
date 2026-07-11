@@ -301,8 +301,16 @@ namespace Content.Server.Atmos.EntitySystems
             }
             else
             {
+                var wasOnFire = flammable.OnFire;
                 flammable.OnFire |= ignite;
                 UpdateAppearance(uid, flammable);
+                // ADT-Tweak-Start: raise OnFireChangedEvent in SetFireStacks (body bag protection)
+                if (!wasOnFire && flammable.OnFire)
+                {
+                    var ev = new OnFireChangedEvent(true);
+                    RaiseLocalEvent(uid, ref ev);
+                }
+                // ADT-Tweak-End
             }
         }
 
@@ -343,6 +351,16 @@ namespace Content.Server.Atmos.EntitySystems
 
             if (flammable.FireStacks > 0 && !flammable.OnFire)
             {
+                // ADT-Tweak-Start: check fire protection before igniting (body bag fire immunity)
+                var protectionEv = new GetFireProtectionEvent();
+                RaiseLocalEvent(uid, ref protectionEv);
+                if (protectionEv.Multiplier <= 0f)
+                {
+                    flammable.FireStacks = 0;
+                    return;
+                }
+                // ADT-Tweak-End
+
                 if (ignitionSourceUser != null)
                     _adminLogger.Add(LogType.Flammable, $"{ToPrettyString(uid):target} set on fire by {ToPrettyString(ignitionSourceUser.Value):actor} with {ToPrettyString(ignitionSource):tool}");
                 else

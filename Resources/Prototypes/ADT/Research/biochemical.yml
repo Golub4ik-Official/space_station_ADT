@@ -29,6 +29,8 @@
   - ADTAdvancedMedicalBedCircuitboard
   - ADTPatchLepo
   - MedicalScannerMachineCircuitboard
+  - BodyBagEnvironmental
+  - BodyBagPrisoner
   position: 3,-1
   requiredTech:
   - ADTIndustrialMedicine
@@ -112,9 +114,25 @@
   - CryostasisBeaker
   - SyringeCryostasis
   - ADTPatchCryo
+  - BodyBagStasis
   requiredTech:
   - ADTAdvancedMedicalCare
   position: 2,-2
+
+- type: technology
+  id: ADTHoloRollerBed
+  name: research-technology-holo-roller-bed
+  icon:
+    sprite: ADT/Structures/Furniture/holo_stretcher.rsi
+    state: holo_stretcher
+  discipline: Biochemical
+  tier: 3
+  cost: 7500
+  recipeUnlocks:
+  - HoloStretcher
+  requiredTech:
+  - ADTCryoTech
+  position: 2,-3
 
 - type: technology
   id: ADTThermoTech
@@ -166,6 +184,7 @@
   recipeUnlocks:
   - BluespaceBeaker
   - SyringeBluespace
+  - BodyBagBluespace
   position: 5,-3
   requiredTech:
   - ADTSyringeGun

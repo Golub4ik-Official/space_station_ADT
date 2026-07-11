@@ -44,6 +44,9 @@
       path: /Audio/Items/deconstruct.ogg
     openSound:
       path: /Audio/Items/deconstruct.ogg
+    whitelist:
+      components:
+      - MobState
   - type: EntityStorageLayingDownOverride
   - type: Morgue
   - type: ContainerContainer

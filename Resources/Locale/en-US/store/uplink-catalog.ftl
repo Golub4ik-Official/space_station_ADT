@@ -530,3 +530,5 @@ uplink-hijack-beacon-desc = A syndicate-brand hijack beacon designed to get arou
 
 uplink-guerrilla-gloves-name = Guerrilla Gloves
 uplink-guerrilla-gloves-desc = A special shock resistant pair of gloves that make you hard grab by default, reduce your slowdown when actively grabbing and make it harder for victims to escape your grabs.
+uplink-bodybag-syndicate-name = Syndicate Body Bag Box
+uplink-bodybag-syndicate-desc = Contains 2 syndicate prisoner transport bags. Perfect for kidnapping or disposing of bodies.

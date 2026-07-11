@@ -95,21 +95,34 @@ public sealed class FoldableSystem : EntitySystem
             args.Cancel();
     }
 
+    // ADT-Tweak-Start: custom cancelled message for fold failures
     public bool TryToggleFold(EntityUid uid, FoldableComponent comp, EntityUid? folder = null)
     {
-        var result = TrySetFolded(uid, comp, !comp.IsFolded, folder);
+        var result = TrySetFolded(uid, comp, !comp.IsFolded, folder, out var cancelledMessage);
         if (!result && folder != null)
         {
-            if (comp.IsFolded)
+            if (cancelledMessage != null)
+            {
+                _popup.PopupPredicted(cancelledMessage, uid, folder.Value);
+            }
+            else if (comp.IsFolded)
                 _popup.PopupPredicted(Loc.GetString("foldable-unfold-fail", ("object", uid)), uid, folder.Value);
             else
                 _popup.PopupPredicted(Loc.GetString("foldable-fold-fail", ("object", uid)), uid, folder.Value);
         }
         return result;
     }
+    // ADT-Tweak-End
 
-    public bool CanToggleFold(EntityUid uid, FoldableComponent? fold = null)
+    // ADT-Tweak: added user parameter
+    public bool CanToggleFold(EntityUid uid, FoldableComponent? fold = null, EntityUid? user = null)
     {
+        return CanToggleFold(uid, fold, user, out _);
+    }
+
+    public bool CanToggleFold(EntityUid uid, FoldableComponent? fold, EntityUid? user, out string? cancelledMessage)
+    {
+        cancelledMessage = null;
         if (!Resolve(uid, ref fold))
             return false;
 
@@ -121,9 +134,13 @@ public sealed class FoldableSystem : EntitySystem
             !_anchorable.TileFree(Transform(uid).Coordinates, body))
             return false;
 
+        // ADT-Tweak-Start: pass user to FoldAttemptEvent + return cancelled message
         var ev = new FoldAttemptEvent(fold);
+        ev.User = user;
         RaiseLocalEvent(uid, ref ev);
+        cancelledMessage = ev.CancelledMessage;
         return !ev.Cancelled;
+        // ADT-Tweak-End
     }
 
     /// <summary>
@@ -131,10 +148,16 @@ public sealed class FoldableSystem : EntitySystem
     /// </summary>
     public bool TrySetFolded(EntityUid uid, FoldableComponent comp, bool state, EntityUid? user = null)
     {
+        return TrySetFolded(uid, comp, state, user, out _);
+    }
+
+    public bool TrySetFolded(EntityUid uid, FoldableComponent comp, bool state, EntityUid? user, out string? cancelledMessage)
+    {
+        cancelledMessage = null;
         if (state == comp.IsFolded)
             return false;
 
-        if (!CanToggleFold(uid, comp))
+        if (!CanToggleFold(uid, comp, user, out cancelledMessage))
             return false;
 
         SetFolded(uid, comp, state, user);
@@ -173,9 +196,23 @@ public sealed class FoldableSystem : EntitySystem
 /// <summary>
 /// Event raised on an entity to determine if it can be folded.
 /// </summary>
+/// <param name="Comp"></param>
 /// <param name="Cancelled"></param>
 [ByRefEvent]
-public record struct FoldAttemptEvent(FoldableComponent Comp, bool Cancelled = false);
+public record struct FoldAttemptEvent(FoldableComponent Comp, bool Cancelled = false)
+{
+    // ADT-Tweak-Start: user and custom cancelled message for fold failures
+    /// <summary>
+    /// The user attempting to fold the entity, if available.
+    /// </summary>
+    public EntityUid? User { get; set; }
+
+    /// <summary>
+    /// If set, overrides the generic fold failure popup with this specific message.
+    /// </summary>
+    public string? CancelledMessage { get; set; }
+    // ADT-Tweak-End
+}
 
 /// <summary>
 /// Event raised on an entity after it has been folded.

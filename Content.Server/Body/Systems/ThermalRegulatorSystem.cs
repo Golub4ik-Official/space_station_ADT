@@ -1,6 +1,7 @@
 using Content.Server.Body.Components;
 using Content.Server.Temperature.Systems;
 using Content.Shared.ActionBlocker;
+using Content.Shared.ADT.Body.Events;
 using Content.Shared.Temperature.Components;
 using Robust.Shared.Timing;
 
@@ -51,7 +52,11 @@ public sealed class ThermalRegulatorSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp2, logMissing: false))
             return;
 
-        // TODO: Why do we have two datafields for this if they are only ever used once here?
+        var ev = new ThermalRegulationAttemptEvent(ent); // ADT-Tweak
+        RaiseLocalEvent(ent, ref ev); // ADT-Tweak
+        if (ev.Cancelled) // ADT-Tweak
+            return; // ADT-Tweak
+
         var totalMetabolismTempChange = ent.Comp1.MetabolismHeat - ent.Comp1.RadiatedHeat;
 
         // implicit heat regulation

@@ -23,3 +23,150 @@
   - type: PhysicalComposition
     materialComposition:
       Cardboard: 50
+
+# Body bag boxes
+- type: entity
+  name: bluespace body bag box
+  parent: BoxCardboard
+  id: BoxBodyBagBluespace
+  description: Contains bluespace body bags.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: BodyBagBluespaceFolded
+        amount: 4
+  - type: Sprite
+    layers:
+      - state: box_medical
+      - state: bodybags
+  - type: Storage
+    whitelist:
+      tags:
+        - BodyBag
+
+- type: entity
+  name: environmental protection bag box
+  parent: BoxCardboard
+  id: BoxBodyBagEnvironmental
+  description: Contains environmental protection bags.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: BodyBagEnvironmentalFolded
+        amount: 2
+  - type: Sprite
+    layers:
+      - state: box_medical
+      - state: bodybags
+  - type: Storage
+    maxItemSize: Normal
+    whitelist:
+      tags:
+        - BodyBag
+
+- type: entity
+  name: prisoner transport bag box
+  parent: BoxCardboard
+  id: BoxBodyBagPrisoner
+  description: Contains prisoner transport bags.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: BodyBagPrisonerFolded
+        amount: 2
+  - type: Sprite
+    layers:
+      - state: box_medical
+      - state: bodybags
+  - type: Storage
+    maxItemSize: Normal
+    whitelist:
+      tags:
+        - BodyBag
+
+- type: entity
+  name: stasis body bag box
+  parent: BoxCardboard
+  id: BoxBodyBagStasis
+  description: Contains stasis body bags.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: BodyBagStasisFolded
+        amount: 2
+  - type: Sprite
+    layers:
+      - state: box_medical
+      - state: bodybags
+  - type: Storage
+    maxItemSize: Normal
+    whitelist:
+      tags:
+        - BodyBag
+
+- type: entity
+  name: elite environmental protection bag box
+  parent: BoxCardboard
+  id: BoxBodyBagEnvironmentalNanotrasen
+  description: Contains elite environmental protection bags.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: BodyBagEnvironmentalNanotrasenFolded
+        amount: 2
+  - type: Sprite
+    layers:
+      - state: box_medical
+      - state: bodybags
+  - type: Storage
+    maxItemSize: Normal
+    whitelist:
+      tags:
+        - BodyBag
+
+- type: entity
+  name: syndicate prisoner transport bag box
+  parent: BoxCardboard
+  id: BoxBodyBagSyndicate
+  description: Contains syndicate prisoner transport bags.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: BodyBagSyndicateFolded
+        amount: 2
+  - type: Sprite
+    sprite: Structures/Storage/boxes.rsi
+    layers:
+       - state: agentbox
+  - type: Storage
+    maxItemSize: Normal
+    whitelist:
+      tags:
+        - BodyBag
+
+- type: entity
+  name: long-term body bag box
+  parent: BoxCardboard
+  id: BoxBodyBagLostCrew
+  description: Contains long-term body bags.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: BodyBagLostCrewFolded
+        amount: 4
+  - type: Sprite
+    layers:
+      - state: box_medical
+      - state: bodybags
+  - type: Storage
+    maxItemSize: Normal
+    whitelist:
+      tags:
+        - BodyBag

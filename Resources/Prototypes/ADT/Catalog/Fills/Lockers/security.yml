@@ -29,6 +29,7 @@
         - id: BoxSyringe
         - id: BoxPillCanister
         - id: BoxBodyBag
+        - id: BoxBodyBagPrisoner
         - id: ChemistryBottleEpinephrine
           amount: 1
         - id: ADTHandheldCrewMonitorBrigmedic

@@ -12,6 +12,8 @@ research-technology-crew-monitoring = Портативный монитор эк
 
 research-technology-chemistry-misc = Химические принадлежности
 
+research-technology-holo-roller-bed = Голографическая каталка
+
 research-technology-thermo = Термогеника
 
 research-technology-syringe-gun = Шприцемёт

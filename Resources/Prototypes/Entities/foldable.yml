@@ -21,3 +21,7 @@
   name: "deploy foldable"
   components:
   - type: DeployFoldable
+  # ADT-Tweak-Start: Allow unfolded holo-stretcher/deployables to be placed inside containers
+  - type: Foldable
+    canFoldInsideContainer: true
+  # ADT-Tweak-End

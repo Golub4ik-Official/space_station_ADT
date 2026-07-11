@@ -1,0 +1,523 @@
+# Bluespace body bag
+- type: entity
+  id: BodyBagBluespace
+  parent: BodyBag
+  name: bluespace body bag
+  description: A bluespace body bag designed for the storage and transportation of cadavers. Can hold much more than a standard body bag. Slows bodily decomposition by two thirds.
+  components:
+  - type: Item
+    size: Small
+    heldPrefix: bag
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    layers:
+    - state: bluespace_bag
+      map: ["unfoldedLayer", "enum.StorageVisualLayers.Base"]
+    - state: bluespace_bag_folded
+      map: ["foldedLayer"]
+      visible: false
+    - state: bluespace_bag_open
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: paper
+      map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Icon
+    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    state: bluespace_bag
+  - type: Tag
+    tags:
+    - BodyBag
+  - type: EntityStorage
+    capacity: 15
+    isCollidableWhenOpen: true
+    airtight: false
+    whitelist:
+      tags:
+        - VimPilot
+        - CanPilot
+    closeSound:
+      path: /Audio/Misc/zip.ogg
+    openSound:
+      path: /Audio/Misc/zip.ogg
+  - type: EntityStorageVisuals
+    stateDoorOpen: bluespace_bag_open
+  - type: PaperLabel
+    labelSlot:
+      insertVerbText: paper-label-attach
+      ejectVerbText: paper-label-remove
+      whitelist:
+        components:
+        - Paper
+      blacklist:
+        tags:
+        - Book
+  - type: Appearance
+  - type: EntityStorageLayingDownOverride
+  - type: GenericVisualizer
+    visuals:
+      enum.PaperLabelVisuals.HasLabel:
+        enum.PaperLabelVisuals.Layer:
+          True: {visible: true}
+          False: {visible: false}
+      enum.PaperLabelVisuals.LabelType:
+        enum.PaperLabelVisuals.Layer:
+          Paper: { state: paper }
+          Bounty: { state: bounty }
+          CaptainsPaper: { state: captains_paper }
+          Invoice: { state: invoice }
+      enum.FoldedVisuals.State:
+        foldedLayer:
+          True: {visible: true}
+          False: {visible: false}
+        unfoldedLayer:
+          True: {visible: false}
+          False: {visible: true}
+  - type: Buckle
+    dontCollide: true
+  - type: Pullable
+  - type: BluespaceBodyBag
+  - type: Foldable
+    canFoldInsideContainer: false
+
+  - type: ContainerContainer
+    containers:
+      entity_storage: !type:Container
+      paper_label: !type:ContainerSlot
+ 
+- type: entity
+  id: BodyBagBluespaceFolded
+  parent: BodyBagBluespace
+  suffix: folded
+  components:
+  - type: Foldable
+    folded: true
+    canFoldInsideContainer: false
+
+# Environmental protection bag
+- type: entity
+  id: BodyBagEnvironmental
+  parent: BodyBag
+  name: environmental protection bag
+  description: An insulated, reinforced bag designed to protect against exoplanetary storms and other environmental factors. Slows bodily decomposition by two thirds.
+  components:
+  - type: Item
+    size: Normal
+    heldPrefix: bag
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    layers:
+    - state: enviro_bag
+      map: ["unfoldedLayer", "enum.StorageVisualLayers.Base"]
+    - state: enviro_bag_folded
+      map: ["foldedLayer"]
+      visible: false
+    - state: enviro_bag_open
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: paper
+      map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Icon
+    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    state: enviro_bag
+  - type: Tag
+    tags:
+    - BodyBag
+  - type: EntityStorage
+    capacity: 1
+    isCollidableWhenOpen: true
+    airtight: true
+    whitelist:
+      tags:
+        - VimPilot
+        - CanPilot
+    closeSound:
+      path: /Audio/Misc/zip.ogg
+    openSound:
+      path: /Audio/Misc/zip.ogg
+  - type: EntityStorageVisuals
+    stateDoorOpen: enviro_bag_open
+  - type: PaperLabel
+    labelSlot:
+      insertVerbText: paper-label-attach
+      ejectVerbText: paper-label-remove
+      whitelist:
+        components:
+        - Paper
+      blacklist:
+        tags:
+        - Book
+  - type: Appearance
+  - type: EntityStorageLayingDownOverride
+  - type: GenericVisualizer
+    visuals:
+      enum.PaperLabelVisuals.HasLabel:
+        enum.PaperLabelVisuals.Layer:
+          True: {visible: true}
+          False: {visible: false}
+      enum.PaperLabelVisuals.LabelType:
+        enum.PaperLabelVisuals.Layer:
+          Paper: { state: paper }
+          Bounty: { state: bounty }
+          CaptainsPaper: { state: captains_paper }
+          Invoice: { state: invoice }
+      enum.FoldedVisuals.State:
+        foldedLayer:
+          True: {visible: true}
+          False: {visible: false}
+        unfoldedLayer:
+          True: {visible: false}
+          False: {visible: true}
+  - type: Buckle
+    dontCollide: true
+  - type: Pullable
+  - type: ContainerContainer
+    containers:
+      entity_storage: !type:Container
+      paper_label: !type:ContainerSlot
+  - type: AshStormImmune
+  - type: BodyBagGas
+    fillMode: Breathable
+  - type: Flammable # ADT-Tweak: override inherited flammable, no fire damage
+    fireSpread: false
+    damage:
+      types:
+        Heat: 0
+
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  id: BodyBagEnvironmentalFolded
+  parent: BodyBagEnvironmental
+  suffix: folded
+  components:
+  - type: Foldable
+    folded: true
+
+# Elite environmental protection bag (Nanotrasen)
+- type: entity
+  id: BodyBagEnvironmentalNanotrasen
+  parent: BodyBagEnvironmental
+  name: elite environmental protection bag
+  description: A heavily reinforced and insulated bag, capable of fully isolating its contents from external factors. Slows bodily decomposition by two thirds.
+  components:
+  - type: Sprite
+    layers:
+    - state: nt_enviro_bag
+      map: ["unfoldedLayer", "enum.StorageVisualLayers.Base"]
+    - state: nt_enviro_bag_folded
+      map: ["foldedLayer"]
+      visible: false
+    - state: nt_enviro_bag_open
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: paper
+      map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Icon
+    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    state: nt_enviro_bag
+  - type: EntityStorageVisuals
+    stateDoorOpen: nt_enviro_bag_open
+  - type: BodyBagGas
+    fillMode: MedicalHeal
+  - type: BodyBagElite # ADT-Tweak: fire immunity + indestructible
+  - type: Flammable # ADT-Tweak: override with zero damage
+    damage:
+      types: {}
+  - type: Destructible # ADT-Tweak: empty thresholds = indestructible
+    thresholds: []
+  - type: StaticPrice
+    price: 200
+
+- type: entity
+  id: BodyBagEnvironmentalNanotrasenFolded
+  parent: BodyBagEnvironmentalNanotrasen
+  suffix: folded
+  components:
+  - type: Foldable
+    folded: true
+
+# Prisoner transport bag
+- type: entity
+  id: BodyBagPrisoner
+  parent: BodyBagEnvironmental
+  name: prisoner transport bag
+  description: Intended for transport of prisoners through hazardous environments, this environmental protection bag comes with straps to keep an occupant secure. Slows bodily decomposition by two thirds.
+  components:
+  - type: Sprite
+    layers:
+    - state: prisoner_enviro_bag
+      map: ["unfoldedLayer", "enum.StorageVisualLayers.Base"]
+    - state: prisoner_enviro_bag_folded
+      map: ["foldedLayer"]
+      visible: false
+    - state: prisoner_enviro_bag_open
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: prisoner_enviro_bag_cinched
+      map: ["cinchedLayer"]
+      visible: false
+    - state: paper
+      map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Icon
+    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    state: prisoner_enviro_bag
+  - type: EntityStorageVisuals
+    stateDoorOpen: prisoner_enviro_bag_open
+  - type: GenericVisualizer
+    visuals:
+      enum.PaperLabelVisuals.HasLabel:
+        enum.PaperLabelVisuals.Layer:
+          True: {visible: true}
+          False: {visible: false}
+      enum.PaperLabelVisuals.LabelType:
+        enum.PaperLabelVisuals.Layer:
+          Paper: { state: paper }
+          Bounty: { state: bounty }
+          CaptainsPaper: { state: captains_paper }
+          Invoice: { state: invoice }
+      enum.FoldedVisuals.State:
+        foldedLayer:
+          True: {visible: true}
+          False: {visible: false}
+        unfoldedLayer:
+          True: {visible: false}
+          False: {visible: true}
+      enum.BodyBagCinchVisuals.Cinched:
+        cinchedLayer:
+          True: {visible: true}
+          False: {visible: false}
+  - type: BodyBagCinch
+  - type: StaticPrice
+    price: 150
+
+- type: entity
+  id: BodyBagPrisonerFolded
+  parent: BodyBagPrisoner
+  suffix: folded
+  components:
+  - type: Foldable
+    folded: true
+
+# Syndicate prisoner transport bag
+- type: entity
+  id: BodyBagSyndicate
+  parent: BodyBagPrisoner
+  name: syndicate prisoner transport bag
+  description: An alteration of Nanotrasen's environmental protection bag which has been used in several high-profile kidnappings. Designed to keep a victim secure during transport. Slows bodily decomposition by two thirds.
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie_enviro_bag
+      map: ["unfoldedLayer", "enum.StorageVisualLayers.Base"]
+    - state: syndie_enviro_bag_folded
+      map: ["foldedLayer"]
+      visible: false
+    - state: syndie_enviro_bag_open
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: syndie_enviro_bag_cinched
+      map: ["cinchedLayer"]
+      visible: false
+    - state: paper
+      map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Icon
+    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    state: syndie_enviro_bag
+  - type: EntityStorageVisuals
+    stateDoorOpen: syndie_enviro_bag_open
+  - type: GenericVisualizer
+    visuals:
+      enum.PaperLabelVisuals.HasLabel:
+        enum.PaperLabelVisuals.Layer:
+          True: {visible: true}
+          False: {visible: false}
+      enum.PaperLabelVisuals.LabelType:
+        enum.PaperLabelVisuals.Layer:
+          Paper: { state: paper }
+          Bounty: { state: bounty }
+          CaptainsPaper: { state: captains_paper }
+          Invoice: { state: invoice }
+      enum.FoldedVisuals.State:
+        foldedLayer:
+          True: {visible: true}
+          False: {visible: false}
+        unfoldedLayer:
+          True: {visible: false}
+          False: {visible: true}
+      enum.BodyBagCinchVisuals.Cinched:
+        cinchedLayer:
+          True: {visible: true}
+          False: {visible: false}
+  - type: BodyBagCinch
+  - type: BodyBagGas
+    fillMode: SedativeSleep
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  id: BodyBagSyndicateFolded
+  parent: BodyBagSyndicate
+  suffix: folded
+  components:
+  - type: Foldable
+    folded: true
+
+# Stasis body bag
+- type: entity
+  id: BodyBagStasis
+  parent: BodyBag
+  name: stasis body bag
+  description: A disposable bodybag designed to keep its contents in stasis, preventing decay and further injury. The bag itself cannot maintain stasis for long, and will eventually fall apart.
+  components:
+  - type: Item
+    size: Normal
+    heldPrefix: bag
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    layers:
+    - state: stasis_bag
+      map: ["unfoldedLayer", "enum.StorageVisualLayers.Base"]
+    - state: stasis_bag_folded
+      map: ["foldedLayer"]
+      visible: false
+    - state: stasis_bag_open
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: paper
+      map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Icon
+    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    state: stasis_bag
+  - type: Tag
+    tags:
+    - BodyBag
+  - type: EntityStorage
+    capacity: 1
+    isCollidableWhenOpen: true
+    whitelist:
+      tags:
+        - VimPilot
+        - CanPilot
+    closeSound:
+      path: /Audio/Effects/spray.ogg
+    openSound:
+      path: /Audio/Effects/spray.ogg
+  - type: EntityStorageVisuals
+    stateDoorOpen: stasis_bag_open
+  - type: PaperLabel
+    labelSlot:
+      insertVerbText: paper-label-attach
+      ejectVerbText: paper-label-remove
+      whitelist:
+        components:
+        - Paper
+      blacklist:
+        tags:
+        - Book
+  - type: Appearance
+  - type: EntityStorageLayingDownOverride
+  - type: GenericVisualizer
+    visuals:
+      enum.PaperLabelVisuals.HasLabel:
+        enum.PaperLabelVisuals.Layer:
+          True: {visible: true}
+          False: {visible: false}
+      enum.PaperLabelVisuals.LabelType:
+        enum.PaperLabelVisuals.Layer:
+          Paper: { state: paper }
+          Bounty: { state: bounty }
+          CaptainsPaper: { state: captains_paper }
+          Invoice: { state: invoice }
+      enum.FoldedVisuals.State:
+        foldedLayer:
+          True: {visible: true}
+          False: {visible: false}
+        unfoldedLayer:
+          True: {visible: false}
+          False: {visible: true}
+  - type: Buckle
+    dontCollide: true
+  - type: Pullable
+  - type: StasisBodyBag
+
+  - type: AntiRottingContainer
+  - type: ContainerContainer
+    containers:
+      entity_storage: !type:Container
+      paper_label: !type:ContainerSlot
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 40
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetPlastic1:
+            min: 1
+            max: 1
+  - type: StaticPrice
+    price: 200
+
+- type: entity
+  id: BodyBagStasisFolded
+  parent: BodyBagStasis
+  suffix: folded
+  components:
+  - type: Foldable
+    folded: true
+
+# Long-term body bag (lost crew)
+- type: entity
+  id: BodyBagLostCrew
+  parent: BodyBag
+  name: long-term body bag
+  description: A plastic bag designed for the long-term storage and transportation of cadavers. Slows bodily decomposition by two thirds.
+  components:
+  - type: Sprite
+    layers:
+    - state: body_bag_lost
+      map: ["unfoldedLayer", "enum.StorageVisualLayers.Base"]
+    - state: body_bag_lost_folded
+      map: ["foldedLayer"]
+      visible: false
+    - state: body_bag_lost_open
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: paper
+      map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Icon
+    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    state: body_bag_lost
+  - type: EntityStorage
+    capacity: 15
+    isCollidableWhenOpen: true
+    whitelist:
+      tags:
+        - VimPilot
+        - CanPilot
+    closeSound:
+      path: /Audio/Misc/zip.ogg
+    openSound:
+      path: /Audio/Misc/zip.ogg
+  - type: EntityStorageVisuals
+    stateDoorOpen: body_bag_lost_open
+  - type: AntiRottingContainer
+  - type: LostCrewBodyBag
+
+  - type: StaticPrice
+    price: 50
+
+- type: entity
+  id: BodyBagLostCrewFolded
+  parent: BodyBagLostCrew
+  suffix: folded
+  components:
+  - type: Foldable
+    folded: true
+
+# Lost crew bag with body pre-spawned
+- type: entity
+  id: BodyBagLostCrewWithBody
+  parent: BodyBagLostCrew
+  suffix: with_body
+  components:
+  - type: LostCrewBodyBag
+    spawnBodyOnMapInit: true
+

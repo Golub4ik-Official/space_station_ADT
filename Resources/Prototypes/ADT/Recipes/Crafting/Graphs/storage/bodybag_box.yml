@@ -1,0 +1,13 @@
+- type: constructionGraph
+  id: BodyBagBox
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: bodybagbox
+          steps:
+            - material: Cloth
+              amount: 5
+              doAfter: 4
+    - node: bodybagbox
+      entity: BoxBodyBag

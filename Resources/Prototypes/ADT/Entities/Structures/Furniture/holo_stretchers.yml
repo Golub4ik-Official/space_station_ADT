@@ -1,0 +1,92 @@
+- type: entity
+  id: HoloStretcher
+  parent: [BaseItem, BaseDeployFoldable]
+  name: holo roller bed
+  description: A compact hardlight roller bed that can be carried around. Deploys into a hardlight roller bed for transporting patients.
+  components:
+    - type: Transform
+      noRot: true
+    - type: Item
+      size: Small
+      heldPrefix: holo_stretcher
+    - type: Sprite
+      sprite: ADT/Structures/Furniture/holo_stretcher.rsi
+      drawdepth: DeadMobs
+      noRot: true
+      layers:
+      - state: holo_stretcher
+        map: ["unfoldedLayer"]
+      - state: holo_stretcher_folded
+        map: ["foldedLayer"]
+        visible: false
+    - type: MovedByPressure
+    - type: DamageOnHighSpeedImpact
+      damage:
+        types:
+          Blunt: 5
+    - type: InjectorBoost
+    - type: InteractionOutline
+    - type: Physics
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.35
+          density: 20
+          mask:
+          - MobMask
+    - type: Damageable
+    - type: Injurable
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 100
+          behaviors:
+          - !type:DoActsBehavior
+            acts: ["Destruction"]
+        - trigger:
+            !type:DamageTrigger
+            damage: 50
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                SheetSteel1:
+                  min: 1
+                  max: 1
+    - type: Pullable
+    - type: Strap
+      position: Down
+      rotation: -90
+      buckleOffset: "0,0.15"
+      buckleOnInteractHand: False
+      buckleDoafterTime: 0.25
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.FoldedVisuals.State:
+          foldedLayer:
+            True: {visible: true}
+            False: {visible: false}
+          unfoldedLayer:
+            True: {visible: false}
+            False: {visible: true}
+    - type: BodyBagStretcher
+    - type: StaticPrice
+      price: 150
+    - type: GuideHelp
+      guides:
+      - Stretchers
+
+- type: entity
+  parent: HoloStretcher
+  id: HoloStretcherFolded
+  suffix: folded
+  components:
+  - type: Foldable
+    folded: true
+  - type: Strap
+    enabled: False

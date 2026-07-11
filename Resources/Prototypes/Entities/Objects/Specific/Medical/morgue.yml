@@ -2,7 +2,7 @@
   id: BodyBag
   parent: [ BaseDeployFoldable, BasePaperLabelableVisualized ]
   name: body bag
-  description: A plastic bag designed for the storage and transportation of cadavers to stop body decomposition.
+  description: A plastic bag designed for the storage and transportation of cadavers. Slows bodily decomposition by two thirds.
   components:
   - type: Item
     size: Small
@@ -86,8 +86,31 @@
         unfoldedLayer:
           True: {visible: false}
           False: {visible: true}
+  - type: Buckle # ADT-Tweak
+    dontCollide: true
   - type: Pullable
-  - type: AntiRottingContainer
+  - type: BodyBagRotSlow # ADT-Tweak: replaces AntiRottingContainer
+  - type: BodyBagOccupantHealth # ADT-Tweak: examine occupant health through the bag
+  - type: Flammable # ADT-Tweak: body bags burn on lava contact
+    fireSpread: false
+    damage:
+      types:
+        Heat: 12
+  - type: Damageable # ADT-Tweak
+  - type: Injurable # ADT-Tweak: required for DamageDealtEvent to actually store damage
+  - type: Destructible # ADT-Tweak
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 40
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetPlastic1:
+            min: 1
+            max: 3
   - type: ContainerContainer
     containers:
       entity_storage: !type:Container
@@ -98,16 +121,12 @@
 - type: entity
   id: BodyBagFolded
   name: body bag
-  description: A plastic bag designed for the storage and transportation of cadavers to stop body decomposition.
+  description: A plastic bag designed for the storage and transportation of cadavers. Slows bodily decomposition by two thirds.
   parent: BodyBag
   suffix: folded
   components:
   - type: Foldable
     folded: true
-#  - type: BodyBagItem #TODO: we need some kind of generic placable, like thus:
-# - type: Placeable
-#   prototype: someId
-#   snap: Center
 
 - type: entity
   parent: BaseItem

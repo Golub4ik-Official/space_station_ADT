@@ -102,6 +102,10 @@
 using Content.Shared.ADT.Grab;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
+using Content.Shared.ADT.Hands;
+using Content.Shared.ADT.Medical.BodyBags; // ADT-Tweak
+using Content.Shared.Storage.Components; // ADT-Tweak
+using Content.Shared.Tag; // ADT-Tweak
 using Content.Shared.Alert;
 using Content.Shared.Buckle.Components;
 using Content.Shared.CombatMode;
@@ -155,8 +159,9 @@ public sealed class PullingSystem : EntitySystem
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedVirtualItemSystem _virtualSystem = default!;
+    [Dependency] private readonly SharedVirtualItemSystem _virtual = default!;
     [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
+    [Dependency] private readonly TagSystem _tagSystem = default!; // ADT-Tweak
 
     public override void Initialize()
     {
@@ -421,6 +426,91 @@ public sealed class PullingSystem : EntitySystem
             };
             args.Verbs.Add(verb);
         }
+    }
+
+    private void OnRefreshMovespeed(EntityUid uid, PullerComponent component, RefreshMovementSpeedModifiersEvent args)
+    {
+        // ADT Start
+        if (!component.Pulling.HasValue)
+            return;
+        // ADT End
+
+        if (TryComp<HeldSpeedModifierComponent>(component.Pulling, out var heldMoveSpeed) && component.Pulling.HasValue)
+        {
+            var (walkMod, sprintMod) =
+                _clothingMoveSpeed.GetHeldMovementSpeedModifiers(component.Pulling.Value, heldMoveSpeed);
+            args.ModifySpeed(walkMod, sprintMod);
+            return;
+        }
+
+        // ADT Grab start
+        int index = (int)component.Stage + component.GrabbingDirection;
+
+        args.ModifySpeed(component.WalkSpeedModifier, component.GrabStats[(GrabStage)index].MovementSpeedModifier);
+        component.GrabbingDirection = 0;
+        // ADT Grab end
+
+        // ADT-Tweak-Start: RollerBedPullSlow
+        if (TryComp<RollerBedPullSlowComponent>(component.Pulling.Value, out var slow)
+            && TryComp<StrapComponent>(component.Pulling.Value, out var strap)
+            && strap.BuckledEntities.Count > 0)
+        {
+            var hasOccupant = false;
+            foreach (var buckled in strap.BuckledEntities)
+            {
+                // Direct mob (body) buckled to stretcher
+                if (HasComp<MobStateComponent>(buckled))
+                {
+                    hasOccupant = true;
+                    break;
+                }
+                // Body bag with contents buckled to stretcher
+                if (TryComp<EntityStorageComponent>(buckled, out var entityStorage)
+                    && !entityStorage.Open
+                    && entityStorage.Contents.ContainedEntities.Count > 0)
+                {
+                    hasOccupant = true;
+                    break;
+                }
+            }
+
+            if (hasOccupant)
+                args.ModifySpeed(slow.WalkSpeedModifier, slow.SprintSpeedModifier);
+        }
+        // ADT-Tweak-End
+
+        // ADT-Tweak-Start: BodyBagPullSlow
+        if (_tagSystem.HasTag(component.Pulling.Value, "BodyBag")
+            && TryComp<EntityStorageComponent>(component.Pulling.Value, out var bagStorage)
+            && !bagStorage.Open
+            && bagStorage.Contents.ContainedEntities.Count > 0)
+        {
+            // Apply slowdown only if RollerBedPullSlow didn't already apply
+            if (!TryComp<RollerBedPullSlowComponent>(component.Pulling.Value, out _))
+            {
+                args.ModifySpeed(0.55f, 0.65f);
+            }
+        }
+        // ADT-Tweak-End
+    }
+
+    private void OnPullableMoveInput(EntityUid uid, PullableComponent component, ref MoveInputEvent args)
+    {
+        // If someone moves then break their pulling.
+        if (!component.BeingPulled)
+            return;
+
+        var entity = args.Entity;
+
+        if (!_blocker.CanMove(entity))
+            return;
+        // ADT Grab start
+        if (!TryComp<PullerComponent>(component.Puller, out var puller))
+            return;
+
+        TryEscapeFromGrab((uid, component), (component.Puller.Value, puller));
+        //TryStopPull(uid, component, user: uid);
+        // ADT Grab end
     }
 
     private void OnPullableCollisionChange(EntityUid uid, PullableComponent component, ref CollisionChangeEvent args)
