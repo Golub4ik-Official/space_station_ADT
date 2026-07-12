@@ -114,12 +114,14 @@ public sealed class FoldableSystem : EntitySystem
     }
     // ADT-Tweak-End
 
-    // ADT-Tweak: added user parameter
+    // ADT-Tweak-Start: added user parameter overload
     public bool CanToggleFold(EntityUid uid, FoldableComponent? fold = null, EntityUid? user = null)
     {
         return CanToggleFold(uid, fold, user, out _);
     }
+    // ADT-Tweak-End
 
+    // ADT-Tweak-Start: cancelledMessage out-parameter overload + pass user to FoldAttemptEvent
     public bool CanToggleFold(EntityUid uid, FoldableComponent? fold, EntityUid? user, out string? cancelledMessage)
     {
         cancelledMessage = null;
@@ -134,15 +136,15 @@ public sealed class FoldableSystem : EntitySystem
             !_anchorable.TileFree(Transform(uid).Coordinates, body))
             return false;
 
-        // ADT-Tweak-Start: pass user to FoldAttemptEvent + return cancelled message
         var ev = new FoldAttemptEvent(fold);
         ev.User = user;
         RaiseLocalEvent(uid, ref ev);
         cancelledMessage = ev.CancelledMessage;
         return !ev.Cancelled;
-        // ADT-Tweak-End
     }
+    // ADT-Tweak-End
 
+    // ADT-Tweak-Start: user + cancelledMessage overloads for TrySetFolded
     /// <summary>
     /// Try to fold/unfold
     /// </summary>
@@ -163,6 +165,7 @@ public sealed class FoldableSystem : EntitySystem
         SetFolded(uid, comp, state, user);
         return true;
     }
+    // ADT-Tweak-End
 
     #region Verb
 

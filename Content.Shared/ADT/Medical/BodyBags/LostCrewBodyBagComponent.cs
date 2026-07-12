@@ -1,4 +1,5 @@
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.ADT.Medical.BodyBags;
 
@@ -10,4 +11,10 @@ public sealed partial class LostCrewBodyBagComponent : Component
 
     [DataField]
     public bool SpawnBodyOnMapInit = false;
+
+    [DataField]
+    public EntProtoId CorpsePrototype = "SalvageHumanCorpse";
+
+    [DataField]
+    public ProtoId<EntityTablePrototype> LootTable = "LostCrewLootTable";
 }

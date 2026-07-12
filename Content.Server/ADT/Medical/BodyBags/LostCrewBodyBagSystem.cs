@@ -6,6 +6,10 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.ADT.Medical.BodyBags;
 
+/// <summary>
+/// Спавнит тело и случайный лут в мешке LostCrew при первом открытии
+/// или при инициализации карты (если <see cref="LostCrewBodyBagComponent.SpawnBodyOnMapInit"/>).
+/// </summary>
 public sealed class LostCrewBodyBagSystem : EntitySystem
 {
     [Dependency] private readonly SharedEntityStorageSystem _storage = default!;
@@ -45,16 +49,16 @@ public sealed class LostCrewBodyBagSystem : EntitySystem
         Dirty(bag, ent.Comp);
 
         // Spawn random humanoid corpse inside the bag
-        var corpse = EntityManager.SpawnEntity("SalvageHumanCorpse", Transform(bag).Coordinates);
+        var corpse = EntityManager.SpawnEntity(ent.Comp.CorpsePrototype, Transform(bag).Coordinates);
         _storage.Insert(corpse, bag);
 
         // Spawn random loot items
-        SpawnLootItems(bag, storage);
+        SpawnLootItems(ent, bag, storage);
     }
 
-    private void SpawnLootItems(EntityUid bag, EntityStorageComponent storage)
+    private void SpawnLootItems(Entity<LostCrewBodyBagComponent> ent, EntityUid bag, EntityStorageComponent storage)
     {
-        if (!_prototype.TryIndex<EntityTablePrototype>("LostCrewLootTable", out var table))
+        if (!_prototype.TryIndex<EntityTablePrototype>(ent.Comp.LootTable, out var table))
             return;
 
         var spawns = _entityTable.GetSpawns(table);

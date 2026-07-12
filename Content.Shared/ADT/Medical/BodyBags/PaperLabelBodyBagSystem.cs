@@ -7,6 +7,10 @@ using Robust.Shared.Containers;
 
 namespace Content.Shared.ADT.Medical.BodyBags;
 
+/// <summary>
+/// Автоматически снимает бумажную этикетку при открытии мешка
+/// и формирует имя по содержимому бумаги.
+/// </summary>
 public sealed class PaperLabelBodyBagSystem : EntitySystem
 {
     [Dependency] private readonly LabelSystem _label = default!;

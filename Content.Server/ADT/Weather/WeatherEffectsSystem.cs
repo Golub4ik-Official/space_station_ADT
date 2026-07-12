@@ -86,6 +86,11 @@ public sealed partial class WeatherEffectsSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Traverses the parent hierarchy of the given entity's transform
+    /// and returns true if any ancestor has <see cref="AshStormImmuneComponent"/>,
+    /// indicating the entity is sheltered from ash storm damage.
+    /// </summary>
     private bool IsInsideImmuneContainer(EntityUid uid, TransformComponent xform)
     {
         var parent = xform.ParentUid;

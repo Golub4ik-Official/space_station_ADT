@@ -10,6 +10,11 @@ using Robust.Shared.Timing;
 
 namespace Content.Server.ADT.Medical.BodyBags;
 
+/// <summary>
+/// Серверная логика заполнения body bag газом: отложенная подача N₂O,
+/// периодическая регенерация дыхательной/лечебной смеси,
+/// лечение и усыпление occupant'ов.
+/// </summary>
 public sealed class BodyBagGasServerSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;

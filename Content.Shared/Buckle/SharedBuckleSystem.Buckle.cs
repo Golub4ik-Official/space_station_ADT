@@ -571,7 +571,9 @@ public abstract partial class SharedBuckleSystem
 
     /// <summary>
     /// If the target being buckled to a chair/bed goes crit or is cuffed
-    /// Cancel the do-after time and try to buckle the target immediately
+    /// Cancel the do-after time and try to buckle the target immediately.
+    /// Entities with <see cref="BodyBagStretcherComponent"/> are excluded
+    /// and retain the do-after progress bar.
     /// </summary>
     /// <param name="args.Target"> The person being put in the chair/bed</param>
     /// <param name="args.User"> The person putting a person in a chair/bed</param>

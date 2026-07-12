@@ -11,11 +11,19 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared.ADT.Medical.BodyBags;
 
+/// <summary>
+/// DoAfter-событие для побега из сложенной блюспейс-сумки.
+/// </summary>
 [Serializable, NetSerializable]
 public sealed partial class BluespaceBodyBagDoAfterEvent : SimpleDoAfterEvent
 {
 }
 
+/// <summary>
+/// Управляет блюспейс body bag: меняет размер при наполнении,
+/// запрещает складывание при >50% заполнении или при наличии
+/// контейнеров внутри, позволяет побег из сложенного мешка.
+/// </summary>
 public sealed class BluespaceBodyBagSystem : EntitySystem
 {
     [Dependency] private readonly SharedContainerSystem _container = default!;

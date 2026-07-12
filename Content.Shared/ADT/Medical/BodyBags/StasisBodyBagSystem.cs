@@ -17,6 +17,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.ADT.Medical.BodyBags;
 
+/// <inheritdoc/>
 public sealed class StasisBodyBagSystem : EntitySystem
 {
     [Dependency] private readonly DamageableSystem _damageable = default!;
@@ -181,8 +182,14 @@ public sealed class StasisBodyBagSystem : EntitySystem
     }
 }
 
+/// <summary>
+/// Публикуется, когда стазис-мешок активировал стазис для occupant'а.
+/// </summary>
 [ByRefEvent]
 public readonly record struct StasisBodyBagActiveEvent(EntityUid Occupant);
 
+/// <summary>
+/// Публикуется, когда стазис-мешок должен потушить огонь у occupant'а.
+/// </summary>
 [ByRefEvent]
 public readonly record struct StasisBodyBagFireExtinguishEvent(EntityUid Occupant);

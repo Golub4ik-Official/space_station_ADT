@@ -10,6 +10,11 @@ using Robust.Shared.Containers;
 
 namespace Content.Server.ADT.Medical.BodyBags;
 
+/// <summary>
+/// Защищает occupant'ов внутри закрытых body bag с газом от урона огнём,
+/// даёт элитным мешкам иммунитет к огню и наносит тепловой урон
+/// не-элитным газовым мешкам при лавовых температурах.
+/// </summary>
 public sealed class BodyBagFireProtectionSystem : EntitySystem
 {
     [Dependency] private readonly DamageableSystem _damageable = default!;
@@ -65,6 +70,10 @@ public sealed class BodyBagFireProtectionSystem : EntitySystem
         _damageable.TryChangeDamage(ent.Owner, lavaDamage);
     }
 
+    /// <summary>
+    /// Returns true if the entity is inside a closed body bag that has
+    /// <see cref="BodyBagGasComponent"/> and a non-open <see cref="EntityStorageComponent"/>.
+    /// </summary>
     private bool IsInProtectedBag(EntityUid uid)
     {
         Entity<TransformComponent?, MetaDataComponent?> containerCheckEnt = (uid, null, null);

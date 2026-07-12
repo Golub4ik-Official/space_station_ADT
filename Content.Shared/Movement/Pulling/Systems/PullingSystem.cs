@@ -165,6 +165,11 @@ public sealed class PullingSystem : EntitySystem
     [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!; // ADT-Tweak
 
+    // ADT-Tweak-Start: Body bag pull slowdown constants
+    private const float PullWalkSpeedModifier = 0.55f;
+    private const float PullSprintSpeedModifier = 0.65f;
+    // ADT-Tweak-End
+
     public override void Initialize()
     {
         base.Initialize();
@@ -472,7 +477,7 @@ public sealed class PullingSystem : EntitySystem
         {
             if (!TryComp<RollerBedPullSlowComponent>(component.Pulling.Value, out _))
             {
-                args.ModifySpeed(0.55f, 0.65f);
+                args.ModifySpeed(PullWalkSpeedModifier, PullSprintSpeedModifier);
             }
         }
         // ADT-Tweak-End

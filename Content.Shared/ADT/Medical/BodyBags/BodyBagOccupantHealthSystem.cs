@@ -11,6 +11,10 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.ADT.Medical.BodyBags;
 
+/// <summary>
+/// Позволяет осматривать здоровье occupant'а через закрытый body bag,
+/// добавляя глагол осмотра и сообщение в examine.
+/// </summary>
 public sealed class BodyBagOccupantHealthSystem : EntitySystem
 {
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;

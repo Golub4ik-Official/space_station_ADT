@@ -11,6 +11,10 @@ using Robust.Shared.Containers;
 
 namespace Content.Shared.ADT.Medical.BodyBags;
 
+/// <summary>
+/// Позволяет размещать сложенные body bag на каталках (stretcher)
+/// через do-after → drop → unfold → buckle.
+/// </summary>
 public sealed class BodyBagStretcherSystem : EntitySystem
 {
     [Dependency] private readonly SharedBuckleSystem _buckle = default!;
