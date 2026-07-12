@@ -152,8 +152,6 @@
   id: EmergencyRollerBedSpawnFolded
   suffix: folded
   components:
-  - type: Item # ADT-Tweak: folded roller bed is carryable
-    size: Normal
   - type: Foldable
     folded: true
   - type: Strap
