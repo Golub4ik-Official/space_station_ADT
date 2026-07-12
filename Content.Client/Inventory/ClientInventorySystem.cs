@@ -237,6 +237,16 @@ namespace Content.Client.Inventory
             RaisePredictiveEvent(new InteractInventorySlotEvent(GetNetEntity(item.Value), altInteract: true));
         }
 
+        // ADT-Tweak-Start: Ctrl+Click PDA pen eject from inventory
+        public void UIInventoryCtrlActivateItem(string slot, EntityUid uid)
+        {
+            if (!TryGetSlotEntity(uid, slot, out var item))
+                return;
+
+            RaisePredictiveEvent(new InteractInventorySlotEvent(GetNetEntity(item.Value), ctrlInteract: true));
+        }
+        // ADT-Tweak-End
+
         protected override void UpdateInventoryTemplate(Entity<InventoryComponent> ent)
         {
             base.UpdateInventoryTemplate(ent);

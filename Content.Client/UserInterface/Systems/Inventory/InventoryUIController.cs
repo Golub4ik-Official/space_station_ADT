@@ -303,6 +303,12 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         {
             _inventorySystem.UIInventoryAltActivateItem(slot, _playerUid.Value);
         }
+        // ADT-Tweak-Start: Ctrl+Click PDA pen eject from inventory
+        else if (args.Function == ContentKeyFunctions.TryPullObject)
+        {
+            _inventorySystem.UIInventoryCtrlActivateItem(slot, _playerUid.Value);
+        }
+        // ADT-Tweak-End
         else
         {
             return;

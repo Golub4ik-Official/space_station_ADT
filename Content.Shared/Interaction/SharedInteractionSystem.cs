@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared.ADT.PDA.Events; // ADT-Tweak
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
@@ -287,6 +288,13 @@ namespace Content.Shared.Interaction
             if (!InRangeUnobstructed(userEntity.Value, uid, popup: true))
                 return false;
 
+            // ADT-Tweak-Start: PDA pen eject via Ctrl+Click
+            var tryPullEvent = new TryPullObjectEvent(userEntity.Value, uid);
+            RaiseLocalEvent(uid, ref tryPullEvent);
+            if (tryPullEvent.Handled)
+                return true;
+            // ADT-Tweak-End
+
             _pullSystem.TogglePull(uid, userEntity.Value);
             return false;
         }
@@ -310,6 +318,16 @@ namespace Content.Shared.Interaction
             // InteractionActivate() should check that the item is accessible. So.. if a user wants to lie about an
             // in-reach item being used in a slot... that should have no impact. This is functionally the same as if
             // they had somehow directly clicked on that item.
+
+            // ADT-Tweak-Start: Ctrl+Click PDA pen eject from inventory
+            if (msg.CtrlInteract)
+            {
+                var ev = new TryPullObjectEvent(user.Value, item);
+                RaiseLocalEvent(item, ref ev);
+                if (ev.Handled)
+                    return;
+            }
+            // ADT-Tweak-End
 
             if (msg.AltInteract)
                 // Use 'UserInteraction' function - behaves as if the user alt-clicked the item in the world.
@@ -1535,11 +1553,19 @@ namespace Content.Shared.Interaction
         /// </summary>
         public bool AltInteract { get; }
 
-        public InteractInventorySlotEvent(NetEntity itemUid, bool altInteract = false)
+        // ADT-Tweak-Start: Ctrl+Click PDA pen eject
+        /// <summary>
+        ///     Whether the interaction used the ctrl-modifier.
+        /// </summary>
+        public bool CtrlInteract { get; }
+
+        public InteractInventorySlotEvent(NetEntity itemUid, bool altInteract = false, bool ctrlInteract = false)
         {
             ItemUid = itemUid;
             AltInteract = altInteract;
+            CtrlInteract = ctrlInteract;
         }
+        // ADT-Tweak-End
     }
 
     /// <summary>

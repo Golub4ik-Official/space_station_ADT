@@ -282,6 +282,13 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
             EntityManager.RaisePredictiveEvent(new InteractInventorySlotEvent(EntityManager.GetNetEntity(control.Entity), altInteract: true));
             args.Handle();
         }
+        // ADT-Tweak-Start: Ctrl+Click PDA pen eject from storage
+        else if (args.Function == ContentKeyFunctions.TryPullObject)
+        {
+            EntityManager.RaisePredictiveEvent(new InteractInventorySlotEvent(EntityManager.GetNetEntity(control.Entity), ctrlInteract: true));
+            args.Handle();
+        }
+        // ADT-Tweak-End
 
         window.FlagDirty();
     }
