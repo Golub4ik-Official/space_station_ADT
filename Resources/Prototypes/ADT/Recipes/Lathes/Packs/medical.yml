@@ -52,6 +52,7 @@
   - CryostasisBeaker
   - SyringeCryostasis
   - BodyBagStasis
+  - HoloStretcher
 
 - type: latheRecipePack
   id: ADTThermoTech
