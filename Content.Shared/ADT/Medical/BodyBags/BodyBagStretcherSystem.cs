@@ -111,6 +111,10 @@ public sealed class BodyBagStretcherSystem : EntitySystem
         if (!HasComp<EntityStorageComponent>(ent))
             return;
 
+        // Allow unfolding (e.g. when placing on stretcher)
+        if (ent.Comp.IsFolded)
+            return;
+
         var xform = Transform(ent);
         foreach (var stretcher in _lookup.GetEntitiesInRange(xform.Coordinates, 0.5f, LookupFlags.Uncontained))
         {

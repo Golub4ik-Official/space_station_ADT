@@ -141,9 +141,9 @@
         id: BodyBagSyndicateFolded
         amount: 2
   - type: Sprite
-    sprite: Structures/Storage/boxes.rsi
     layers:
-       - state: agentbox
+      - state: box_medical
+      - state: bodybags
   - type: Storage
     maxItemSize: Normal
     whitelist:

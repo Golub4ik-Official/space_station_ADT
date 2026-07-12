@@ -3,6 +3,7 @@ using Content.Shared.Labels.EntitySystems;
 using Content.Shared.NameModifier.EntitySystems;
 using Content.Shared.Paper;
 using Content.Shared.Storage.Components;
+using Robust.Shared.Containers;
 
 namespace Content.Shared.ADT.Medical.BodyBags;
 

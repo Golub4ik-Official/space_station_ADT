@@ -6,12 +6,14 @@ using Content.Shared.Labels.Components;
 using Content.Shared.NameModifier.EntitySystems;
 using Content.Shared.Paper;
 using Robust.Shared.Containers;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Labels.EntitySystems;
 
 public sealed partial class LabelSystem : EntitySystem
 {
+    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly NameModifierSystem _nameModifier = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
@@ -182,6 +184,11 @@ public sealed partial class LabelSystem : EntitySystem
             return;
 
         UpdateAppearance((uid, label));
+
+        if (_timing.ApplyingState)
+            return;
+
+        _nameModifier.RefreshNameModifiers(uid);
     }
 
     private void UpdateAppearance(Entity<PaperLabelComponent, AppearanceComponent?> ent)

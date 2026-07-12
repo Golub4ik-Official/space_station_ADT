@@ -110,7 +110,7 @@ public sealed class BodyBagCinchSystem : EntitySystem
 
         var ev = doAfterArgs.Event as BodyBagCinchDoAfterEvent;
         if (ev != null)
-            ev.TargetCinched = true;
+            ev.TargetCinched = !ent.Comp.Cinched;
 
         _doAfter.TryStartDoAfter(doAfterArgs);
     }

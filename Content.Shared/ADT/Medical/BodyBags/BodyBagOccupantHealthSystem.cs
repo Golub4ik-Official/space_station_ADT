@@ -66,7 +66,9 @@ public sealed class BodyBagOccupantHealthSystem : EntitySystem
         }
         else
         {
+#pragma warning disable CS0618
             var totalDamage = _damageable.GetTotalDamage((occupant.Value, null));
+#pragma warning restore CS0618
             if (totalDamage == FixedPoint2.Zero)
             {
                 args.PushMarkup(Loc.GetString("body-bag-occupant-health-fine"));

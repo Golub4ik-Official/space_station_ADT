@@ -176,13 +176,13 @@ public sealed class BodyBagGasServerSystem : EntitySystem
     private void ApplyMedicalHeal(EntityUid occupant)
     {
         var heal = new DamageSpecifier();
-        heal.DamageDict.Add("Blunt", -0.08);
-        heal.DamageDict.Add("Slash", -0.08);
-        heal.DamageDict.Add("Piercing", -0.08);
-        heal.DamageDict.Add("Heat", -0.08);
-        heal.DamageDict.Add("Shock", -0.08);
-        heal.DamageDict.Add("Poison", -0.10);
-        heal.DamageDict.Add("Asphyxiation", -1.00);
+        heal.DamageDict.Add("Blunt", -0.16);
+        heal.DamageDict.Add("Slash", -0.16);
+        heal.DamageDict.Add("Piercing", -0.16);
+        heal.DamageDict.Add("Heat", -0.16);
+        heal.DamageDict.Add("Shock", -0.16);
+        heal.DamageDict.Add("Poison", -0.20);
+        heal.DamageDict.Add("Asphyxiation", -2.00);
         _damageable.TryChangeDamage((occupant, null), heal, true, false);
     }
 

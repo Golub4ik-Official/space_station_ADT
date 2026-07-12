@@ -4,6 +4,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.StatusEffectNew.Components;
 using Content.Shared.Weather;
+using Content.Shared.Weather.Components;
 using Content.Shared.Whitelist;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
@@ -22,12 +23,14 @@ public sealed partial class WeatherEffectsSystem : EntitySystem
     [Dependency] private readonly SharedWeatherSystem _weather = default!;
 
     private EntityQuery<MapGridComponent> _gridQuery;
+    private EntityQuery<AshStormImmuneComponent> _immuneQuery;
 
     public override void Initialize()
     {
         base.Initialize();
 
         _gridQuery = GetEntityQuery<MapGridComponent>();
+        _immuneQuery = GetEntityQuery<AshStormImmuneComponent>();
     }
 
     public override void Update(float frameTime)
@@ -75,10 +78,32 @@ public sealed partial class WeatherEffectsSystem : EntitySystem
                     continue;
             }
 
-            if (!_whitelist.IsWhitelistFailOrNull(damageBlacklist, uid))
+            // skip damage if the mob has AshStormImmune (directly or via container)
+            if (!_whitelist.IsWhitelistFailOrNull(damageBlacklist, uid) || IsInsideImmuneContainer(uid, xform))
                 continue;
 
             _damageable.TryChangeDamage(uid, damage, interruptsDoAfters: false);
         }
+    }
+
+    private bool IsInsideImmuneContainer(EntityUid uid, TransformComponent xform)
+    {
+        var parent = xform.ParentUid;
+        if (!parent.IsValid())
+            return false;
+
+        // traverse container hierarchy looking for AshStormImmune
+        while (parent.IsValid())
+        {
+            if (_immuneQuery.HasComp(parent))
+                return true;
+
+            if (!TryComp(parent, out TransformComponent? parentXform))
+                return false;
+
+            parent = parentXform.ParentUid;
+        }
+
+        return false;
     }
 }

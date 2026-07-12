@@ -47,8 +47,14 @@ public sealed class BluespaceBodyBagSystem : EntitySystem
         if (!TryComp<EntityStorageComponent>(ent, out var storage))
             return;
 
+        // Reset base EntityStorage check — bluespace bag has its own fold rules
+        args.Cancelled = false;
+
         if (storage.Open)
+        {
+            args.Cancelled = true;
             return;
+        }
 
         // Prevent folding from inside the bag
         if (args.User != null)
