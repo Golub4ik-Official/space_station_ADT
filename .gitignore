@@ -314,8 +314,6 @@ Resources/MapImages
 /Content.Docfx/*site
 
 *.bak
-error.txt
-nul
 
 # Direnv stuff
 .direnv/
