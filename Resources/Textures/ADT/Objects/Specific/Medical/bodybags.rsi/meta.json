@@ -8,6 +8,24 @@
   },
   "states": [
     {
+      "name": "paper"
+    },
+    {
+      "name": "bounty"
+    },
+    {
+      "name": "invoice"
+    },
+    {
+      "name": "captains_paper"
+    },
+    {
+      "name": "bag-inhand-left"
+    },
+    {
+      "name": "bag-inhand-right"
+    },
+    {
       "name": "body_bag_label"
     },
     {

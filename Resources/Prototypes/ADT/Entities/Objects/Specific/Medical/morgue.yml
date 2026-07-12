@@ -467,6 +467,7 @@
   description: A plastic bag designed for the long-term storage and transportation of cadavers. Slows bodily decomposition by two thirds.
   components:
   - type: Sprite
+    sprite: ADT/Objects/Specific/Medical/bodybags.rsi
     layers:
     - state: body_bag_lost
       map: ["unfoldedLayer", "enum.StorageVisualLayers.Base"]
