@@ -1,3 +1,4 @@
+using Content.Shared.EntityTable;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
