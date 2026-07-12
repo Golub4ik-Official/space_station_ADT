@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from tgstation.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "body_bag_label"
+    },
+    {
+      "name": "bluespace_bag"
+    },
+    {
+      "name": "bluespace_bag_open"
+    },
+    {
+      "name": "bluespace_bag_folded"
+    },
+    {
+      "name": "enviro_bag"
+    },
+    {
+      "name": "enviro_bag_open"
+    },
+    {
+      "name": "enviro_bag_folded"
+    },
+    {
+      "name": "nt_enviro_bag"
+    },
+    {
+      "name": "nt_enviro_bag_open"
+    },
+    {
+      "name": "nt_enviro_bag_folded"
+    },
+    {
+      "name": "prisoner_enviro_bag"
+    },
+    {
+      "name": "prisoner_enviro_bag_open"
+    },
+    {
+      "name": "prisoner_enviro_bag_folded"
+    },
+    {
+      "name": "prisoner_enviro_bag_cinched"
+    },
+    {
+      "name": "syndie_enviro_bag"
+    },
+    {
+      "name": "syndie_enviro_bag_open"
+    },
+    {
+      "name": "syndie_enviro_bag_folded"
+    },
+    {
+      "name": "syndie_enviro_bag_cinched"
+    },
+    {
+      "name": "stasis_bag"
+    },
+    {
+      "name": "stasis_bag_open"
+    },
+    {
+      "name": "body_bag_lost"
+    },
+    {
+      "name": "body_bag_lost_open"
+    },
+    {
+      "name": "body_bag_lost_folded"
+    },
+    {
+      "name": "stasis_bag_folded"
+    }
+  ]
+}

@@ -9,7 +9,7 @@
     size: Small
     heldPrefix: bag
   - type: Sprite
-    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    sprite: ADT/Objects/Specific/Medical/bodybags.rsi
     layers:
     - state: bluespace_bag
       map: ["unfoldedLayer", "enum.StorageVisualLayers.Base"]
@@ -21,7 +21,7 @@
     - state: paper
       map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
-    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    sprite: ADT/Objects/Specific/Medical/bodybags.rsi
     state: bluespace_bag
   - type: Tag
     tags:
@@ -103,7 +103,7 @@
     size: Normal
     heldPrefix: bag
   - type: Sprite
-    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    sprite: ADT/Objects/Specific/Medical/bodybags.rsi
     layers:
     - state: enviro_bag
       map: ["unfoldedLayer", "enum.StorageVisualLayers.Base"]
@@ -115,7 +115,7 @@
     - state: paper
       map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
-    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    sprite: ADT/Objects/Specific/Medical/bodybags.rsi
     state: enviro_bag
   - type: Tag
     tags:
@@ -206,7 +206,7 @@
     - state: paper
       map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
-    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    sprite: ADT/Objects/Specific/Medical/bodybags.rsi
     state: nt_enviro_bag
   - type: EntityStorageVisuals
     stateDoorOpen: nt_enviro_bag_open
@@ -251,7 +251,7 @@
     - state: paper
       map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
-    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    sprite: ADT/Objects/Specific/Medical/bodybags.rsi
     state: prisoner_enviro_bag
   - type: EntityStorageVisuals
     stateDoorOpen: prisoner_enviro_bag_open
@@ -312,7 +312,7 @@
     - state: paper
       map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
-    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    sprite: ADT/Objects/Specific/Medical/bodybags.rsi
     state: syndie_enviro_bag
   - type: EntityStorageVisuals
     stateDoorOpen: syndie_enviro_bag_open
@@ -364,7 +364,7 @@
     size: Normal
     heldPrefix: bag
   - type: Sprite
-    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    sprite: ADT/Objects/Specific/Medical/bodybags.rsi
     layers:
     - state: stasis_bag
       map: ["unfoldedLayer", "enum.StorageVisualLayers.Base"]
@@ -376,7 +376,7 @@
     - state: paper
       map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
-    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    sprite: ADT/Objects/Specific/Medical/bodybags.rsi
     state: stasis_bag
   - type: Tag
     tags:
@@ -478,7 +478,7 @@
     - state: paper
       map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
-    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    sprite: ADT/Objects/Specific/Medical/bodybags.rsi
     state: body_bag_lost
   - type: EntityStorage
     capacity: 15
