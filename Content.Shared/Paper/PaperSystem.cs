@@ -1,26 +1,29 @@
 using System.Linq;
-using Content.Shared.ADT.Paper; // ADT-Tweak: Paper field tag
 using Content.Shared.Administration.Logs;
 using Content.Shared.UserInterface;
 using Content.Shared.Database;
 using Content.Shared.Examine;
-using Content.Shared.GameTicking; // ADT-Tweak: Paper field tag
-using Content.Shared.Humanoid; // ADT-Tweak: Paper field tag
-using Content.Shared.Humanoid.Prototypes; // ADT-Tweak: Paper field tag
 using Content.Shared.Interaction;
-using Content.Shared.Mind; // ADT-Tweak: Paper field tag
 using Content.Shared.Random.Helpers;
 using Content.Shared.Popups;
-using Content.Shared.Roles.Jobs; // ADT-Tweak: Paper field tag
-using Content.Shared.Station; // ADT-Tweak: Paper field tag
 using Content.Shared.Tag;
-using Content.Shared.Verbs; // ADT-Tweak: Pen signing
-using Content.Shared.ADT.Chalkboard; // ADT-Tweak: Chalkboard
+using Content.Shared.Verbs;
+using Content.Shared.ADT.Chalkboard;
 using Robust.Shared.Player;
 using Robust.Shared.Audio.Systems;
 using static Content.Shared.Paper.PaperComponent;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+// ADT-Tweak Start: Paper field tag
+using Content.Shared.ADT.Paper;
+using Content.Shared.GameTicking;
+using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Mind;
+using Content.Shared.Roles.Jobs;
+using Content.Shared.Station;
+using Robust.Shared.Network;
+// ADT-Tweak End
 
 namespace Content.Shared.Paper;
 
@@ -41,6 +44,7 @@ public sealed class PaperSystem : EntitySystem
     [Dependency] private readonly SharedJobSystem _job = default!;
     [Dependency] private readonly SharedStationSystem _station = default!;
     [Dependency] private readonly SharedGameTicker _gameTicker = default!;
+    [Dependency] private readonly INetManager _net = default!;
     // ADT-Tweak End
 
     private static readonly ProtoId<TagPrototype> WriteIgnoreStampsTag = "WriteIgnoreStamps";
@@ -453,18 +457,17 @@ public sealed class PaperSystem : EntitySystem
     private void UpdateUserInterface(Entity<PaperComponent> entity, EntityUid? user = null)
     {
         // ADT-Tweak Start: Paper field tag
-        PaperFieldContext? fieldContext = null;
         if (user != null && entity.Comp.Content.Contains("[field]"))
         {
-            fieldContext = GetFieldContext(user.Value);
+            var fieldContext = GetFieldContext(user.Value);
+            if (_net.IsServer)
+                _uiSystem.ServerSendUiMessage(entity.Owner, PaperUiKey.Key, new PaperFieldContextMessage(fieldContext), user.Value);
         }
         // ADT-Tweak End
 
-        // ADT-Tweak: Start
         _uiSystem.SetUiState(entity.Owner,
             PaperUiKey.Key,
-            new PaperBoundUserInterfaceState(entity.Comp.Content, entity.Comp.StampedBy, entity.Comp.Mode, fieldContext));
-        // ADT-Tweak: End
+            new PaperBoundUserInterfaceState(entity.Comp.Content, entity.Comp.StampedBy, entity.Comp.Mode));
     }
 
     // ADT-Tweak Start: Paper field tag

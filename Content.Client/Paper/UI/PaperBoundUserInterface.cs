@@ -40,6 +40,18 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
         _window?.Populate((PaperBoundUserInterfaceState) state);
     }
 
+    // ADT-Tweak Start: Paper field tag
+    protected override void ReceiveMessage(BoundUserInterfaceMessage message)
+    {
+        base.ReceiveMessage(message);
+
+        if (message is PaperFieldContextMessage fieldMsg)
+        {
+            _window?.SetFieldContext(fieldMsg.FieldContext);
+        }
+    }
+    // ADT-Tweak End
+
     private void InputOnTextEntered(string text)
     {
         SendMessage(new PaperInputTextMessage(text));

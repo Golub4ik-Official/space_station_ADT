@@ -39,20 +39,32 @@ public sealed partial class PaperComponent : Component
         public readonly string Text;
         public readonly List<StampDisplayInfo> StampedBy;
         public readonly PaperAction Mode;
-        // ADT-Tweak Start: Paper field tag
-        public readonly PaperFieldContext? FieldContext;
-        // ADT-Tweak End
 
-        public PaperBoundUserInterfaceState(string text, List<StampDisplayInfo> stampedBy, PaperAction mode = PaperAction.Read, PaperFieldContext? fieldContext = null)
+        public PaperBoundUserInterfaceState(string text, List<StampDisplayInfo> stampedBy, PaperAction mode = PaperAction.Read)
         {
             Text = text;
             StampedBy = stampedBy;
             Mode = mode;
-            // ADT-Tweak Start: Paper field tag
-            FieldContext = fieldContext;
-            // ADT-Tweak End
         }
     }
+
+    // ADT-Tweak Start: Paper field tag
+    /// <summary>
+    ///     Per-user message carrying field context for [field] tag substitution.
+    ///     Sent server-side only to the specific actor who opened the UI,
+    ///     so each player sees their own field data without leaking to other viewers.
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class PaperFieldContextMessage : BoundUserInterfaceMessage
+    {
+        public readonly PaperFieldContext? FieldContext;
+
+        public PaperFieldContextMessage(PaperFieldContext? fieldContext)
+        {
+            FieldContext = fieldContext;
+        }
+    }
+    // ADT-Tweak End
 
     [Serializable, NetSerializable]
     public sealed class PaperInputTextMessage : BoundUserInterfaceMessage
