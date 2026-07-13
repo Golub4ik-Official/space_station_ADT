@@ -238,17 +238,34 @@ namespace Content.Client.Examine
 
             if (knowTarget)
             {
-                var itemName = FormattedMessage.EscapeText(Identity.Name(target, EntityManager, player));
-                var labelMessage = FormattedMessage.FromMarkupPermissive($"[bold]{itemName}[/bold]");
-                var label = new RichTextLabel();
-                label.SetMessage(labelMessage);
-                hBox.AddChild(label);
-            }
-            else
-            {
-                var label = new RichTextLabel();
-                label.SetMessage(FormattedMessage.FromMarkupOrThrow("[bold]???[/bold]"));
-                hBox.AddChild(label);
+                var entName = Identity.Name(target, EntityManager, player);
+
+                // ADT-Tweak-Start: Render label BBCode inline in examine title
+                var headerMsg = new FormattedMessage();
+                if (TryComp<Content.Shared.Labels.Components.LabelComponent>(target, out var labelComp)
+                    && !string.IsNullOrEmpty(labelComp.CurrentLabel)
+                    && labelComp.CurrentLabel.Contains('['))
+                {
+                    var cleanLabel = FormattedMessage.RemoveMarkupPermissive(labelComp.CurrentLabel);
+                    var escapedName = FormattedMessage.EscapeText(entName);
+                    var escapedCleanLabel = FormattedMessage.EscapeText(cleanLabel);
+                    var idx = escapedName.LastIndexOf(escapedCleanLabel, StringComparison.Ordinal);
+                    if (idx >= 0)
+                    {
+                        headerMsg.AddMarkupPermissive($"[bold]{escapedName[..idx]}[/bold]");
+                        headerMsg.AddMarkupPermissive(labelComp.CurrentLabel);
+                        headerMsg.AddMarkupPermissive($"[bold]{escapedName[(idx + escapedCleanLabel.Length)..]}[/bold]");
+                    }
+                    else
+                        headerMsg.AddMarkupPermissive($"[bold]{escapedName}[/bold]");
+                }
+                else
+                    headerMsg.AddMarkupPermissive($"[bold]{FormattedMessage.EscapeText(entName)}[/bold]");
+                // ADT-Tweak-End
+
+                var nameLabel = new RichTextLabel();
+                nameLabel.SetMessage(headerMsg);
+                hBox.AddChild(nameLabel);
             }
 
             panel.Measure(Vector2Helpers.Infinity);
