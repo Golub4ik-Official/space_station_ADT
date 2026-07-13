@@ -238,10 +238,8 @@ namespace Content.Client.Examine
 
             if (knowTarget)
             {
-                // ADT-Tweak-Start: Preserve BBCode in entity name (for colored labels etc)
-                var itemName = Identity.Name(target, EntityManager, player);
+                var itemName = FormattedMessage.EscapeText(Identity.Name(target, EntityManager, player));
                 var labelMessage = FormattedMessage.FromMarkupPermissive($"[bold]{itemName}[/bold]");
-                // ADT-Tweak-End
                 var label = new RichTextLabel();
                 label.SetMessage(labelMessage);
                 hBox.AddChild(label);
