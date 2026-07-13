@@ -208,8 +208,10 @@ public sealed class AtmosMonitoringConsoleSystem : SharedAtmosMonitoringConsoleS
         var pipeColor = TryComp<AtmosPipeColorComponent>(uid, out var colorComponent) ? colorComponent.Color : Color.White;
 
         // Name the entity based on its label, if available
+        // ADT-Tweak-Start: Strip BBCode from label text
         if (TryComp<LabelComponent>(uid, out var label) && label.CurrentLabel != null)
             name = FormattedMessage.RemoveMarkupPermissive(label.CurrentLabel);
+        // ADT-Tweak-End
 
         // Otherwise use its base name and network address
         else if (TryComp<DeviceNetworkComponent>(uid, out var deviceNet))
