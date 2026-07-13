@@ -55,6 +55,7 @@ public sealed partial class LabelSystem : EntitySystem
     /// </summary>
     /// <remarks>
     /// If <paramref name="text"/> is <see langword="null"/> or an empty string, the <see cref="LabelComponent"/> will be removed.
+    /// The label text supports BBCode markup (bold, italic, color, etc.).
     /// </remarks>
     /// <param name="uid">EntityUid to change label on</param>
     /// <param name="text">intended label text (null to remove)</param>
@@ -72,7 +73,9 @@ public sealed partial class LabelSystem : EntitySystem
 
         label = EnsureComp<LabelComponent>(uid);
 
-        label.CurrentLabel = FormattedMessage.EscapeText(text);
+        // ADT-Tweak-Start: Allow BBCode in hand labeler labels
+        label.CurrentLabel = text;
+        // ADT-Tweak-End
         _nameModifier.RefreshNameModifiers(uid);
 
         Dirty(uid, label);
@@ -119,16 +122,23 @@ public sealed partial class LabelSystem : EntitySystem
         if (ent.Comp.CurrentLabel == null)
             return;
 
-        var message = new FormattedMessage();
-        message.AddText(Loc.GetString("hand-labeler-has-label", ("label", ent.Comp.CurrentLabel)));
+        // ADT-Tweak-Start: Render label BBCode in examine
+        var msg = Loc.GetString("hand-labeler-has-label", ("label", ent.Comp.CurrentLabel));
+        var message = FormattedMessage.FromMarkupPermissive(msg);
         args.PushMessage(message);
+        // ADT-Tweak-End
     }
 
     private void OnRefreshNameModifiers(Entity<LabelComponent> entity, ref RefreshNameModifiersEvent args)
     {
         // We need to check lifestage so labels queued for deferred removal don't get applied.
         if (!string.IsNullOrEmpty(entity.Comp.CurrentLabel) && entity.Comp.LifeStage < ComponentLifeStage.Stopping)
-            args.AddModifier("comp-label-format", extraArgs: ("label", entity.Comp.CurrentLabel));
+        {
+            // ADT-Tweak-Start: Strip BBCode for entity name display
+            var plainLabel = FormattedMessage.RemoveMarkupPermissive(entity.Comp.CurrentLabel);
+            args.AddModifier("comp-label-format", extraArgs: ("label", plainLabel));
+            // ADT-Tweak-End
+        }
     }
 
     private void OnComponentInit(Entity<PaperLabelComponent> ent, ref ComponentInit args)
