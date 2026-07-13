@@ -238,29 +238,9 @@ namespace Content.Client.Examine
 
             if (knowTarget)
             {
+                // ADT-Tweak-Start: Render BBCode in entity name (labels etc)
                 var entName = Identity.Name(target, EntityManager, player);
-
-                // ADT-Tweak-Start: Render label BBCode inline in examine title
-                var headerMsg = new FormattedMessage();
-                if (TryComp<Content.Shared.Labels.Components.LabelComponent>(target, out var labelComp)
-                    && !string.IsNullOrEmpty(labelComp.CurrentLabel)
-                    && labelComp.CurrentLabel.Contains('['))
-                {
-                    var cleanLabel = FormattedMessage.RemoveMarkupPermissive(labelComp.CurrentLabel);
-                    var escapedName = FormattedMessage.EscapeText(entName);
-                    var escapedCleanLabel = FormattedMessage.EscapeText(cleanLabel);
-                    var idx = escapedName.LastIndexOf(escapedCleanLabel, StringComparison.Ordinal);
-                    if (idx >= 0)
-                    {
-                        headerMsg.AddMarkupPermissive($"[bold]{escapedName[..idx]}[/bold]");
-                        headerMsg.AddMarkupPermissive(labelComp.CurrentLabel);
-                        headerMsg.AddMarkupPermissive($"[bold]{escapedName[(idx + escapedCleanLabel.Length)..]}[/bold]");
-                    }
-                    else
-                        headerMsg.AddMarkupPermissive($"[bold]{escapedName}[/bold]");
-                }
-                else
-                    headerMsg.AddMarkupPermissive($"[bold]{FormattedMessage.EscapeText(entName)}[/bold]");
+                var headerMsg = FormattedMessage.FromMarkupPermissive($"[bold]{entName}[/bold]");
                 // ADT-Tweak-End
 
                 var nameLabel = new RichTextLabel();
