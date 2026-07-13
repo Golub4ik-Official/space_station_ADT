@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
+using System.Linq; // ADT-Tweak
 using System.Text;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Examine;
@@ -228,21 +229,28 @@ public sealed partial class LabelSystem : EntitySystem
     /// <summary>
     /// Closes any unclosed BBCode tags in the markup to prevent formatting leaks.
     /// Handles missing closing brackets like [/color as well.
+    /// Only recognizes tags with letter-only names to avoid treating [1] or [?!] as tags.
+    /// Builds the output string from scratch to fix malformed closing tags.
     /// </summary>
     private static string CloseUnclosedTags(string markup)
     {
         var openTags = new List<string>();
+        var sb = new StringBuilder(markup.Length + 64);
         var i = 0;
         while (i < markup.Length)
         {
             if (markup[i] != '[')
             {
+                sb.Append(markup[i]);
                 i++;
                 continue;
             }
 
             if (i + 1 >= markup.Length)
+            {
+                sb.Append(markup[i]);
                 break;
+            }
 
             var closeIdx = markup.IndexOf(']', i + 1);
 
@@ -253,33 +261,57 @@ public sealed partial class LabelSystem : EntitySystem
                 var tagNameLen = 0;
                 for (var j = i + 2; j < tagEnd && char.IsLetter(markup[j]); j++)
                     tagNameLen++;
+
+                int endIdx;
                 if (tagNameLen > 0)
                 {
                     var tagName = markup.Substring(i + 2, tagNameLen);
+                    // Emit fixed closing tag (adds ] if it was missing)
+                    sb.Append($"[/{tagName}]");
+                    endIdx = closeIdx > i ? closeIdx + 1 : i + 2 + tagNameLen;
+
+                    // Only remove this specific tag, not everything after it
                     var idx = openTags.LastIndexOf(tagName);
                     if (idx >= 0)
-                        openTags.RemoveRange(idx, openTags.Count - idx);
+                        openTags.RemoveAt(idx);
                 }
-                i = closeIdx > i ? closeIdx + 1 : i + 2 + tagNameLen;
+                else
+                {
+                    // Not a recognizable closing tag, emit as-is
+                    endIdx = closeIdx > i ? closeIdx + 1 : i + 1;
+                    sb.Append(markup[i..endIdx]);
+                }
+                i = endIdx;
             }
             else if (closeIdx > i + 1)
             {
                 // Opening tag: [tag] or [tag=value]
                 var tagContent = markup[(i + 1)..closeIdx];
                 var tagName = tagContent.Split('=')[0];
-                openTags.Add(tagName);
+
+                if (tagName.Length > 0 && tagName.All(char.IsLetter))
+                {
+                    sb.Append(markup[i..(closeIdx + 1)]);
+                    openTags.Add(tagName);
+                }
+                else
+                {
+                    sb.Append(markup[i]);
+                    i++;
+                    continue;
+                }
                 i = closeIdx + 1;
             }
             else
+            {
+                sb.Append(markup[i]);
                 i++;
+            }
         }
 
-        if (openTags.Count == 0)
-            return markup;
-
-        var sb = new StringBuilder(markup);
         for (var j = openTags.Count - 1; j >= 0; j--)
             sb.Append($"[/{openTags[j]}]");
+
         return sb.ToString();
     }
     // ADT-Tweak-End

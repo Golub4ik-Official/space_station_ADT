@@ -236,17 +236,22 @@ namespace Content.Client.Examine
                 hBox.AddChild(spriteView);
             }
 
+            // ADT-Tweak-Start: Render BBCode in entity name (labels etc)
             if (knowTarget)
             {
-                // ADT-Tweak-Start: Render BBCode in entity name (labels etc)
                 var entName = Identity.Name(target, EntityManager, player);
                 var headerMsg = FormattedMessage.FromMarkupPermissive($"[bold]{entName}[/bold]");
-                // ADT-Tweak-End
-
                 var nameLabel = new RichTextLabel();
                 nameLabel.SetMessage(headerMsg);
                 hBox.AddChild(nameLabel);
             }
+            else
+            {
+                var unknownLabel = new RichTextLabel();
+                unknownLabel.SetMessage(FormattedMessage.FromMarkupPermissive("[bold]???[/bold]"));
+                hBox.AddChild(unknownLabel);
+            }
+            // ADT-Tweak-End
 
             panel.Measure(Vector2Helpers.Infinity);
             var size = Vector2.Max(new Vector2(minWidth, 0), panel.DesiredSize);
