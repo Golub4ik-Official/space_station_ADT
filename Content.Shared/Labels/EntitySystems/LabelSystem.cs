@@ -224,6 +224,7 @@ public sealed partial class LabelSystem : EntitySystem
         return true;
     }
 
+    // ADT-Tweak-Start: Auto-close unclosed BBCode tags
     /// <summary>
     /// Closes any unclosed BBCode tags in the markup to prevent formatting leaks.
     /// Handles missing closing brackets like [/color as well.
@@ -281,4 +282,5 @@ public sealed partial class LabelSystem : EntitySystem
             sb.Append($"[/{openTags[j]}]");
         return sb.ToString();
     }
+    // ADT-Tweak-End
 }
