@@ -3,7 +3,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Input;  //ADT-Tweak
-using Robust.Shared.Utility;
+using Robust.Shared.Utility; // ADT-Tweak
 
 namespace Content.Client.SmartFridge;
 
