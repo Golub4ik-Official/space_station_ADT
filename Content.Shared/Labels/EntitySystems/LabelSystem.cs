@@ -134,9 +134,8 @@ public sealed partial class LabelSystem : EntitySystem
         // We need to check lifestage so labels queued for deferred removal don't get applied.
         if (!string.IsNullOrEmpty(entity.Comp.CurrentLabel) && entity.Comp.LifeStage < ComponentLifeStage.Stopping)
         {
-            // ADT-Tweak-Start: Strip BBCode for entity name display
-            var plainLabel = FormattedMessage.RemoveMarkupPermissive(entity.Comp.CurrentLabel);
-            args.AddModifier("comp-label-format", extraArgs: ("label", plainLabel));
+            // ADT-Tweak-Start: Allow BBCode in entity name (rendered in examine tooltip)
+            args.AddModifier("comp-label-format", extraArgs: ("label", entity.Comp.CurrentLabel));
             // ADT-Tweak-End
         }
     }
