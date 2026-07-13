@@ -3,6 +3,9 @@ using Content.Shared.PDA;
 
 namespace Content.Client.ADT.PDA;
 
+/// <summary>
+/// Prevents predictive default Ctrl-interaction with PDAs carried by the user.
+/// </summary>
 public sealed class PdaPenEjectSystem : EntitySystem
 {
     public override void Initialize()

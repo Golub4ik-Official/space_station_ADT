@@ -5,6 +5,9 @@ using Content.Shared.Popups;
 
 namespace Content.Server.ADT.PDA;
 
+/// <summary>
+/// Ejects a pen from a PDA carried by the user after Ctrl-interaction.
+/// </summary>
 public sealed class PdaPenEjectSystem : EntitySystem
 {
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
