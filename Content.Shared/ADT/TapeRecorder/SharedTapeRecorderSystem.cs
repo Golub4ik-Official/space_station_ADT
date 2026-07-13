@@ -1,5 +1,6 @@
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
+using Robust.Shared.Utility;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
@@ -406,7 +407,7 @@ public abstract class SharedTapeRecorderSystem : EntitySystem
 
             if (TryComp<LabelComponent>(tape, out var labelComp))
                 if (labelComp.CurrentLabel != null)
-                    cassetteName = labelComp.CurrentLabel;
+                    cassetteName = FormattedMessage.RemoveMarkupPermissive(labelComp.CurrentLabel);
         }
 
         var state = new TapeRecorderState(

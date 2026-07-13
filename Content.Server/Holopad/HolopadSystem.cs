@@ -518,7 +518,7 @@ public sealed class HolopadSystem : SharedHolopadSystem
             var name = MetaData(receiverUid).EntityName;
 
             if (TryComp<LabelComponent>(receiverUid, out var label) && !string.IsNullOrEmpty(label.CurrentLabel))
-                name = label.CurrentLabel;
+                name = FormattedMessage.RemoveMarkupPermissive(label.CurrentLabel);
 
             holopads.Add(GetNetEntity(receiverUid), name);
         }
