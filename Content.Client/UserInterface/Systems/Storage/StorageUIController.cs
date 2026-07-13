@@ -3,6 +3,7 @@ using System.Numerics;
 using Content.Client.Examine;
 using Content.Client.Hands.Systems;
 using Content.Client.Interaction;
+using Content.Shared.PDA; // ADT-Tweak
 using Content.Client.Storage;
 using Content.Client.Storage.Systems;
 using Content.Client.UserInterface.Systems.Hotbar.Widgets;
@@ -285,6 +286,9 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
         // ADT-Tweak-Start: Ctrl+Click PDA pen eject from storage
         else if (args.Function == ContentKeyFunctions.TryPullObject)
         {
+            if (!EntityManager.HasComponent<PdaComponent>(control.Entity))
+                return;
+
             EntityManager.RaisePredictiveEvent(new InteractInventorySlotEvent(EntityManager.GetNetEntity(control.Entity), ctrlInteract: true));
             args.Handle();
         }

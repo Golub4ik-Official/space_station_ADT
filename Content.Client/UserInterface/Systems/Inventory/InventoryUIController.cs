@@ -3,6 +3,7 @@ using System.Numerics;
 using Content.Client.Gameplay;
 using Content.Client.Hands.Systems;
 using Content.Client.Inventory;
+using Content.Shared.PDA; // ADT-Tweak
 using Content.Client.Storage.Systems;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Gameplay;
@@ -306,6 +307,10 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         // ADT-Tweak-Start: Ctrl+Click PDA pen eject from inventory
         else if (args.Function == ContentKeyFunctions.TryPullObject)
         {
+            if (!_inventorySystem.TryGetSlotEntity(_playerUid.Value, slot, out var item)
+                || !_entities.HasComponent<PdaComponent>(item.Value))
+                return;
+
             _inventorySystem.UIInventoryCtrlActivateItem(slot, _playerUid.Value);
         }
         // ADT-Tweak-End
