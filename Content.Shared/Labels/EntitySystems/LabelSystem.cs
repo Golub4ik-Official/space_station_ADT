@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
+using System.Text;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Examine;
 using Content.Shared.Labels.Components;
@@ -74,7 +75,7 @@ public sealed partial class LabelSystem : EntitySystem
         label = EnsureComp<LabelComponent>(uid);
 
         // ADT-Tweak-Start: Allow BBCode in hand labeler labels
-        label.CurrentLabel = text;
+        label.CurrentLabel = CloseUnclosedTags(text);
         // ADT-Tweak-End
         _nameModifier.RefreshNameModifiers(uid);
 
@@ -221,5 +222,63 @@ public sealed partial class LabelSystem : EntitySystem
 
         label = (labelEnt, labelComp);
         return true;
+    }
+
+    /// <summary>
+    /// Closes any unclosed BBCode tags in the markup to prevent formatting leaks.
+    /// Handles missing closing brackets like [/color as well.
+    /// </summary>
+    private static string CloseUnclosedTags(string markup)
+    {
+        var openTags = new List<string>();
+        var i = 0;
+        while (i < markup.Length)
+        {
+            if (markup[i] != '[')
+            {
+                i++;
+                continue;
+            }
+
+            if (i + 1 >= markup.Length)
+                break;
+
+            var closeIdx = markup.IndexOf(']', i + 1);
+
+            if (markup[i + 1] == '/')
+            {
+                // Closing tag: [/tag] or [/tag (missing ])
+                var tagEnd = closeIdx > i + 2 ? closeIdx : markup.Length;
+                var tagNameLen = 0;
+                for (var j = i + 2; j < tagEnd && char.IsLetter(markup[j]); j++)
+                    tagNameLen++;
+                if (tagNameLen > 0)
+                {
+                    var tagName = markup.Substring(i + 2, tagNameLen);
+                    var idx = openTags.LastIndexOf(tagName);
+                    if (idx >= 0)
+                        openTags.RemoveRange(idx, openTags.Count - idx);
+                }
+                i = closeIdx > i ? closeIdx + 1 : i + 2 + tagNameLen;
+            }
+            else if (closeIdx > i + 1)
+            {
+                // Opening tag: [tag] or [tag=value]
+                var tagContent = markup[(i + 1)..closeIdx];
+                var tagName = tagContent.Split('=')[0];
+                openTags.Add(tagName);
+                i = closeIdx + 1;
+            }
+            else
+                i++;
+        }
+
+        if (openTags.Count == 0)
+            return markup;
+
+        var sb = new StringBuilder(markup);
+        for (var j = openTags.Count - 1; j >= 0; j--)
+            sb.Append($"[/{openTags[j]}]");
+        return sb.ToString();
     }
 }
