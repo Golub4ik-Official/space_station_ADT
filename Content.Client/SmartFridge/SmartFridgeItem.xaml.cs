@@ -17,9 +17,9 @@ public sealed partial class SmartFridgeItem : BoxContainer
         RobustXamlLoader.Load(this);
 
         EntityView.SetEntity(uid);
-        // ADT-Tweak-Start: Parse BBCode in item name
-        NameLabel.SetMessage(FormattedMessage.FromMarkupPermissive(text));
-        // ADT-Tweak-End
+
+        NameLabel.SetMessage(FormattedMessage.FromMarkupPermissive(text)); // ADT-Tweak
+
     //ADT-Tweak Start: Delete Button UI keylock
         DeleteButton.OnKeyBindDown += args =>
         {

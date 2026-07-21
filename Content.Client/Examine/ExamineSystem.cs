@@ -236,10 +236,9 @@ namespace Content.Client.Examine
                 hBox.AddChild(spriteView);
             }
 
-            // ADT-Tweak-Start: Render BBCode in entity name (labels etc)
             if (knowTarget)
             {
-                var entName = Identity.Name(target, EntityManager, player);
+                var entName = Identity.Name(target, EntityManager, player); // ADT-Tweak. Убран FormattedMessage.EscapeText
                 var headerMsg = FormattedMessage.FromMarkupPermissive($"[bold]{entName}[/bold]");
                 var nameLabel = new RichTextLabel();
                 nameLabel.SetMessage(headerMsg);
@@ -248,10 +247,9 @@ namespace Content.Client.Examine
             else
             {
                 var unknownLabel = new RichTextLabel();
-                unknownLabel.SetMessage(FormattedMessage.FromMarkupPermissive("[bold]???[/bold]"));
+                unknownLabel.SetMessage(FormattedMessage.FromMarkupOrThrow("[bold]???[/bold]"));
                 hBox.AddChild(unknownLabel);
             }
-            // ADT-Tweak-End
 
             panel.Measure(Vector2Helpers.Infinity);
             var size = Vector2.Max(new Vector2(minWidth, 0), panel.DesiredSize);
