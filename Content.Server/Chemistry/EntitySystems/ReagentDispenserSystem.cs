@@ -98,10 +98,8 @@ namespace Content.Server.Chemistry.EntitySystems
             foreach (var (storedContainer, storageLocation) in storage.StoredItems)
             {
                 string reagentLabel;
-                // ADT-Tweak-Start: Strip BBCode from label text
                 if (TryComp<LabelComponent>(storedContainer, out var label) && !string.IsNullOrEmpty(label.CurrentLabel))
-                    reagentLabel = FormattedMessage.RemoveMarkupPermissive(label.CurrentLabel);
-                // ADT-Tweak-End
+                    reagentLabel = FormattedMessage.RemoveMarkupPermissive(label.CurrentLabel); // ADT-Tweak. label.CurrentLabel -> FormattedMessage.RemoveMarkupPermissive
                 else
                     reagentLabel = Name(storedContainer);
 
