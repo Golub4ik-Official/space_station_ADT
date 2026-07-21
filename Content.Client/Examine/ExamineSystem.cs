@@ -238,17 +238,17 @@ namespace Content.Client.Examine
 
             if (knowTarget)
             {
-                var entName = Identity.Name(target, EntityManager, player); // ADT-Tweak. Убран FormattedMessage.EscapeText
-                var headerMsg = FormattedMessage.FromMarkupPermissive($"[bold]{entName}[/bold]");
-                var nameLabel = new RichTextLabel();
-                nameLabel.SetMessage(headerMsg);
-                hBox.AddChild(nameLabel);
+                var itemName = Identity.Name(target, EntityManager, player); // ADT-Tweak. Убран FormattedMessage.EscapeText
+                var labelMessage = FormattedMessage.FromMarkupPermissive($"[bold]{itemName}[/bold]");
+                var label = new RichTextLabel();
+                label.SetMessage(labelMessage);
+                hBox.AddChild(label);
             }
             else
             {
-                var unknownLabel = new RichTextLabel();
-                unknownLabel.SetMessage(FormattedMessage.FromMarkupOrThrow("[bold]???[/bold]"));
-                hBox.AddChild(unknownLabel);
+                var label = new RichTextLabel();
+                label.SetMessage(FormattedMessage.FromMarkupOrThrow("[bold]???[/bold]"));
+                hBox.AddChild(label);
             }
 
             panel.Measure(Vector2Helpers.Infinity);
