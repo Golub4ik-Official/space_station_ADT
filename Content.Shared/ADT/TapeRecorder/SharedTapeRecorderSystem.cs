@@ -1,6 +1,5 @@
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
-using Robust.Shared.Utility;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
