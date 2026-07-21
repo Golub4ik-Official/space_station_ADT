@@ -246,10 +246,8 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
         // Base the name of the device on its label
         string? deviceName = null;
 
-        // ADT-Tweak-Start: Strip BBCode from label text
-        if (TryComp<LabelComponent>(source, out var label) && label.CurrentLabel != null)
-            deviceName = FormattedMessage.RemoveMarkupPermissive(label.CurrentLabel);
-        // ADT-Tweak-End
+        if (TryComp<LabelComponent>(source, out var label))
+            deviceName = label.CurrentLabel;
 
         receiver.Comp.LastCallerId = (callerInfo.Item1, callerInfo.Item2, deviceName); // This will be networked when the state changes
         receiver.Comp.LinkedTelephones.Add(source);

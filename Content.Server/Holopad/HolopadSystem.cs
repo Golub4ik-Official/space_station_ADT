@@ -517,10 +517,8 @@ public sealed class HolopadSystem : SharedHolopadSystem
 
             var name = MetaData(receiverUid).EntityName;
 
-            // ADT-Tweak-Start: Strip BBCode from label text
             if (TryComp<LabelComponent>(receiverUid, out var label) && !string.IsNullOrEmpty(label.CurrentLabel))
-                name = FormattedMessage.RemoveMarkupPermissive(label.CurrentLabel);
-            // ADT-Tweak-End
+                name = label.CurrentLabel;
 
             holopads.Add(GetNetEntity(receiverUid), name);
         }

@@ -405,11 +405,9 @@ public abstract class SharedTapeRecorderSystem : EntitySystem
             currentTime = tape.Comp.CurrentPosition;
             maxTime = (float) tape.Comp.MaxCapacity.TotalSeconds;
 
-            // ADT-Tweak-Start: Strip BBCode from label text
             if (TryComp<LabelComponent>(tape, out var labelComp))
                 if (labelComp.CurrentLabel != null)
-                    cassetteName = FormattedMessage.RemoveMarkupPermissive(labelComp.CurrentLabel);
-            // ADT-Tweak-End
+                    cassetteName = labelComp.CurrentLabel;
         }
 
         var state = new TapeRecorderState(
